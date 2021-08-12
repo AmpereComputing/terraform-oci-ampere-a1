@@ -19,12 +19,12 @@ Terraform code to launch a Ampere A1 Shape on Oracle Cloud Infrastructure (OCI) 
 ### terraform.tfvars
 
 The easiest way to configure is to use a terraform.tfvars in the project directory.  
+Please note that Compartment OCID are the same as Tenancy OCID for Root Compartment.
 The following is an example of what terraform.tfvars should look like:
 
 ```
 tenancy_ocid = "ocid1.tenancy.oc1..aaaaaaaabcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopq"
 user_ocid = "ocid1.user.oc1..aaaaaaaabcdefghijklmnopqrstuvwxyz0987654321zyxwvustqrponmlkj"
-# Compartment OCID is same as Tenancy OCID for Root Compartment
 compartment_ocid = "ocid1.tenancy.oc1..aaaaaaaabcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopq"
 fingerprint = "a1:01:b2:02:c3:03:e4:04:10:11:12:13:14:15:16:17"
 ```
