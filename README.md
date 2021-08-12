@@ -15,7 +15,35 @@ Terraform code to launch a Ampere A1 Shape on Oracle Cloud Infrastructure (OCI) 
  * Terraform
  * Oracle Free Tier Account
 
+
 ## Usage
+
+### terraform.tfvars
+
+The easiest way to configure is to use a terraform.tfvars in the project directory.  
+The following is an example of what terraform.tfvars should look like:
+
+```
+tenancy_ocid = "ocid1.tenancy.oc1..aaaaaaaabcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopq"
+user_ocid = "ocid1.user.oc1..aaaaaaaasoeefdt73o7uufpibhqofukdxzujisiwdcfv6xgy7fowfx7pm5ya"
+user_ocid = "ocid1.user.oc1..aaaaaaaabcdefghijklmnopqrstuvwxyz0987654321zyxwvustqrponmlkj"
+# Compartment OCID is same as Tenancy OCID for Root Compartment
+compartment_ocid = "ocid1.tenancy.oc1..aaaaaaaabcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopq"
+fingerprint = "a1:01:b2:02:c3:03:e4:04:10:11:12:13:14:15:16:17"
+```
+
+### Oracle OCI Specifics Notes
+
+Some helpful notes to understand what metadata is required.
+
+* Currently this code utilizes the "ca-montreal-1" region of Oracle's cloud.
+* The Availability Domain for that region is the following: "FFpD:CA-MONTREAL-1-AD-1".  i
+  * This information can be found in the webui when starting to launch an instance.
+
+* OracleLinux Image ID for Region: "ocid1.image.oc1.ca-montreal-1.aaaaaaaad6knjdtt7y55hbsr4o3ckdx2uoj7xg7xqbjrb66nf76i7ijjaeta"
+  * You must supply the OS image id for the region when selecting your OS.  Each different region will have an different ID.
+
+### Running Terraform
 
 ```
 terraform init && terraform plan && terraform apply -auto-approve
