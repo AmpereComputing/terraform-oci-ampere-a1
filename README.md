@@ -37,8 +37,14 @@ Some helpful notes to understand what metadata is required.
 * The Availability Domain for that region is the following: "FFpD:CA-MONTREAL-1-AD-1".  i
   * This information can be found in the webui when starting to launch an instance.
 
-* OracleLinux Image ID for Region: "ocid1.image.oc1.ca-montreal-1.aaaaaaaad6knjdtt7y55hbsr4o3ckdx2uoj7xg7xqbjrb66nf76i7ijjaeta"
-  * You must supply the OS image id for the region when selecting your OS.  Each different region will have an different ID.
+* OracleLinux Image ID for Region
+
+  ```
+  ocid1.image.oc1.ca-montreal-1.aaaaaaaad6knjdtt7y55hbsr4o3ckdx2uoj7xg7xqbjrb66nf76i7ijjaeta"
+  ```
+
+  * You must supply the OS image id for the region when selecting your OS.
+  * Each region will have an different IDs for each os image.
 
 ### Running Terraform
 
