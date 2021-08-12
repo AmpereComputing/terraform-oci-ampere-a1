@@ -25,6 +25,11 @@ resource "oci_core_instance" "free_instance0" {
   }
 
   metadata = {
-    ssh_authorized_keys = local.ssh_public_key
+# Add key from your home directory
+#    ssh_authorized_keys = "${file("/home/ansible/.ssh/id_rsa.pub")}"
+#   ssh_authorized_keys = "${file(tls_private_key.oci.public_key_openssh)}"
+    ssh_authorized_keys = tls_private_key.oci.public_key_openssh
+    user_data = "${base64encode(data.template_file.cloud_config.rendered)}"
+    
   }
 }
