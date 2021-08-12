@@ -52,6 +52,13 @@ Some helpful notes to understand what metadata is required.
 terraform init && terraform plan && terraform apply -auto-approve
 ```
 
+### What is Terraform doing
+
+* Dynamically creating sshkeys to use when logging into the instance.
+* Creating necessary core networking configurations for the tenancy
+* Rendering metadata to pass into the Ampere A1 instance.
+* Launching an Ampere A1 instance with metadata and ssh keys.
+
 ## References
 
 * [https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformproviderconfiguration.htm](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformproviderconfiguration.htm)
