@@ -23,7 +23,6 @@ The following is an example of what terraform.tfvars should look like:
 
 ```
 tenancy_ocid = "ocid1.tenancy.oc1..aaaaaaaabcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopq"
-user_ocid = "ocid1.user.oc1..aaaaaaaasoeefdt73o7uufpibhqofukdxzujisiwdcfv6xgy7fowfx7pm5ya"
 user_ocid = "ocid1.user.oc1..aaaaaaaabcdefghijklmnopqrstuvwxyz0987654321zyxwvustqrponmlkj"
 # Compartment OCID is same as Tenancy OCID for Root Compartment
 compartment_ocid = "ocid1.tenancy.oc1..aaaaaaaabcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopq"
