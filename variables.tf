@@ -57,12 +57,12 @@ variable "ad_region_mapping" {
 }
 
 
-variable "AD" {
-    default     = "1"
-    description = "Availability Domain"
+variable "oci_availability_domain" {
+    default     = "FFpD:CA-MONTREAL-1-AD-1"
+    description = "OCI Availability Domain, default is for CA-Montreal-1"
 }
 
-variable "CPUCoreCount" {
-    default = "2"
+variable "ampere_a1_cpu_core_count" {
+    default = "4"
     type    = string
 }

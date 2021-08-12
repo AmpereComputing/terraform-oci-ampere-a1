@@ -1,5 +1,5 @@
 resource "oci_core_instance" "free_instance0" {
-  availability_domain = "FFpD:CA-MONTREAL-1-AD-1"
+  availability_domain = var.oci_availability_domain
   compartment_id      = var.compartment_ocid
   display_name        = "AmpereA1-0"
   shape               = "VM.Standard.A1.Flex"
@@ -17,7 +17,7 @@ resource "oci_core_instance" "free_instance0" {
     #baseline_ocpu_utilization = var.instance_shape_config_baseline_ocpu_utilization
     # https://blogs.oracle.com/cloud-infrastructure/post/oracle-makes-building-applications-on-ampere-a1-compute-instances-easy?source=:ow:o:p:nav:062520CloudComputeBC
     memory_in_gbs = 24
-    ocpus         = 4
+    ocpus         = var.ampere_a1_cpu_core_count
   }
   source_details {
     source_type = "image"
