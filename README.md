@@ -18,7 +18,9 @@ Terraform code to launch a Ampere A1 Shape on Oracle Cloud Infrastructure (OCI) 
 ## What exactly is Terraform doing
 
 The goal of this code is to supply the minimal ammount of information to quickly have working Ampere A1 instances on OCI ["Always Free"](https://www.oracle.com/cloud/free/#always-free).
-The root compartment will be used (compartment id and tenancy id are the same) when launching the instance.  
+To keep things simple, The root compartment will be used (compartment id and tenancy id are the same) when launching the instance.  
+
+Addtional tasks performed by this code:
 
 * Dynamically creating sshkeys to use when logging into the instance.
 * Dynamically getting region, availability zone and image id..
@@ -26,6 +28,9 @@ The root compartment will be used (compartment id and tenancy id are the same) w
 * Rendering metadata to pass into the Ampere A1 instance.
 * Launch 1 to 4 Ampere A1 instances with metadata and ssh keys.
 * Output IP information to connect to the instance.
+
+
+To get started clone this repository from GitHub locally.
 
 ## Configuration with terraform.tfvars
 
