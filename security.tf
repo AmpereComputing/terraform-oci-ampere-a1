@@ -1,5 +1,6 @@
 resource "oci_core_security_list" "ampere_security_list" {
-  compartment_id = var.compartment_ocid
+# compartment_id = var.compartment_ocid
+  compartment_id = var.tenancy_ocid
   vcn_id         = oci_core_virtual_network.ampere_vcn.id
   display_name   = "ampereSecurityList"
 

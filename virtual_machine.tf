@@ -1,6 +1,8 @@
 resource "oci_core_instance" "ampere_a1" {
-  availability_domain = var.oci_availability_domain
-  compartment_id      = var.compartment_ocid
+# Using the Default Availability Domain
+  availability_domain = data.oci_identity_availability_domains.ads.availability_domains.0.name
+# compartment_id      = var.compartment_ocid
+  compartment_id      = var.tenancy_ocid
   display_name        = "AmpereA1-0"
   shape               = "VM.Standard.A1.Flex"
 
@@ -21,7 +23,8 @@ resource "oci_core_instance" "ampere_a1" {
   }
   source_details {
     source_type = "image"
-    source_id   = var.image_ocid
+#   source_id   = var.image_ocid
+    source_id   = data.oci_core_images.oraclelinux-8_4-aarch64.images.0.id
   }
 
   metadata = {
