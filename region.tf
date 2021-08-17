@@ -1,8 +1,3 @@
-#provider oci { 
-#    alias = "home"
-#    region = lookup(local.region_map, data.oci_identity_tenancy.tenancy.home_region_key)
-#}
-
 data oci_identity_regions regions {}
 
 data oci_identity_tenancy tenancy {

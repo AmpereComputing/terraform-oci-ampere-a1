@@ -14,32 +14,6 @@ variable "private_key_path" {
     description = "Local path to the OCI private key file"
 }
 
-#variable "region" {
-#    default = "ca-montreal-1"
-#    description = "OCI Region that was chosen during Free-Tier Account creation"
-#}
-
-#variable "oci_availability_domain" {
-#    default     = "FFpD:CA-MONTREAL-1-AD-1"
-#    description = "OCI Availability Domain, default is for CA-Montreal-1"
-#}
-
-#variable "compartment_ocid" {
-#}
-
-
-# Api Token
-variable "oci_api_token" {
-}
-
-# Object Storage Variables
-variable "oci_object_storage_namespace" {
-}
-variable "oci_s3_designated_compartment" {
-}
-variable "oci_swift_designated_compartment" {
-}
-
 # Network Configuration Variables
 
 variable "oci_vcn_cidr_block" {

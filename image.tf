@@ -3,7 +3,6 @@
 # pattern to include the aarch64 images
 
 data "oci_core_images" "oraclelinux-8_4-aarch64" {
-# compartment_id = var.compartment_ocid
   compartment_id = var.tenancy_ocid
 
   operating_system         = "Oracle Linux"
