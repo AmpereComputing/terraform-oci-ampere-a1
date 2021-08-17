@@ -1,4 +1,5 @@
 resource "oci_core_instance" "ampere_a1" {
+  count               = var.oci_vm_count
   availability_domain = data.oci_identity_availability_domains.ads.availability_domains.0.name
   compartment_id      = var.tenancy_ocid
   display_name        = "AmpereA1-0"
@@ -8,12 +9,12 @@ resource "oci_core_instance" "ampere_a1" {
     subnet_id        = oci_core_subnet.ampere_subnet.id
     display_name     = "primaryvnic"
     assign_public_ip = true
-    hostname_label   = "ampere-a1-0"
+    hostname_label   = format("${var.instance_prefix}-%02d", count.index+1)
   }
 
   shape_config {
 
-    memory_in_gbs = 24
+    memory_in_gbs = var.ampere_a1_vm_memory
     ocpus         = var.ampere_a1_cpu_core_count
   }
   source_details {

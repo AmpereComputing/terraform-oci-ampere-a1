@@ -27,8 +27,31 @@ variable "oci_vcn_cidr_subnet" {
 }
 
 # Virtual Machine Configuration Variables
+
+variable "instance_prefix" {
+  description = "Name prefix for vm instances"
+  default = "ampere-a1-"
+}
+
+# OCI Free Tier Ampere A1 provides 4 cores and  24G of memory.
+# This can be broken up between up to 4 virtual machines.
+#  * 1 vm 24G 4 cores
+#  * 2 vm 16G 2 cores
+#  * 4 vm 8G 1 cores
+
+variable "oci_vm_count" {
+  description = "OCI Free Tier Ampere A1 is two instances"
+  default = 4
+}
+
+variable "ampere_a1_vm_memory" {
+    default = "8"
+    description = "Default RAM in GB for Ampere A1 instances in OCI Free Tier"
+    type    = string
+}
+
 variable "ampere_a1_cpu_core_count" {
-    default = "4"
+    default = "1"
     description = "Default core count for Ampere A1 instances in OCI Free Tier"
     type    = string
 }
