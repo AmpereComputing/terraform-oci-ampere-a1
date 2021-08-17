@@ -24,8 +24,8 @@ The root compartment will be used (compartment id and tenancy id are the same) w
 * Dynamically getting region, availability zone and image id..
 * Creating necessary core networking configurations for the tenancy
 * Rendering metadata to pass into the Ampere A1 instance.
-* Launching an Ampere A1 instance with metadata and ssh keys.
-* Output information to connect to the instance.
+* Launch 1 to 4 Ampere A1 instances with metadata and ssh keys.
+* Output IP information to connect to the instance.
 
 ## Configuration with terraform.tfvars
 
