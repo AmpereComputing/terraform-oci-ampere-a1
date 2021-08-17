@@ -16,6 +16,10 @@ Terraform code to launch a Ampere A1 Shape on Oracle Cloud Infrastructure (OCI) 
 
 ## Usage
 
+This terraform launches an Ampere A1 instance on Oracle's Cloud Infrastructure.
+Additionally it will dynamically create a ssh keypair within the local directory
+to be used when connecting to the external IP address of the launched instance.
+
 ### terraform.tfvars
 
 The easiest way to configure is to use a terraform.tfvars in the project directory.  
