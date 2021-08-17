@@ -1,4 +1,4 @@
-resource "oci_core_instance" "free_instance0" {
+resource "oci_core_instance" "ampere_a1" {
   availability_domain = var.oci_availability_domain
   compartment_id      = var.compartment_ocid
   display_name        = "AmpereA1-0"
