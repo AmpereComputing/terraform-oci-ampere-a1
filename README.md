@@ -15,7 +15,7 @@ Terraform code to launch a Ampere A1 Shape on Oracle Cloud Infrastructure (OCI) 
 
 
 
-### What exactly is Terraform doing
+## What exactly is Terraform doing
 
 The goal of this code is to supply the minimal ammount of information to have a working Ampere A1 instance on OCI.
 The root compartment will be used (compartment id and tenancy id are the same) when launching the instance.  
@@ -27,9 +27,7 @@ The root compartment will be used (compartment id and tenancy id are the same) w
 * Launching an Ampere A1 instance with metadata and ssh keys.
 * Output information to connect to the instance.
 
-## Configuration
-
-### terraform.tfvars
+## Configuration with terraform.tfvars
 
 The easiest way to configure is to use a terraform.tfvars in the project directory.  
 Please note that Compartment OCID are the same as Tenancy OCID for Root Compartment.
