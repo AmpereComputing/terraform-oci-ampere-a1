@@ -14,11 +14,20 @@ Terraform code to launch a Ampere A1 Shape on Oracle Cloud Infrastructure (OCI) 
  * Oracle Free Tier Account
 
 
-## Usage
 
-This terraform launches an Ampere A1 instance on Oracle's Cloud Infrastructure.
-Additionally it will dynamically create a ssh keypair within the local directory
-to be used when connecting to the external IP address of the launched instance.
+### What exactly is Terraform doing
+
+The goal of this code is to supply the minimal ammount of information to have a working Ampere A1 instance on OCI.
+The root compartment will be used (compartment id and tenancy id are the same) when launching the instance.  
+
+* Dynamically creating sshkeys to use when logging into the instance.
+* Dynamically getting region, availability zone and image id..
+* Creating necessary core networking configurations for the tenancy
+* Rendering metadata to pass into the Ampere A1 instance.
+* Launching an Ampere A1 instance with metadata and ssh keys.
+* Output information to connect to the instance.
+
+## Configuration
 
 ### terraform.tfvars
 
@@ -29,39 +38,14 @@ The following is an example of what terraform.tfvars should look like:
 ```
 tenancy_ocid = "ocid1.tenancy.oc1..aaaaaaaabcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopq"
 user_ocid = "ocid1.user.oc1..aaaaaaaabcdefghijklmnopqrstuvwxyz0987654321zyxwvustqrponmlkj"
-compartment_ocid = "ocid1.tenancy.oc1..aaaaaaaabcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopq"
 fingerprint = "a1:01:b2:02:c3:03:e4:04:10:11:12:13:14:15:16:17"
 ```
-
-### Oracle OCI Specifics Notes
-
-Some helpful notes to understand what metadata is required.
-
-* Currently this code utilizes the "ca-montreal-1" region of Oracle's cloud.
-* The Availability Domain for that region is the following: "FFpD:CA-MONTREAL-1-AD-1".  i
-  * This information can be found in the webui when starting to launch an instance.
-
-* OracleLinux Image ID for Region
-
-  ```
-  ocid1.image.oc1.ca-montreal-1.aaaaaaaad6knjdtt7y55hbsr4o3ckdx2uoj7xg7xqbjrb66nf76i7ijjaeta"
-  ```
-
-  * You must supply the OS image id for the region when selecting your OS.
-  * Each region will have an different IDs for each os image.
 
 ### Running Terraform
 
 ```
 terraform init && terraform plan && terraform apply -auto-approve
 ```
-
-### What is Terraform doing
-
-* Dynamically creating sshkeys to use when logging into the instance.
-* Creating necessary core networking configurations for the tenancy
-* Rendering metadata to pass into the Ampere A1 instance.
-* Launching an Ampere A1 instance with metadata and ssh keys.
 
 ## References
 
