@@ -1,8 +1,4 @@
 # Output the private and public IPs of the instance
-# Gets a list of Availability Domains
-data "oci_identity_availability_domains" "ADs" {
-  compartment_id = "${var.tenancy_ocid}"
-}
 
 output "AmpereA1_PrivateIPs" {
   value = ["${oci_core_instance.ampere_a1.*.private_ip}"]
