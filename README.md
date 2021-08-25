@@ -44,6 +44,39 @@ user_ocid = "ocid1.user.oc1..aaaaaaaabcdefghijklmnopqrstuvwxyz0987654321zyxwvust
 fingerprint = "a1:01:b2:02:c3:03:e4:04:10:11:12:13:14:15:16:17"
 ```
 
+### Using as a Module
+
+This can also be used as a terraform module.   The following is example code for module usage:
+
+```
+variable "tenancy_ocid" {}
+variable "user_ocid" {}
+variable "fingerprint" {}
+variable "private_key_path" {}
+
+module "oci-ampere-a1" {
+  source                   = "github.com/amperecomputing/terraform-oci-ampere-a1"
+  tenancy_ocid             = var.tenancy_ocid
+  user_ocid                = var.user_ocid
+  fingerprint              = var.fingerprint
+  private_key_path         = var.private_key_path
+# Optional
+# oci_vcn_cidr_block       = "10.2.0.0/16"
+# oci_vcn_cidr_subnet      = "10.2.1.0/24"
+# instance_prefix          = "ampere-a1-"
+# oci_vm_count             = "4"
+# ampere_a1_vm_memory      = "8"
+# ampere_a1_cpu_core_count = "1"
+}
+
+output "oci_ampere_a1_private_ips" {
+  value     = module.oci-ampere-a1.AmpereA1_PrivateIPs
+}
+output "oci_ampere_a1_public_ips" {
+  value = module.oci-ampere-a1.AmpereA1_PublicIPs
+}
+```
+
 ### Running Terraform
 
 ```
