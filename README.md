@@ -83,6 +83,9 @@ output "oci_ampere_a1_public_ips" {
 terraform init && terraform plan && terraform apply -auto-approve
 ```
 
+
+<script id="asciicast-432487" src="https://asciinema.org/a/432487.js" async data-autoplay="true" data-size="small" data-speed="2"></script>
+
 ## References
 
 * [https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformproviderconfiguration.htm](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformproviderconfiguration.htm)
