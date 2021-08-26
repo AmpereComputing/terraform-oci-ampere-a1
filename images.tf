@@ -35,10 +35,6 @@ locals {
     oci_aarch64_image_names = tolist(keys(local.oci_aarch64_images))
     oci_aarch64_image_ids = tolist(values(local.oci_aarch64_images))
 
-    oci_os_images = flatten([
-      for i in local.oci_aarch64_images : i["values"]
-      ]
-   ) 
 }
 
 output "local_oci_aarch64_images_map" {
