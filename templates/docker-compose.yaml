@@ -1,7 +1,12 @@
 version: "3.3"
 services:
-  dev-workstation:
-    image: ghcr.io/onspecta/tf2_oci:0.1.0
+  image_segmentation:
+    image: ghcr.io/onspecta/dls_image_segmentation:1.0.0
     ports:
-      - "80:8888"
+      - "8000:8888"
+    privileged: true
+  yolo3_tf2:
+    image: ghcr.io/onspecta/dls_yolov3_tf2:1.0.0
+    ports:
+      - "9000:8888"
     privileged: true
