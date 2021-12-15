@@ -106,3 +106,4 @@ terraform init && terraform plan && terraform apply -auto-approve
 * [scross01/oci-linux-instance-cloud-init.tf](https://gist.github.com/scross01/5a66207fdc731dd99869a91461e9e2b8)
 * [scross01/autonomous_linux_7.7.tf](https://gist.github.com/scross01/bcd21c12b15787f3ae9d51d0d9b2df06)
 * [Oracle Cloud Always Free](https://www.oracle.com/cloud/free/#always-free)
+* [OCI Deploy Button](https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Tasks/deploybutton.htm)
