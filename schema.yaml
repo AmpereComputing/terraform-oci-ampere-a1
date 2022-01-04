@@ -1,0 +1,167 @@
+title: "Deploy Ampere A1 VM Instances on OCI"
+stackDescription: "Deploy Ampere A1 VM Instances on OCI"
+schemaVersion: 0.0.1
+version: "20220104"
+locale: "en"
+
+variableGroups:
+- title: General Configuration
+  visible: false
+  variables:
+  - tenancy_ocid
+  - user_ocid
+  - fingerprint
+  - private_key_path
+
+- title: Required Configuration
+  visible: true  
+  variables:
+  - compartment_ocid
+  - availablity_domain_name 
+  - admin_password
+  - show_advanced
+
+- title: Network Optional Configuration
+  visible: 
+      and:
+        - show_advanced
+  variables:
+  - oci_vcn_cidr_block
+  - oci_vcn_cidr_subnet
+
+- title: Ampere A1 Optional Configuration
+  visible: 
+      and:
+        - show_advanced
+  variables:
+  - instance_prefix
+  - oci_vm_count
+  - ampere_a1_vm_memory
+  - ampere_a1_cpu_core_count
+
+variables:
+
+  show_advanced:
+    type: boolean
+    title: "Show advanced options?"
+    description: "Shows advanced options."
+    visible: true
+    default: false
+
+  tenancy_ocid:
+    type: oci:identity:tenancy:id
+    required: true
+    visibile: true
+    title: "Tenancy"
+    description: "Tenancy where your Ampere A1 instances will be deployed."
+
+  user_ocid:
+    type: oci:identity:user:id
+    required: true
+    visibile: true
+    title: "User"
+    description: "User for the OCI account for your Ampere A1 instances will be deployed."
+
+  fingerprint:
+    type: oci:identity:fingerprint
+    required: true
+    visibile: true
+    title: "Fingerprint"
+    description: "Fingerprint for the OCI account for your Ampere A1 instances will be deployed."
+
+  private_key_path:
+    type: string
+    visible: false
+    required: true
+    title: "Private SSH Key path"
+    description: "Path where your private  SSH Key is stored."
+    required: false
+
+  oci_vcn_cidr_block:
+    type: string
+    visible: false
+    required: true
+    title: "OCI VCN CIDR Block"
+    description: "VCN CIDR Block where your Network subnet will reside."
+    pattern: "^(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9]).(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9]).(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9]).(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\\/(3[0-2]|[1-2]?[0-9])$"
+
+  oci_vcn_cidr_subnet:
+    type: string
+    visible: false
+    required: false
+    pattern: "^(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9]).(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9]).(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9]).(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\\/(3[0-2]|[1-2]?[0-9])$"
+    title: "OCI VCN CIDR Subnet"
+    description: "A CIDR subnet within the CIDR block for Ampere A1 deployments."
+
+  instance_prefix:
+    type: string
+    required: false
+    visible: false
+    title: "Instance Hostname Prefix"
+    description: "Type Instance Hostname Prefix."
+
+
+  oci_vm_count:
+    type: number
+    required: false
+    minimum: 1
+    maximum: 4
+    multipleOf: 1
+    default: 1
+    title: "OCI Free Tier Ampere A1 Instance Count"
+    description: "Choose number of OCPUs for Flex Shape."
+    visible: true
+
+  ampere_a1_vm_memory:
+    type: number
+    required: false
+    minimum: 1
+    maximum: 24
+    multipleOf: 1
+    default: 8
+    title: "Ampere A1 Instance Memory (GB)"
+    description: "Choose number GB for Ampere A1 Instance Memory."
+    visible: true
+
+  ampere_a1_cpu_core_count:
+    type: number
+    required: false
+    minimum: 1
+    maximum: 4
+    multipleOf: 1
+    default: 4
+    title: "Ampere A1 VM CPU Core Count"
+    description: "Choose number of Ampere A1 cores."
+    visible: true
+
+outputs:
+
+  oci_ssh_private_key:
+    title: "OCI SSH Private Key"
+    displayText: "OCI SSH Private Key"
+    type: copyableString
+    visible: true
+
+  oci_ssh_public_key:
+    title: "OCI SSH Public Key"
+    displayText: "OCI SSH Public Key"
+    type: copyableString
+    visible: true
+
+  AmpereA1_PrivateIPs:
+    title: "Ampere A1 Private IPs"
+    displayText: "Ampere A1 Private IPs"
+    type: string
+    visible: true
+
+  AmpereA1_PublicIPs:
+    title: "Ampere A1 Public IPs"
+    displayText: "Ampere A1 Public IPs"
+    type: string
+    visible: true
+
+  AmpereA1_BootVolumeIDs:
+    title: "Ampere A1 Boot Volume IDs"
+    displayText: "Ampere A1 Boot Volume IDs"
+    type: string
+    visible: true
