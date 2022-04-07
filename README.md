@@ -42,6 +42,7 @@ The following is an example of what terraform.tfvars should look like:
 tenancy_ocid = "ocid1.tenancy.oc1..aaaaaaaabcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopq"
 user_ocid = "ocid1.user.oc1..aaaaaaaabcdefghijklmnopqrstuvwxyz0987654321zyxwvustqrponmlkj"
 fingerprint = "a1:01:b2:02:c3:03:e4:04:10:11:12:13:14:15:16:17"
+private_key_path = "/home/bwayne/.oci/oracleidentitycloudservice_bwayne-08-09-14-59.pem"
 ```
 
 ### Using as a Module
