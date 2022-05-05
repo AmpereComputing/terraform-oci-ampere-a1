@@ -109,3 +109,4 @@ terraform init && terraform plan && terraform apply -auto-approve
 * [Oracle Cloud Always Free](https://www.oracle.com/cloud/free/#always-free)
 * [OCI Terraform Level 200](https://www.oracle.com/a/ocom/docs/terraform-200.pdf)
 * [OCI Deploy Button](https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Tasks/deploybutton.htm)
+* [Working with OCI Marketplace Stacks](https://www.abhinavkotnala.com/?p=377)

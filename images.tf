@@ -2,16 +2,16 @@
 output "oci_aarch64_images_map" {
   value = zipmap(
     [
-      data.oci_core_images.almalinux-8_5-aarch64.images.0.display_name,
-      data.oci_core_images.freebsd-13_1-aarch64.images.0.display_name,
+
+      "${data.oci_marketplace_listing.almalinux_8_5.name}${data.oci_core_app_catalog_listing_resource_version.almalinux_8_5_catalog_listing.listing_resource_version}",
+#     data.oci_core_app_catalog_listing_resource_version.almalinux_8_5_catalog_listing.listing_id,
       data.oci_core_images.oraclelinux-8_4-aarch64.images.0.display_name,
       data.oci_core_images.oraclelinux-7_9-aarch64.images.0.display_name,
       data.oci_core_images.ubuntu-20_04-aarch64.images.0.display_name,
       data.oci_core_images.ubuntu-18_04-aarch64.images.0.display_name
     ],
     [
-      data.oci_core_images.almalinux-8_5-aarch64.images.0.id,
-      data.oci_core_images.freebsd-13_1-aarch64.images.0.id,
+      data.oci_core_app_catalog_listing_resource_version.almalinux_8_5_catalog_listing.listing_resource_id,
       data.oci_core_images.oraclelinux-8_4-aarch64.images.0.id,
       data.oci_core_images.oraclelinux-7_9-aarch64.images.0.id,
       data.oci_core_images.ubuntu-20_04-aarch64.images.0.id,
@@ -23,16 +23,15 @@ output "oci_aarch64_images_map" {
 locals {
     oci_aarch64_images = zipmap(
     [
-      data.oci_core_images.almalinux-8_5-aarch64.images.0.display_name,
-      data.oci_core_images.freebsd-13_1-aarch64.images.0.display_name,
+      "${data.oci_marketplace_listing.almalinux_8_5.name}${data.oci_core_app_catalog_listing_resource_version.almalinux_8_5_catalog_listing.listing_resource_version}",
+      #data.oci_core_app_catalog_listing_resource_version.almalinux_8_5_catalog_listing.listing_resource_version,
       data.oci_core_images.oraclelinux-8_4-aarch64.images.0.display_name,
       data.oci_core_images.oraclelinux-7_9-aarch64.images.0.display_name,
       data.oci_core_images.ubuntu-20_04-aarch64.images.0.display_name,
       data.oci_core_images.ubuntu-18_04-aarch64.images.0.display_name
     ],
     [
-      data.oci_core_images.almalinux-8_5-aarch64.images.0.id,
-      data.oci_core_images.freebsd-13_1-aarch64.images.0.id,
+      data.oci_core_app_catalog_listing_resource_version.almalinux_8_5_catalog_listing.listing_resource_id,
       data.oci_core_images.oraclelinux-8_4-aarch64.images.0.id,
       data.oci_core_images.oraclelinux-7_9-aarch64.images.0.id,
       data.oci_core_images.ubuntu-20_04-aarch64.images.0.id,
