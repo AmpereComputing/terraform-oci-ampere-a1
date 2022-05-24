@@ -4,7 +4,8 @@
 locals {
   # return var.cloud_init_template_path if it's not null
   # otherwise return "${path.module}/templates/cloud-init.yaml.tpl"
-  cloud_init_template_path = coalesce(var.cloud_init_template_path, "${path.module}/templates/cloud-init.yaml.tpl")
+# cloud_init_template_path = coalesce(var.cloud_init_template_path, "${path.module}/templates/cloud-init.yaml.tpl")
+  cloud_init_template_path = coalesce(var.cloud_init_template_path, "${path.cwd}/templates/cloud-init.yaml.tpl", "${path.module}/templates/cloud-init.yaml.tpl")
 }
 
 data "template_file" "cloud_config" {
