@@ -6,13 +6,13 @@ resource "tls_private_key" "oci" {
 
 resource "local_file" "oci-ssh-privkey" {
     content = tls_private_key.oci.private_key_pem
-    filename = "${path.module}/oci-id_rsa"
+    filename = "${path.cwd}/oci-id_rsa"
     file_permission = "0600"
 }
 
 resource "local_file" "oci-ssh-pubkey" {
     content  = tls_private_key.oci.public_key_openssh
-    filename = "${path.module}/oci-id_rsa.pub"
+    filename = "${path.cwd}/oci-id_rsa.pub"
     file_permission = "0644"
 }
 
