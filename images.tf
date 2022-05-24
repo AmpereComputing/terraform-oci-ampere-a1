@@ -22,6 +22,7 @@ output "oci_aarch64_images_map" {
 }
 
 locals {
+    oci_os_image_id = data.oci_core_images.oraclelinux-8_4-aarch64.images.0.id
     oci_aarch64_images = zipmap(
     [
       "${data.oci_marketplace_listing.almalinux_8_5.name}${data.oci_core_app_catalog_listing_resource_version.almalinux_8_5_catalog_listing.listing_resource_version}",

@@ -26,6 +26,11 @@ variable "oci_vcn_cidr_subnet" {
   description = "CIDR Address range for OCI Networks"
 }
 
+variable "oci_os_image_id" {
+  default     = null
+  description = "Default OS Image ID"
+}
+
 # Virtual Machine Configuration Variables
 
 variable "instance_prefix" {
@@ -60,3 +65,5 @@ variable "cloud_init_template_path" {
   description = "Default path for the cloud-init template"
   type        = string
 }
+
+
