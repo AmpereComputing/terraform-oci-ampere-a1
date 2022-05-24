@@ -1,36 +1,36 @@
 # User/Tenant authentication variables
 variable "tenancy_ocid" {
-    description = "OCI Tenancy ID for Free-Tier Account"
+  description = "OCI Tenancy ID for Free-Tier Account"
 }
 
 variable "user_ocid" {
-    description = "OCI User ID for Free-Tier Account"
+  description = "OCI User ID for Free-Tier Account"
 }
 variable "fingerprint" {
-    description = "OCI Fingerprint ID for Free-Tier Account"
+  description = "OCI Fingerprint ID for Free-Tier Account"
 }
 
 variable "private_key_path" {
-    description = "Local path to the OCI private key file"
+  description = "Local path to the OCI private key file"
 }
 
 # Network Configuration Variables
 
 variable "oci_vcn_cidr_block" {
-    default     = "10.2.0.0/16"
-    description = "CIDR Address range for OCI Networks"
+  default     = "10.2.0.0/16"
+  description = "CIDR Address range for OCI Networks"
 }
 
 variable "oci_vcn_cidr_subnet" {
-    default     = "10.2.1.0/24"
-    description = "CIDR Address range for OCI Networks"
+  default     = "10.2.1.0/24"
+  description = "CIDR Address range for OCI Networks"
 }
 
 # Virtual Machine Configuration Variables
 
 variable "instance_prefix" {
   description = "Name prefix for vm instances"
-  default = "ampere-a1-"
+  default     = "ampere-a1-"
 }
 
 # OCI Free Tier Ampere A1 provides 4 cores and  24G of memory.
@@ -45,13 +45,18 @@ variable "oci_vm_count" {
 }
 
 variable "ampere_a1_vm_memory" {
-    default = "8"
-    description = "Default RAM in GB for Ampere A1 instances in OCI Free Tier"
-    type    = string
+  default     = "8"
+  description = "Default RAM in GB for Ampere A1 instances in OCI Free Tier"
+  type        = string
 }
 
 variable "ampere_a1_cpu_core_count" {
-    default = "1"
-    description = "Default core count for Ampere A1 instances in OCI Free Tier"
-    type    = string
+  default     = "1"
+  description = "Default core count for Ampere A1 instances in OCI Free Tier"
+  type        = string
+}
+variable "cloud_init_template_path" {
+  default     = null
+  description = "Default path for the cloud-init template"
+  type        = string
 }
