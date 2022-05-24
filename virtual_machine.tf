@@ -1,9 +1,3 @@
-locals {
-  # return var.oci_os_image_id if it is not null
-  # otherwise return "data.oci_core_images.oraclelinux-8_4-aarch64.images.0.id"
-  oci_os_image_id = coalesce(var.oci_os_image_id, "data.oci_core_images.oraclelinux-8_4-aarch64.images.0.id")
-}
-
 resource "oci_core_instance" "ampere_a1" {
   count               = var.oci_vm_count
   availability_domain = data.oci_identity_availability_domains.ads.availability_domains.0.name
@@ -26,7 +20,7 @@ resource "oci_core_instance" "ampere_a1" {
   source_details {
     source_type = "image"
 #   source_id   = data.oci_core_images.oraclelinux-8_4-aarch64.images.0.id
-    source_id   = local.oci_os_image_id
+    source_id   = local.os_images[var.oci_os_image].os_image_id
   }
 
   metadata = {
