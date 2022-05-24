@@ -6,5 +6,6 @@ data "oci_identity_availability_domains" "ads" {
 
 # Output Availability Domain Results
 output "OCI_Availability_Domains" {
-  value = data.oci_identity_availability_domains.ads.availability_domains
+  sensitive = false
+  value     = data.oci_identity_availability_domains.ads.availability_domains
 }

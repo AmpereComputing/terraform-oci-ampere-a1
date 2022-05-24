@@ -19,4 +19,5 @@ data "template_file" "cloud_config" {
 
 output "cloud_init" {
   value = data.template_file.cloud_config.rendered
+  sensitive = false
 }
