@@ -18,6 +18,7 @@ resource "local_file" "oci-ssh-pubkey" {
 
 output "oci_ssh_public_key" {
   value = tls_private_key.oci.public_key_openssh
+  sensitive = false
 }
 
 output "oci_ssh_private_key" {
@@ -26,3 +27,8 @@ output "oci_ssh_private_key" {
 }
 
 resource "random_uuid" "random_id" { }
+
+output "random_uuid" {
+  value = random_uuid.random_id.result
+  sensitive = false
+}

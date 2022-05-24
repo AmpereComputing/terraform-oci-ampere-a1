@@ -18,8 +18,10 @@ data "oci_core_images" "oraclelinux-8_4-aarch64" {
 
 output "OracleLinux-8_4-aarch64-latest-name" {
   value = data.oci_core_images.oraclelinux-8_4-aarch64.images.0.display_name
+  sensitive = false
 }
 
 output "OracleLinux-8_4-aarch64-latest_ocid" {
   value = data.oci_core_images.oraclelinux-8_4-aarch64.images.0.id
+  sensitive = false
 }

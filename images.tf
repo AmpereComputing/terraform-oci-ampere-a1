@@ -1,5 +1,6 @@
 
 output "oci_aarch64_images_map" {
+  sensitive = false
   value = zipmap(
     [
 
@@ -46,11 +47,14 @@ locals {
 
 output "local_oci_aarch64_images_map" {
   value = local.oci_aarch64_images
+  sensitive = false
 }
 
 output "local_oci_aarch64_image_names" {
   value = local.oci_aarch64_image_names
+  sensitive = false
 }
 output "local_oci_aarch64_image_ids" {
   value = local.oci_aarch64_image_ids
+  sensitive = false
 }
