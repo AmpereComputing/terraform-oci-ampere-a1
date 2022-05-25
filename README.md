@@ -6,7 +6,7 @@
 
 ## Description
 
-Terraform code to launch a Ampere A1 Shape on Oracle Cloud Infrastructure (OCI) Free-Tier
+Using Terraform code to launch a Ampere A1 Shape on Oracle Cloud Infrastructure (OCI) Free-Tier
 
 ## Requirements
 
