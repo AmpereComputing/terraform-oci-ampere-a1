@@ -3,7 +3,6 @@ variable "tenancy_ocid" {}
 variable "user_ocid" {}
 variable "fingerprint" {}
 variable "private_key_path" {}
-variable "gitlab_access_token" {}
 
 locals {
   cloud_init_template_path = "${path.cwd}/cloud-init.yaml.tpl"
