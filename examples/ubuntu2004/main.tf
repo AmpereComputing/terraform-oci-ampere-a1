@@ -3,11 +3,9 @@ variable "tenancy_ocid" {}
 variable "user_ocid" {}
 variable "fingerprint" {}
 variable "private_key_path" {}
-
 locals {
   cloud_init_template_path = "${path.cwd}/cloud-init.yaml.tpl"
 }
-
 module "oci-ampere-a1" {
   source                   = "github.com/amperecomputing/terraform-oci-ampere-a1"
   tenancy_ocid             = var.tenancy_ocid
@@ -24,7 +22,6 @@ module "oci-ampere-a1" {
   ampere_a1_cpu_core_count = "4"
   cloud_init_template_file = local.cloud_init_template_path
 }
-
 output "oci_ampere_a1_private_ips" {
   value     = module.oci-ampere-a1.ampere_a1_private_ips
 }
