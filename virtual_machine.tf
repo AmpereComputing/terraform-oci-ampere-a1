@@ -3,7 +3,7 @@ resource "oci_core_instance" "ampere_a1" {
   availability_domain = data.oci_identity_availability_domains.ads.availability_domains.0.name
   compartment_id      = var.tenancy_ocid
   display_name        = "AmpereA1-0"
-  shape               = "VM.Standard.A1.Flex"
+  shape               = var.ampere_a1_shape
 
   create_vnic_details {
     subnet_id        = oci_core_subnet.ampere_subnet.id

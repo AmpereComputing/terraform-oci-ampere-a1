@@ -31,6 +31,10 @@ variable "oci_os_image" {
   description = "Default OS Image From the Local Vars"
 }
 
+variable "ampere_a1_shape" {
+  default = "VM.Standard.A1.Flex"
+}
+
 # Virtual Machine Configuration Variables
 
 variable "instance_prefix" {
