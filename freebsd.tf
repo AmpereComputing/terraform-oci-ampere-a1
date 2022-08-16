@@ -13,7 +13,7 @@ resource "oci_marketplace_listing_package_agreement" "freebsd_package_agreement"
 }
 data "oci_marketplace_listings" "freebsd" {
   pricing        = ["Free"]
-  name           = ["FreeBSD OS 8 (AArch64)"]
+  name           = ["FreeBSD"]
   compartment_id = var.tenancy_ocid
 }
 data "oci_marketplace_listing_package_agreements" "freebsd_package_agreements" {
