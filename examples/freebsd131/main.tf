@@ -1,4 +1,4 @@
-# Example of Ampere A1 running AlmaLinux 8 on OCI using this module
+# Example of Ampere A1 running FreeBSD 13.1 on OCI using this module
 variable "tenancy_ocid" {}
 variable "user_ocid" {}
 variable "fingerprint" {}
