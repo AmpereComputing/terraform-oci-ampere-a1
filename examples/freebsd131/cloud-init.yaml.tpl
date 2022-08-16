@@ -9,6 +9,13 @@ packages:
   - git
   - curl
   - bzip2
+  - python3
+  - python3-devel
+  - python3-pip-wheel
+  - gcc
+  - gcc-c++
+  - bzip2
+  - screen
 
 groups:
   - ampere
