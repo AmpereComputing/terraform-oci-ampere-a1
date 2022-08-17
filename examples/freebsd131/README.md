@@ -159,16 +159,8 @@ Next you'll need to login with the dynamically generated sshkey that will be sit
 
 
 ```
+
 bwayne@ampere1:~/freebsd$ ssh -i ./oci-id_rsa freebsd@155.248.238.91
-Warning: Identity file 155.248.238.91 not accessible: No such file or directory.
-usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface]
-           [-b bind_address] [-c cipher_spec] [-D [bind_address:]port]
-           [-E log_file] [-e escape_char] [-F configfile] [-I pkcs11]
-           [-i identity_file] [-J [user@]host[:port]] [-L address]
-           [-l login_name] [-m mac_spec] [-O ctl_cmd] [-o option] [-p port]
-           [-Q query_option] [-R address] [-S ctl_path] [-W host:port]
-           [-w local_tun[:remote_tun]] destination [command [argument ...]]
-ansible@bristlecone:~/src/terraform-oci-ampere-a1/examples/freebsd131$ ssh -i ./oci-id_rsa freebsd@155.248.238.91
 hostkeys_find_by_key_hostfile: hostkeys_foreach failed for /etc/ssh/ssh_known_hosts: Permission denied
 The authenticity of host '155.248.238.91 (155.248.238.91)' can't be established.
 ED25519 key fingerprint is SHA256:ALiotO651cdw2YrFvc4M4UQepVBcmfQPydj/pjbjSws.
