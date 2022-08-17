@@ -132,7 +132,83 @@ runcmd:
 ```
 terraform init && terraform plan && terraform apply -auto-approve
 ```
+### Logging in
 
+To log in take the ip address from the output.  An example of what the terraform looks like is below.
+
+```
+Apply complete! Resources: 18 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+oci_ampere_a1_private_ips = [
+  [
+    "10.2.1.18",
+  ],
+]
+oci_ampere_a1_public_ips = [
+  [
+    "155.248.238.91",
+  ],
+]
+
+```
+
+
+Next you'll need to login with the dynamically generated sshkey that will be sitting in your project directory.
+
+
+```
+bwayne@ampere1:~/freebsd$ ssh -i ./oci-id_rsa freebsd@155.248.238.91
+Warning: Identity file 155.248.238.91 not accessible: No such file or directory.
+usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface]
+           [-b bind_address] [-c cipher_spec] [-D [bind_address:]port]
+           [-E log_file] [-e escape_char] [-F configfile] [-I pkcs11]
+           [-i identity_file] [-J [user@]host[:port]] [-L address]
+           [-l login_name] [-m mac_spec] [-O ctl_cmd] [-o option] [-p port]
+           [-Q query_option] [-R address] [-S ctl_path] [-W host:port]
+           [-w local_tun[:remote_tun]] destination [command [argument ...]]
+ansible@bristlecone:~/src/terraform-oci-ampere-a1/examples/freebsd131$ ssh -i ./oci-id_rsa freebsd@155.248.238.91
+hostkeys_find_by_key_hostfile: hostkeys_foreach failed for /etc/ssh/ssh_known_hosts: Permission denied
+The authenticity of host '155.248.238.91 (155.248.238.91)' can't be established.
+ED25519 key fingerprint is SHA256:ALiotO651cdw2YrFvc4M4UQepVBcmfQPydj/pjbjSws.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '155.248.238.91' (ED25519) to the list of known hosts.
+FreeBSD 13.1-RELEASE GENERIC
+
+Welcome to FreeBSD!
+
+Release Notes, Errata: https://www.FreeBSD.org/releases/
+Security Advisories:   https://www.FreeBSD.org/security/
+FreeBSD Handbook:      https://www.FreeBSD.org/handbook/
+FreeBSD FAQ:           https://www.FreeBSD.org/faq/
+Questions List: https://lists.FreeBSD.org/mailman/listinfo/freebsd-questions/
+FreeBSD Forums:        https://forums.FreeBSD.org/
+
+Documents installed with the system are in the /usr/local/share/doc/freebsd/
+directory, or can be installed later with:  pkg install en-freebsd-doc
+For other languages, replace "en" with a language code like de or fr.
+
+Show the version of FreeBSD installed:  freebsd-version ; uname -a
+Please include that output and any error messages when posting questions.
+Introduction to manual pages:  man man
+FreeBSD directory layout:      man hier
+
+To change this login announcement, see motd(5).
+Before deleting a dataset or snapshot, perform a dry run using the -n
+parameter. This is to make sure you really want to delete just that
+dataset/snapshot and not any dependent ones. ZFS will display the resulting
+action when -n is combined with the -v option without actually performing
+it:
+
+zfs destroy -nrv mypool@mysnap
+
+Once you are sure this is exactly what you intend to do, remove the -n
+parameter to execute the destroy operation.
+                -- Benedict Reuschling <bcr@FreeBSD.org>
+freebsd@ampere-a1-freebsd-01:~ %
+```
 
 <script id="asciicast-432487" src="https://asciinema.org/a/432487.js" async data-autoplay="true" data-size="small" data-speed="2"></script>
 
