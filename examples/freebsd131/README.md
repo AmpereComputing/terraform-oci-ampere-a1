@@ -38,7 +38,7 @@ Obviously to begin you will need a couple things.  Personally I'm a big fan of t
 
 ## Using the oci-ampere-a1 terraform module
 
-The [oci-ampere-a1](https://github.com/amperecomputing/terraform-oci-ampere-a1) terraform module code supplies the minimal ammount of information to quickly have working Ampere A1 instances on OCI ["Always Free"](https://www.oracle.com/cloud/free/#always-free).  It has been updated to include the ability to easily select [FreeBSD](https://freebsd.org) as an option.  To keep things simple from an OCI perspective, the root compartment will be used (compartment id and tenancy id are the same) when launching any instances.  Addtional tasks performed by the the [oci-ampere-a1](https://github.com/amperecomputing/terraform-oci-ampere-a1) terraform module.
+The [oci-ampere-a1](https://github.com/amperecomputing/terraform-oci-ampere-a1) terraform module code supplies the minimal ammount of information to quickly have working Ampere A1 instances on OCI ["Always Free"](https://www.oracle.com/cloud/free/#always-free).  It has been updated to include the ability to easily select [FreeBSD](https://freebsd.org) as an option.  To keep things simple from an OCI perspective, the root compartment will be used (compartment id and tenancy id are the same) when launching any instances.  Addtional tasks performed by the [oci-ampere-a1](https://github.com/amperecomputing/terraform-oci-ampere-a1) terraform module.
 
 * Operating system image id discovery in the user region.
 * Dynamically creating sshkeys to use when logging into the instance.
