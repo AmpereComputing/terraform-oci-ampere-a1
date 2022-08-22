@@ -1,0 +1,445 @@
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create
+[0m
+Terraform will perform the following actions:
+
+[1m  # module.oci-ampere-a1.local_file.oci-ssh-privkey[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "local_file" "oci-ssh-privkey" {
+      [32m+[0m [0m[1m[0mcontent[0m[0m              = (sensitive)
+      [32m+[0m [0m[1m[0mdirectory_permission[0m[0m = "0777"
+      [32m+[0m [0m[1m[0mfile_permission[0m[0m      = "0600"
+      [32m+[0m [0m[1m[0mfilename[0m[0m             = "/home/ansible/src/terraform-oci-ampere-a1/examples/freebsd131/oci-id_rsa"
+      [32m+[0m [0m[1m[0mid[0m[0m                   = (known after apply)
+    }
+
+[1m  # module.oci-ampere-a1.local_file.oci-ssh-pubkey[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "local_file" "oci-ssh-pubkey" {
+      [32m+[0m [0m[1m[0mcontent[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mdirectory_permission[0m[0m = "0777"
+      [32m+[0m [0m[1m[0mfile_permission[0m[0m      = "0644"
+      [32m+[0m [0m[1m[0mfilename[0m[0m             = "/home/ansible/src/terraform-oci-ampere-a1/examples/freebsd131/oci-id_rsa.pub"
+      [32m+[0m [0m[1m[0mid[0m[0m                   = (known after apply)
+    }
+
+[1m  # module.oci-ampere-a1.oci_core_app_catalog_listing_resource_version_agreement.almalinux_8_app_catalog_listing_resource_version_agreement[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "oci_core_app_catalog_listing_resource_version_agreement" "almalinux_8_app_catalog_listing_resource_version_agreement" {
+      [32m+[0m [0m[1m[0meula_link[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mlisting_id[0m[0m               = "ocid1.appcataloglisting.oc1..aaaaaaaaiayknhrp2gsevmoano5i3253iv65q73pc6qzk4s2lrouoruz6zua"
+      [32m+[0m [0m[1m[0mlisting_resource_version[0m[0m = "8.6.20220523"
+      [32m+[0m [0m[1m[0moracle_terms_of_use_link[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0msignature[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mtime_retrieved[0m[0m           = (known after apply)
+    }
+
+[1m  # module.oci-ampere-a1.oci_core_app_catalog_listing_resource_version_agreement.freebsd_app_catalog_listing_resource_version_agreement[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "oci_core_app_catalog_listing_resource_version_agreement" "freebsd_app_catalog_listing_resource_version_agreement" {
+      [32m+[0m [0m[1m[0meula_link[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mlisting_id[0m[0m               = "ocid1.appcataloglisting.oc1..aaaaaaaa52miob5xfolxu32kuxb2jgmdvtdovkisqvr22uozlr2b5cjwjm7a"
+      [32m+[0m [0m[1m[0mlisting_resource_version[0m[0m = "13.1"
+      [32m+[0m [0m[1m[0moracle_terms_of_use_link[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0msignature[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mtime_retrieved[0m[0m           = (known after apply)
+    }
+
+[1m  # module.oci-ampere-a1.oci_core_app_catalog_subscription.almalinux_8_app_catalog_subscription[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "oci_core_app_catalog_subscription" "almalinux_8_app_catalog_subscription" {
+      [32m+[0m [0m[1m[0mcompartment_id[0m[0m           = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      [32m+[0m [0m[1m[0mdisplay_name[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0meula_link[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mlisting_id[0m[0m               = "ocid1.appcataloglisting.oc1..aaaaaaaaiayknhrp2gsevmoano5i3253iv65q73pc6qzk4s2lrouoruz6zua"
+      [32m+[0m [0m[1m[0mlisting_resource_id[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mlisting_resource_version[0m[0m = "8.6.20220523"
+      [32m+[0m [0m[1m[0moracle_terms_of_use_link[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mpublisher_name[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0msignature[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0msummary[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mtime_created[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mtime_retrieved[0m[0m           = (known after apply)
+    }
+
+[1m  # module.oci-ampere-a1.oci_core_app_catalog_subscription.freebsd_app_catalog_subscription[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "oci_core_app_catalog_subscription" "freebsd_app_catalog_subscription" {
+      [32m+[0m [0m[1m[0mcompartment_id[0m[0m           = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      [32m+[0m [0m[1m[0mdisplay_name[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0meula_link[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mlisting_id[0m[0m               = "ocid1.appcataloglisting.oc1..aaaaaaaa52miob5xfolxu32kuxb2jgmdvtdovkisqvr22uozlr2b5cjwjm7a"
+      [32m+[0m [0m[1m[0mlisting_resource_id[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mlisting_resource_version[0m[0m = "13.1"
+      [32m+[0m [0m[1m[0moracle_terms_of_use_link[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mpublisher_name[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0msignature[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0msummary[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mtime_created[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mtime_retrieved[0m[0m           = (known after apply)
+    }
+
+[1m  # module.oci-ampere-a1.oci_core_instance.ampere_a1[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "oci_core_instance" "ampere_a1" {
+      [32m+[0m [0m[1m[0mavailability_domain[0m[0m                 = "FFpD:CA-MONTREAL-1-AD-1"
+      [32m+[0m [0m[1m[0mboot_volume_id[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0mcapacity_reservation_id[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mcompartment_id[0m[0m                      = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      [32m+[0m [0m[1m[0mdedicated_vm_host_id[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mdefined_tags[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0mdisplay_name[0m[0m                        = "AmpereA1-0"
+      [32m+[0m [0m[1m[0mfault_domain[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0mfreeform_tags[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mhostname_label[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                                  = (known after apply)
+      [32m+[0m [0m[1m[0mimage[0m[0m                               = (known after apply)
+      [32m+[0m [0m[1m[0mipxe_script[0m[0m                         = (known after apply)
+      [32m+[0m [0m[1m[0mis_pv_encryption_in_transit_enabled[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mlaunch_mode[0m[0m                         = (known after apply)
+      [32m+[0m [0m[1m[0mmetadata[0m[0m                            = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m                          = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_ip[0m[0m                           = (known after apply)
+      [32m+[0m [0m[1m[0mregion[0m[0m                              = (known after apply)
+      [32m+[0m [0m[1m[0mshape[0m[0m                               = "VM.Standard.A1.Flex"
+      [32m+[0m [0m[1m[0mstate[0m[0m                               = (known after apply)
+      [32m+[0m [0m[1m[0msubnet_id[0m[0m                           = (known after apply)
+      [32m+[0m [0m[1m[0msystem_tags[0m[0m                         = (known after apply)
+      [32m+[0m [0m[1m[0mtime_created[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0mtime_maintenance_reboot_due[0m[0m         = (known after apply)
+
+      [32m+[0m [0magent_config {
+          [32m+[0m [0m[1m[0mare_all_plugins_disabled[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mis_management_disabled[0m[0m   = (known after apply)
+          [32m+[0m [0m[1m[0mis_monitoring_disabled[0m[0m   = (known after apply)
+
+          [32m+[0m [0mplugins_config {
+              [32m+[0m [0m[1m[0mdesired_state[0m[0m = (known after apply)
+              [32m+[0m [0m[1m[0mname[0m[0m          = (known after apply)
+            }
+        }
+
+      [32m+[0m [0mavailability_config {
+          [32m+[0m [0m[1m[0mis_live_migration_preferred[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mrecovery_action[0m[0m             = (known after apply)
+        }
+
+      [32m+[0m [0mcreate_vnic_details {
+          [32m+[0m [0m[1m[0massign_public_ip[0m[0m       = "true"
+          [32m+[0m [0m[1m[0mdefined_tags[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mdisplay_name[0m[0m           = "primaryvnic"
+          [32m+[0m [0m[1m[0mfreeform_tags[0m[0m          = (known after apply)
+          [32m+[0m [0m[1m[0mhostname_label[0m[0m         = "ampere-a1-freebsd-01"
+          [32m+[0m [0m[1m[0mprivate_ip[0m[0m             = (known after apply)
+          [32m+[0m [0m[1m[0mskip_source_dest_check[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0msubnet_id[0m[0m              = (known after apply)
+          [32m+[0m [0m[1m[0mvlan_id[0m[0m                = (known after apply)
+        }
+
+      [32m+[0m [0minstance_options {
+          [32m+[0m [0m[1m[0mare_legacy_imds_endpoints_disabled[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mlaunch_options {
+          [32m+[0m [0m[1m[0mboot_volume_type[0m[0m                    = (known after apply)
+          [32m+[0m [0m[1m[0mfirmware[0m[0m                            = (known after apply)
+          [32m+[0m [0m[1m[0mis_consistent_volume_naming_enabled[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mis_pv_encryption_in_transit_enabled[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mnetwork_type[0m[0m                        = (known after apply)
+          [32m+[0m [0m[1m[0mremote_data_volume_type[0m[0m             = (known after apply)
+        }
+
+      [32m+[0m [0mplatform_config {
+          [32m+[0m [0m[1m[0mare_virtual_instructions_enabled[0m[0m               = (known after apply)
+          [32m+[0m [0m[1m[0mis_access_control_service_enabled[0m[0m              = (known after apply)
+          [32m+[0m [0m[1m[0mis_input_output_memory_management_unit_enabled[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mis_measured_boot_enabled[0m[0m                       = (known after apply)
+          [32m+[0m [0m[1m[0mis_secure_boot_enabled[0m[0m                         = (known after apply)
+          [32m+[0m [0m[1m[0mis_symmetric_multi_threading_enabled[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mis_trusted_platform_module_enabled[0m[0m             = (known after apply)
+          [32m+[0m [0m[1m[0mnuma_nodes_per_socket[0m[0m                          = (known after apply)
+          [32m+[0m [0m[1m[0mpercentage_of_cores_enabled[0m[0m                    = (known after apply)
+          [32m+[0m [0m[1m[0mtype[0m[0m                                           = (known after apply)
+        }
+
+      [32m+[0m [0mpreemptible_instance_config {
+          [32m+[0m [0mpreemption_action {
+              [32m+[0m [0m[1m[0mpreserve_boot_volume[0m[0m = (known after apply)
+              [32m+[0m [0m[1m[0mtype[0m[0m                 = (known after apply)
+            }
+        }
+
+      [32m+[0m [0mshape_config {
+          [32m+[0m [0m[1m[0mbaseline_ocpu_utilization[0m[0m     = (known after apply)
+          [32m+[0m [0m[1m[0mgpu_description[0m[0m               = (known after apply)
+          [32m+[0m [0m[1m[0mgpus[0m[0m                          = (known after apply)
+          [32m+[0m [0m[1m[0mlocal_disk_description[0m[0m        = (known after apply)
+          [32m+[0m [0m[1m[0mlocal_disks[0m[0m                   = (known after apply)
+          [32m+[0m [0m[1m[0mlocal_disks_total_size_in_gbs[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mmax_vnic_attachments[0m[0m          = (known after apply)
+          [32m+[0m [0m[1m[0mmemory_in_gbs[0m[0m                 = 24
+          [32m+[0m [0m[1m[0mnetworking_bandwidth_in_gbps[0m[0m  = (known after apply)
+          [32m+[0m [0m[1m[0mnvmes[0m[0m                         = (known after apply)
+          [32m+[0m [0m[1m[0mocpus[0m[0m                         = 4
+          [32m+[0m [0m[1m[0mprocessor_description[0m[0m         = (known after apply)
+        }
+
+      [32m+[0m [0msource_details {
+          [32m+[0m [0m[1m[0mboot_volume_size_in_gbs[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mboot_volume_vpus_per_gb[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mkms_key_id[0m[0m              = (known after apply)
+          [32m+[0m [0m[1m[0msource_id[0m[0m               = "ocid1.image.oc1..aaaaaaaayjatgvecms7kciqjx5exbj4dpcs3ympvpggpodwlfuezn7dejdja"
+          [32m+[0m [0m[1m[0msource_type[0m[0m             = "image"
+        }
+    }
+
+[1m  # module.oci-ampere-a1.oci_core_internet_gateway.ampere_internet_gateway[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "oci_core_internet_gateway" "ampere_internet_gateway" {
+      [32m+[0m [0m[1m[0mcompartment_id[0m[0m = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      [32m+[0m [0m[1m[0mdefined_tags[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mdisplay_name[0m[0m   = "AmpereInternetGateway"
+      [32m+[0m [0m[1m[0menabled[0m[0m        = true
+      [32m+[0m [0m[1m[0mfreeform_tags[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mroute_table_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mstate[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mtime_created[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mvcn_id[0m[0m         = (known after apply)
+    }
+
+[1m  # module.oci-ampere-a1.oci_core_route_table.ampere_route_table[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "oci_core_route_table" "ampere_route_table" {
+      [32m+[0m [0m[1m[0mcompartment_id[0m[0m = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      [32m+[0m [0m[1m[0mdefined_tags[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mdisplay_name[0m[0m   = "AmpereRouteTable"
+      [32m+[0m [0m[1m[0mfreeform_tags[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mstate[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mtime_created[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mvcn_id[0m[0m         = (known after apply)
+
+      [32m+[0m [0mroute_rules {
+          [32m+[0m [0m[1m[0mcidr_block[0m[0m        = (known after apply)
+          [32m+[0m [0m[1m[0mdescription[0m[0m       = (known after apply)
+          [32m+[0m [0m[1m[0mdestination[0m[0m       = "0.0.0.0/0"
+          [32m+[0m [0m[1m[0mdestination_type[0m[0m  = "CIDR_BLOCK"
+          [32m+[0m [0m[1m[0mnetwork_entity_id[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mroute_type[0m[0m        = (known after apply)
+        }
+    }
+
+[1m  # module.oci-ampere-a1.oci_core_security_list.ampere_security_list[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "oci_core_security_list" "ampere_security_list" {
+      [32m+[0m [0m[1m[0mcompartment_id[0m[0m = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      [32m+[0m [0m[1m[0mdefined_tags[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mdisplay_name[0m[0m   = "ampereSecurityList"
+      [32m+[0m [0m[1m[0mfreeform_tags[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mstate[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mtime_created[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mvcn_id[0m[0m         = (known after apply)
+
+      [32m+[0m [0megress_security_rules {
+          [32m+[0m [0m[1m[0mdescription[0m[0m      = (known after apply)
+          [32m+[0m [0m[1m[0mdestination[0m[0m      = "0.0.0.0/0"
+          [32m+[0m [0m[1m[0mdestination_type[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mprotocol[0m[0m         = "6"
+          [32m+[0m [0m[1m[0mstateless[0m[0m        = (known after apply)
+        }
+
+      [32m+[0m [0mingress_security_rules {
+          [32m+[0m [0m[1m[0mdescription[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mprotocol[0m[0m    = "6"
+          [32m+[0m [0m[1m[0msource[0m[0m      = "0.0.0.0/0"
+          [32m+[0m [0m[1m[0msource_type[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mstateless[0m[0m   = false
+
+          [32m+[0m [0mtcp_options {
+              [32m+[0m [0m[1m[0mmax[0m[0m = 22
+              [32m+[0m [0m[1m[0mmin[0m[0m = 22
+            }
+        }
+      [32m+[0m [0mingress_security_rules {
+          [32m+[0m [0m[1m[0mdescription[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mprotocol[0m[0m    = "6"
+          [32m+[0m [0m[1m[0msource[0m[0m      = "0.0.0.0/0"
+          [32m+[0m [0m[1m[0msource_type[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mstateless[0m[0m   = false
+
+          [32m+[0m [0mtcp_options {
+              [32m+[0m [0m[1m[0mmax[0m[0m = 3000
+              [32m+[0m [0m[1m[0mmin[0m[0m = 3000
+            }
+        }
+      [32m+[0m [0mingress_security_rules {
+          [32m+[0m [0m[1m[0mdescription[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mprotocol[0m[0m    = "6"
+          [32m+[0m [0m[1m[0msource[0m[0m      = "0.0.0.0/0"
+          [32m+[0m [0m[1m[0msource_type[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mstateless[0m[0m   = false
+
+          [32m+[0m [0mtcp_options {
+              [32m+[0m [0m[1m[0mmax[0m[0m = 3005
+              [32m+[0m [0m[1m[0mmin[0m[0m = 3005
+            }
+        }
+      [32m+[0m [0mingress_security_rules {
+          [32m+[0m [0m[1m[0mdescription[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mprotocol[0m[0m    = "6"
+          [32m+[0m [0m[1m[0msource[0m[0m      = "0.0.0.0/0"
+          [32m+[0m [0m[1m[0msource_type[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mstateless[0m[0m   = false
+
+          [32m+[0m [0mtcp_options {
+              [32m+[0m [0m[1m[0mmax[0m[0m = 80
+              [32m+[0m [0m[1m[0mmin[0m[0m = 80
+            }
+        }
+    }
+
+[1m  # module.oci-ampere-a1.oci_core_subnet.ampere_subnet[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "oci_core_subnet" "ampere_subnet" {
+      [32m+[0m [0m[1m[0mavailability_domain[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mcidr_block[0m[0m                 = "10.2.1.0/24"
+      [32m+[0m [0m[1m[0mcompartment_id[0m[0m             = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      [32m+[0m [0m[1m[0mdefined_tags[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mdhcp_options_id[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mdisplay_name[0m[0m               = "AmpereSubnet"
+      [32m+[0m [0m[1m[0mdns_label[0m[0m                  = "Ampere"
+      [32m+[0m [0m[1m[0mfreeform_tags[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                         = (known after apply)
+      [32m+[0m [0m[1m[0mipv6cidr_block[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mipv6cidr_blocks[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mipv6virtual_router_ip[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mprohibit_internet_ingress[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mprohibit_public_ip_on_vnic[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mroute_table_id[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0msecurity_list_ids[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mstate[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0msubnet_domain_name[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mtime_created[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mvcn_id[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mvirtual_router_ip[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mvirtual_router_mac[0m[0m         = (known after apply)
+    }
+
+[1m  # module.oci-ampere-a1.oci_core_virtual_network.ampere_vcn[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "oci_core_virtual_network" "ampere_vcn" {
+      [32m+[0m [0m[1m[0mbyoipv6cidr_blocks[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mcidr_block[0m[0m                       = "10.2.0.0/16"
+      [32m+[0m [0m[1m[0mcidr_blocks[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0mcompartment_id[0m[0m                   = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      [32m+[0m [0m[1m[0mdefault_dhcp_options_id[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mdefault_route_table_id[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mdefault_security_list_id[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mdefined_tags[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mdisplay_name[0m[0m                     = "AmpereVirtualCoreNetwork"
+      [32m+[0m [0m[1m[0mdns_label[0m[0m                        = "amperevcn"
+      [32m+[0m [0m[1m[0mfreeform_tags[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                               = (known after apply)
+      [32m+[0m [0m[1m[0mipv6cidr_blocks[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mipv6private_cidr_blocks[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mis_ipv6enabled[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mis_oracle_gua_allocation_enabled[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mstate[0m[0m                            = (known after apply)
+      [32m+[0m [0m[1m[0mtime_created[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mvcn_domain_name[0m[0m                  = (known after apply)
+
+      [32m+[0m [0mbyoipv6cidr_details {
+          [32m+[0m [0m[1m[0mbyoipv6range_id[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mipv6cidr_block[0m[0m  = (known after apply)
+        }
+    }
+
+[1m  # module.oci-ampere-a1.oci_marketplace_accepted_agreement.almalinux_8_accepted_agreement[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "oci_marketplace_accepted_agreement" "almalinux_8_accepted_agreement" {
+      [32m+[0m [0m[1m[0magreement_id[0m[0m    = "50511633"
+      [32m+[0m [0m[1m[0mcompartment_id[0m[0m  = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      [32m+[0m [0m[1m[0mdefined_tags[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mdisplay_name[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mfreeform_tags[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mlisting_id[0m[0m      = "125567282"
+      [32m+[0m [0m[1m[0mpackage_version[0m[0m = "8.6.20220523"
+      [32m+[0m [0m[1m[0msignature[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mtime_accepted[0m[0m   = (known after apply)
+    }
+
+[1m  # module.oci-ampere-a1.oci_marketplace_accepted_agreement.freebsd_accepted_agreement[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "oci_marketplace_accepted_agreement" "freebsd_accepted_agreement" {
+      [32m+[0m [0m[1m[0magreement_id[0m[0m    = "50511633"
+      [32m+[0m [0m[1m[0mcompartment_id[0m[0m  = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      [32m+[0m [0m[1m[0mdefined_tags[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mdisplay_name[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mfreeform_tags[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mlisting_id[0m[0m      = "125980175"
+      [32m+[0m [0m[1m[0mpackage_version[0m[0m = "13.1"
+      [32m+[0m [0m[1m[0msignature[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mtime_accepted[0m[0m   = (known after apply)
+    }
+
+[1m  # module.oci-ampere-a1.oci_marketplace_listing_package_agreement.almalinux_8_package_agreement[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "oci_marketplace_listing_package_agreement" "almalinux_8_package_agreement" {
+      [32m+[0m [0m[1m[0magreement_id[0m[0m    = "50511633"
+      [32m+[0m [0m[1m[0mauthor[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mcompartment_id[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mcontent_url[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mlisting_id[0m[0m      = "125567282"
+      [32m+[0m [0m[1m[0mpackage_version[0m[0m = "8.6.20220523"
+      [32m+[0m [0m[1m[0mprompt[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0msignature[0m[0m       = (known after apply)
+    }
+
+[1m  # module.oci-ampere-a1.oci_marketplace_listing_package_agreement.freebsd_package_agreement[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "oci_marketplace_listing_package_agreement" "freebsd_package_agreement" {
+      [32m+[0m [0m[1m[0magreement_id[0m[0m    = "50511633"
+      [32m+[0m [0m[1m[0mauthor[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mcompartment_id[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mcontent_url[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mlisting_id[0m[0m      = "125980175"
+      [32m+[0m [0m[1m[0mpackage_version[0m[0m = "13.1"
+      [32m+[0m [0m[1m[0mprompt[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0msignature[0m[0m       = (known after apply)
+    }
+
+[1m  # module.oci-ampere-a1.random_uuid.random_id[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "random_uuid" "random_id" {
+      [32m+[0m [0m[1m[0mid[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0mresult[0m[0m = (known after apply)
+    }
+
+[1m  # module.oci-ampere-a1.tls_private_key.oci[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "tls_private_key" "oci" {
+      [32m+[0m [0m[1m[0malgorithm[0m[0m                     = "RSA"
+      [32m+[0m [0m[1m[0mecdsa_curve[0m[0m                   = "P224"
+      [32m+[0m [0m[1m[0mid[0m[0m                            = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_key_openssh[0m[0m           = (sensitive value)
+      [32m+[0m [0m[1m[0mprivate_key_pem[0m[0m               = (sensitive value)
+      [32m+[0m [0m[1m[0mprivate_key_pem_pkcs8[0m[0m         = (sensitive value)
+      [32m+[0m [0m[1m[0mpublic_key_fingerprint_md5[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_key_fingerprint_sha256[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_key_openssh[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_key_pem[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mrsa_bits[0m[0m                      = 4096
+    }
+
+[0m[1mPlan:[0m 18 to add, 0 to change, 0 to destroy.
+[0m[0m
+[1mChanges to Outputs:[0m[0m
+  [32m+[0m [0m[1m[0moci_ampere_a1_private_ips[0m[0m = [
+      [32m+[0m [0m[
+          [32m+[0m [0m(known after apply),
+        ],
+    ]
+  [32m+[0m [0m[1m[0moci_ampere_a1_public_ips[0m[0m  = [
+      [32m+[0m [0m[
+          [32m+[0m [0m(known after apply),
+        ],
+    ]
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
