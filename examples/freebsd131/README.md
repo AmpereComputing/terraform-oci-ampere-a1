@@ -1146,6 +1146,7 @@ oci_ampere_a1_public_ips = [
 ```
 ### Logging in
 
+Next you'll need to login with the dynamically generated sshkey that will be sitting in your project directory.
 To log in take the ip address from the output above and run the following ssh command:
 
 ```
@@ -1155,13 +1156,6 @@ ssh -i ./oci-is_rsa freebsd@155.248.228.151
 You should be automatically logged in and see something similar to the following:
 
 ```
-
-
-Next you'll need to login with the dynamically generated sshkey that will be sitting in your project directory.
-
-
-```
-
 bwayne@ampere1:~/freebsd$ ssh -i ./oci-id_rsa freebsd@155.248.238.91
 hostkeys_find_by_key_hostfile: hostkeys_foreach failed for /etc/ssh/ssh_known_hosts: Permission denied
 The authenticity of host '155.248.238.91 (155.248.238.91)' can't be established.
@@ -1205,6 +1199,7 @@ freebsd@ampere-a1-freebsd-01:~ %
 ```
 
 You now should have a fully running and configured FreeBSD instance.   When finished you will need to execute the 'destroy' command to remove all created objects in a 'leave no trace' manner.  Execute the following from a command to remove all created objects when finished:
+
 
 ```
 terraform destroy -auto-approve
