@@ -136,13 +136,13 @@ terraform init && terraform plan && terraform apply -auto-approve
 terraform init
 
 ```
-[0m[1mInitializing modules...[0m
+Initializing modules...
 Downloading git::https://github.com/amperecomputing/terraform-oci-ampere-a1.git for oci-ampere-a1...
 - oci-ampere-a1 in .terraform/modules/oci-ampere-a1
 
-[0m[1mInitializing the backend...[0m
+Initializing the backend...
 
-[0m[1mInitializing provider plugins...[0m
+Initializing provider plugins...
 - Finding latest version of hashicorp/local...
 - Finding latest version of hashicorp/random...
 - Finding latest version of hashicorp/template...
@@ -151,7 +151,7 @@ Downloading git::https://github.com/amperecomputing/terraform-oci-ampere-a1.git 
 - Installing hashicorp/template v2.2.0...
 - Installed hashicorp/template v2.2.0 (signed by HashiCorp)
 - Installing oracle/oci v4.89.0...
-- Installed oracle/oci v4.89.0 (signed by a HashiCorp partner, key ID [0m[1m1533A49284137CEB[0m[0m)
+- Installed oracle/oci v4.89.0 (signed by a HashiCorp partner, key ID 1533A49284137CEB)
 - Installing hashicorp/tls v4.0.1...
 - Installed hashicorp/tls v4.0.1 (signed by HashiCorp)
 - Installing hashicorp/local v2.2.3...
@@ -163,40 +163,980 @@ Partner and community providers are signed by their developers.
 If you'd like to know more about provider signing, you can read about it here:
 https://www.terraform.io/docs/cli/plugins/signing.html
 
-Terraform has created a lock file [1m.terraform.lock.hcl[0m to record the provider
+Terraform has created a lock file .terraform.lock.hcl to record the provider
 selections it made above. Include this file in your version control repository
 so that Terraform can guarantee to make the same selections by default when
-you run "terraform init" in the future.[0m
+you run "terraform init" in the future.
 
-[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
-[0m[32m
+Terraform has been successfully initialized!
+
 You may now begin working with Terraform. Try running "terraform plan" to see
 any changes that are required for your infrastructure. All Terraform commands
 should now work.
 
 If you ever set or change modules or backend configuration for Terraform,
 rerun this command to reinitialize your working directory. If you forget, other
-commands will detect it and remind you to do so if necessary.[0m
+commands will detect it and remind you to do so if necessary.
 ```
-### Logging in
 
-To log in take the ip address from the output.  An example of what the terraform looks like is below.
+Terraform Plan
 
 ```
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # module.oci-ampere-a1.local_file.oci-ssh-privkey will be created
+  + resource "local_file" "oci-ssh-privkey" {
+      + content              = (sensitive)
+      + directory_permission = "0777"
+      + file_permission      = "0600"
+      + filename             = "/home/ansible/src/terraform-oci-ampere-a1/examples/freebsd131/oci-id_rsa"
+      + id                   = (known after apply)
+    }
+
+  # module.oci-ampere-a1.local_file.oci-ssh-pubkey will be created
+  + resource "local_file" "oci-ssh-pubkey" {
+      + content              = (known after apply)
+      + directory_permission = "0777"
+      + file_permission      = "0644"
+      + filename             = "/home/ansible/src/terraform-oci-ampere-a1/examples/freebsd131/oci-id_rsa.pub"
+      + id                   = (known after apply)
+    }
+
+  # module.oci-ampere-a1.oci_core_app_catalog_listing_resource_version_agreement.almalinux_8_app_catalog_listing_resource_version_agreement will be created
+  + resource "oci_core_app_catalog_listing_resource_version_agreement" "almalinux_8_app_catalog_listing_resource_version_agreement" {
+      + eula_link                = (known after apply)
+      + id                       = (known after apply)
+      + listing_id               = "ocid1.appcataloglisting.oc1..aaaaaaaaiayknhrp2gsevmoano5i3253iv65q73pc6qzk4s2lrouoruz6zua"
+      + listing_resource_version = "8.6.20220523"
+      + oracle_terms_of_use_link = (known after apply)
+      + signature                = (known after apply)
+      + time_retrieved           = (known after apply)
+    }
+
+  # module.oci-ampere-a1.oci_core_app_catalog_listing_resource_version_agreement.freebsd_app_catalog_listing_resource_version_agreement will be created
+  + resource "oci_core_app_catalog_listing_resource_version_agreement" "freebsd_app_catalog_listing_resource_version_agreement" {
+      + eula_link                = (known after apply)
+      + id                       = (known after apply)
+      + listing_id               = "ocid1.appcataloglisting.oc1..aaaaaaaa52miob5xfolxu32kuxb2jgmdvtdovkisqvr22uozlr2b5cjwjm7a"
+      + listing_resource_version = "13.1"
+      + oracle_terms_of_use_link = (known after apply)
+      + signature                = (known after apply)
+      + time_retrieved           = (known after apply)
+    }
+
+  # module.oci-ampere-a1.oci_core_app_catalog_subscription.almalinux_8_app_catalog_subscription will be created
+  + resource "oci_core_app_catalog_subscription" "almalinux_8_app_catalog_subscription" {
+      + compartment_id           = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      + display_name             = (known after apply)
+      + eula_link                = (known after apply)
+      + id                       = (known after apply)
+      + listing_id               = "ocid1.appcataloglisting.oc1..aaaaaaaaiayknhrp2gsevmoano5i3253iv65q73pc6qzk4s2lrouoruz6zua"
+      + listing_resource_id      = (known after apply)
+      + listing_resource_version = "8.6.20220523"
+      + oracle_terms_of_use_link = (known after apply)
+      + publisher_name           = (known after apply)
+      + signature                = (known after apply)
+      + summary                  = (known after apply)
+      + time_created             = (known after apply)
+      + time_retrieved           = (known after apply)
+    }
+
+  # module.oci-ampere-a1.oci_core_app_catalog_subscription.freebsd_app_catalog_subscription will be created
+  + resource "oci_core_app_catalog_subscription" "freebsd_app_catalog_subscription" {
+      + compartment_id           = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      + display_name             = (known after apply)
+      + eula_link                = (known after apply)
+      + id                       = (known after apply)
+      + listing_id               = "ocid1.appcataloglisting.oc1..aaaaaaaa52miob5xfolxu32kuxb2jgmdvtdovkisqvr22uozlr2b5cjwjm7a"
+      + listing_resource_id      = (known after apply)
+      + listing_resource_version = "13.1"
+      + oracle_terms_of_use_link = (known after apply)
+      + publisher_name           = (known after apply)
+      + signature                = (known after apply)
+      + summary                  = (known after apply)
+      + time_created             = (known after apply)
+      + time_retrieved           = (known after apply)
+    }
+
+  # module.oci-ampere-a1.oci_core_instance.ampere_a1[0] will be created
+  + resource "oci_core_instance" "ampere_a1" {
+      + availability_domain                 = "FFpD:CA-MONTREAL-1-AD-1"
+      + boot_volume_id                      = (known after apply)
+      + capacity_reservation_id             = (known after apply)
+      + compartment_id                      = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      + dedicated_vm_host_id                = (known after apply)
+      + defined_tags                        = (known after apply)
+      + display_name                        = "AmpereA1-0"
+      + fault_domain                        = (known after apply)
+      + freeform_tags                       = (known after apply)
+      + hostname_label                      = (known after apply)
+      + id                                  = (known after apply)
+      + image                               = (known after apply)
+      + ipxe_script                         = (known after apply)
+      + is_pv_encryption_in_transit_enabled = (known after apply)
+      + launch_mode                         = (known after apply)
+      + metadata                            = (known after apply)
+      + private_ip                          = (known after apply)
+      + public_ip                           = (known after apply)
+      + region                              = (known after apply)
+      + shape                               = "VM.Standard.A1.Flex"
+      + state                               = (known after apply)
+      + subnet_id                           = (known after apply)
+      + system_tags                         = (known after apply)
+      + time_created                        = (known after apply)
+      + time_maintenance_reboot_due         = (known after apply)
+
+      + agent_config {
+          + are_all_plugins_disabled = (known after apply)
+          + is_management_disabled   = (known after apply)
+          + is_monitoring_disabled   = (known after apply)
+
+          + plugins_config {
+              + desired_state = (known after apply)
+              + name          = (known after apply)
+            }
+        }
+
+      + availability_config {
+          + is_live_migration_preferred = (known after apply)
+          + recovery_action             = (known after apply)
+        }
+
+      + create_vnic_details {
+          + assign_public_ip       = "true"
+          + defined_tags           = (known after apply)
+          + display_name           = "primaryvnic"
+          + freeform_tags          = (known after apply)
+          + hostname_label         = "ampere-a1-freebsd-01"
+          + private_ip             = (known after apply)
+          + skip_source_dest_check = (known after apply)
+          + subnet_id              = (known after apply)
+          + vlan_id                = (known after apply)
+        }
+
+      + instance_options {
+          + are_legacy_imds_endpoints_disabled = (known after apply)
+        }
+
+      + launch_options {
+          + boot_volume_type                    = (known after apply)
+          + firmware                            = (known after apply)
+          + is_consistent_volume_naming_enabled = (known after apply)
+          + is_pv_encryption_in_transit_enabled = (known after apply)
+          + network_type                        = (known after apply)
+          + remote_data_volume_type             = (known after apply)
+        }
+
+      + platform_config {
+          + are_virtual_instructions_enabled               = (known after apply)
+          + is_access_control_service_enabled              = (known after apply)
+          + is_input_output_memory_management_unit_enabled = (known after apply)
+          + is_measured_boot_enabled                       = (known after apply)
+          + is_secure_boot_enabled                         = (known after apply)
+          + is_symmetric_multi_threading_enabled           = (known after apply)
+          + is_trusted_platform_module_enabled             = (known after apply)
+          + numa_nodes_per_socket                          = (known after apply)
+          + percentage_of_cores_enabled                    = (known after apply)
+          + type                                           = (known after apply)
+        }
+
+      + preemptible_instance_config {
+          + preemption_action {
+              + preserve_boot_volume = (known after apply)
+              + type                 = (known after apply)
+            }
+        }
+
+      + shape_config {
+          + baseline_ocpu_utilization     = (known after apply)
+          + gpu_description               = (known after apply)
+          + gpus                          = (known after apply)
+          + local_disk_description        = (known after apply)
+          + local_disks                   = (known after apply)
+          + local_disks_total_size_in_gbs = (known after apply)
+          + max_vnic_attachments          = (known after apply)
+          + memory_in_gbs                 = 24
+          + networking_bandwidth_in_gbps  = (known after apply)
+          + nvmes                         = (known after apply)
+          + ocpus                         = 4
+          + processor_description         = (known after apply)
+        }
+
+      + source_details {
+          + boot_volume_size_in_gbs = (known after apply)
+          + boot_volume_vpus_per_gb = (known after apply)
+          + kms_key_id              = (known after apply)
+          + source_id               = "ocid1.image.oc1..aaaaaaaayjatgvecms7kciqjx5exbj4dpcs3ympvpggpodwlfuezn7dejdja"
+          + source_type             = "image"
+        }
+    }
+
+  # module.oci-ampere-a1.oci_core_internet_gateway.ampere_internet_gateway will be created
+  + resource "oci_core_internet_gateway" "ampere_internet_gateway" {
+      + compartment_id = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      + defined_tags   = (known after apply)
+      + display_name   = "AmpereInternetGateway"
+      + enabled        = true
+      + freeform_tags  = (known after apply)
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + state          = (known after apply)
+      + time_created   = (known after apply)
+      + vcn_id         = (known after apply)
+    }
+
+  # module.oci-ampere-a1.oci_core_route_table.ampere_route_table will be created
+  + resource "oci_core_route_table" "ampere_route_table" {
+      + compartment_id = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      + defined_tags   = (known after apply)
+      + display_name   = "AmpereRouteTable"
+      + freeform_tags  = (known after apply)
+      + id             = (known after apply)
+      + state          = (known after apply)
+      + time_created   = (known after apply)
+      + vcn_id         = (known after apply)
+
+      + route_rules {
+          + cidr_block        = (known after apply)
+          + description       = (known after apply)
+          + destination       = "0.0.0.0/0"
+          + destination_type  = "CIDR_BLOCK"
+          + network_entity_id = (known after apply)
+          + route_type        = (known after apply)
+        }
+    }
+
+  # module.oci-ampere-a1.oci_core_security_list.ampere_security_list will be created
+  + resource "oci_core_security_list" "ampere_security_list" {
+      + compartment_id = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      + defined_tags   = (known after apply)
+      + display_name   = "ampereSecurityList"
+      + freeform_tags  = (known after apply)
+      + id             = (known after apply)
+      + state          = (known after apply)
+      + time_created   = (known after apply)
+      + vcn_id         = (known after apply)
+
+      + egress_security_rules {
+          + description      = (known after apply)
+          + destination      = "0.0.0.0/0"
+          + destination_type = (known after apply)
+          + protocol         = "6"
+          + stateless        = (known after apply)
+        }
+
+      + ingress_security_rules {
+          + description = (known after apply)
+          + protocol    = "6"
+          + source      = "0.0.0.0/0"
+          + source_type = (known after apply)
+          + stateless   = false
+
+          + tcp_options {
+              + max = 22
+              + min = 22
+            }
+        }
+      + ingress_security_rules {
+          + description = (known after apply)
+          + protocol    = "6"
+          + source      = "0.0.0.0/0"
+          + source_type = (known after apply)
+          + stateless   = false
+
+          + tcp_options {
+              + max = 3000
+              + min = 3000
+            }
+        }
+      + ingress_security_rules {
+          + description = (known after apply)
+          + protocol    = "6"
+          + source      = "0.0.0.0/0"
+          + source_type = (known after apply)
+          + stateless   = false
+
+          + tcp_options {
+              + max = 3005
+              + min = 3005
+            }
+        }
+      + ingress_security_rules {
+          + description = (known after apply)
+          + protocol    = "6"
+          + source      = "0.0.0.0/0"
+          + source_type = (known after apply)
+          + stateless   = false
+
+          + tcp_options {
+              + max = 80
+              + min = 80
+            }
+        }
+    }
+
+  # module.oci-ampere-a1.oci_core_subnet.ampere_subnet will be created
+  + resource "oci_core_subnet" "ampere_subnet" {
+      + availability_domain        = (known after apply)
+      + cidr_block                 = "10.2.1.0/24"
+      + compartment_id             = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      + defined_tags               = (known after apply)
+      + dhcp_options_id            = (known after apply)
+      + display_name               = "AmpereSubnet"
+      + dns_label                  = "Ampere"
+      + freeform_tags              = (known after apply)
+      + id                         = (known after apply)
+      + ipv6cidr_block             = (known after apply)
+      + ipv6cidr_blocks            = (known after apply)
+      + ipv6virtual_router_ip      = (known after apply)
+      + prohibit_internet_ingress  = (known after apply)
+      + prohibit_public_ip_on_vnic = (known after apply)
+      + route_table_id             = (known after apply)
+      + security_list_ids          = (known after apply)
+      + state                      = (known after apply)
+      + subnet_domain_name         = (known after apply)
+      + time_created               = (known after apply)
+      + vcn_id                     = (known after apply)
+      + virtual_router_ip          = (known after apply)
+      + virtual_router_mac         = (known after apply)
+    }
+
+  # module.oci-ampere-a1.oci_core_virtual_network.ampere_vcn will be created
+  + resource "oci_core_virtual_network" "ampere_vcn" {
+      + byoipv6cidr_blocks               = (known after apply)
+      + cidr_block                       = "10.2.0.0/16"
+      + cidr_blocks                      = (known after apply)
+      + compartment_id                   = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      + default_dhcp_options_id          = (known after apply)
+      + default_route_table_id           = (known after apply)
+      + default_security_list_id         = (known after apply)
+      + defined_tags                     = (known after apply)
+      + display_name                     = "AmpereVirtualCoreNetwork"
+      + dns_label                        = "amperevcn"
+      + freeform_tags                    = (known after apply)
+      + id                               = (known after apply)
+      + ipv6cidr_blocks                  = (known after apply)
+      + ipv6private_cidr_blocks          = (known after apply)
+      + is_ipv6enabled                   = (known after apply)
+      + is_oracle_gua_allocation_enabled = (known after apply)
+      + state                            = (known after apply)
+      + time_created                     = (known after apply)
+      + vcn_domain_name                  = (known after apply)
+
+      + byoipv6cidr_details {
+          + byoipv6range_id = (known after apply)
+          + ipv6cidr_block  = (known after apply)
+        }
+    }
+
+  # module.oci-ampere-a1.oci_marketplace_accepted_agreement.almalinux_8_accepted_agreement will be created
+  + resource "oci_marketplace_accepted_agreement" "almalinux_8_accepted_agreement" {
+      + agreement_id    = "50511633"
+      + compartment_id  = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      + defined_tags    = (known after apply)
+      + display_name    = (known after apply)
+      + freeform_tags   = (known after apply)
+      + id              = (known after apply)
+      + listing_id      = "125567282"
+      + package_version = "8.6.20220523"
+      + signature       = (known after apply)
+      + time_accepted   = (known after apply)
+    }
+
+  # module.oci-ampere-a1.oci_marketplace_accepted_agreement.freebsd_accepted_agreement will be created
+  + resource "oci_marketplace_accepted_agreement" "freebsd_accepted_agreement" {
+      + agreement_id    = "50511633"
+      + compartment_id  = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      + defined_tags    = (known after apply)
+      + display_name    = (known after apply)
+      + freeform_tags   = (known after apply)
+      + id              = (known after apply)
+      + listing_id      = "125980175"
+      + package_version = "13.1"
+      + signature       = (known after apply)
+      + time_accepted   = (known after apply)
+    }
+
+  # module.oci-ampere-a1.oci_marketplace_listing_package_agreement.almalinux_8_package_agreement will be created
+  + resource "oci_marketplace_listing_package_agreement" "almalinux_8_package_agreement" {
+      + agreement_id    = "50511633"
+      + author          = (known after apply)
+      + compartment_id  = (known after apply)
+      + content_url     = (known after apply)
+      + id              = (known after apply)
+      + listing_id      = "125567282"
+      + package_version = "8.6.20220523"
+      + prompt          = (known after apply)
+      + signature       = (known after apply)
+    }
+
+  # module.oci-ampere-a1.oci_marketplace_listing_package_agreement.freebsd_package_agreement will be created
+  + resource "oci_marketplace_listing_package_agreement" "freebsd_package_agreement" {
+      + agreement_id    = "50511633"
+      + author          = (known after apply)
+      + compartment_id  = (known after apply)
+      + content_url     = (known after apply)
+      + id              = (known after apply)
+      + listing_id      = "125980175"
+      + package_version = "13.1"
+      + prompt          = (known after apply)
+      + signature       = (known after apply)
+    }
+
+  # module.oci-ampere-a1.random_uuid.random_id will be created
+  + resource "random_uuid" "random_id" {
+      + id     = (known after apply)
+      + result = (known after apply)
+    }
+
+  # module.oci-ampere-a1.tls_private_key.oci will be created
+  + resource "tls_private_key" "oci" {
+      + algorithm                     = "RSA"
+      + ecdsa_curve                   = "P224"
+      + id                            = (known after apply)
+      + private_key_openssh           = (sensitive value)
+      + private_key_pem               = (sensitive value)
+      + private_key_pem_pkcs8         = (sensitive value)
+      + public_key_fingerprint_md5    = (known after apply)
+      + public_key_fingerprint_sha256 = (known after apply)
+      + public_key_openssh            = (known after apply)
+      + public_key_pem                = (known after apply)
+      + rsa_bits                      = 4096
+    }
+
+Plan: 18 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + oci_ampere_a1_private_ips = [
+      + [
+          + (known after apply),
+        ],
+    ]
+  + oci_ampere_a1_public_ips  = [
+      + [
+          + (known after apply),
+        ],
+    ]
+
+─────────────────────────────────────────────────────────────────────────────
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
+```
+
+Terraform Apply
+
+```
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # module.oci-ampere-a1.local_file.oci-ssh-privkey will be created
+  + resource "local_file" "oci-ssh-privkey" {
+      + content              = (sensitive)
+      + directory_permission = "0777"
+      + file_permission      = "0600"
+      + filename             = "/home/ansible/src/terraform-oci-ampere-a1/examples/freebsd131/oci-id_rsa"
+      + id                   = (known after apply)
+    }
+
+  # module.oci-ampere-a1.local_file.oci-ssh-pubkey will be created
+  + resource "local_file" "oci-ssh-pubkey" {
+      + content              = (known after apply)
+      + directory_permission = "0777"
+      + file_permission      = "0644"
+      + filename             = "/home/ansible/src/terraform-oci-ampere-a1/examples/freebsd131/oci-id_rsa.pub"
+      + id                   = (known after apply)
+    }
+
+  # module.oci-ampere-a1.oci_core_app_catalog_listing_resource_version_agreement.almalinux_8_app_catalog_listing_resource_version_agreement will be created
+  + resource "oci_core_app_catalog_listing_resource_version_agreement" "almalinux_8_app_catalog_listing_resource_version_agreement" {
+      + eula_link                = (known after apply)
+      + id                       = (known after apply)
+      + listing_id               = "ocid1.appcataloglisting.oc1..aaaaaaaaiayknhrp2gsevmoano5i3253iv65q73pc6qzk4s2lrouoruz6zua"
+      + listing_resource_version = "8.6.20220523"
+      + oracle_terms_of_use_link = (known after apply)
+      + signature                = (known after apply)
+      + time_retrieved           = (known after apply)
+    }
+
+  # module.oci-ampere-a1.oci_core_app_catalog_listing_resource_version_agreement.freebsd_app_catalog_listing_resource_version_agreement will be created
+  + resource "oci_core_app_catalog_listing_resource_version_agreement" "freebsd_app_catalog_listing_resource_version_agreement" {
+      + eula_link                = (known after apply)
+      + id                       = (known after apply)
+      + listing_id               = "ocid1.appcataloglisting.oc1..aaaaaaaa52miob5xfolxu32kuxb2jgmdvtdovkisqvr22uozlr2b5cjwjm7a"
+      + listing_resource_version = "13.1"
+      + oracle_terms_of_use_link = (known after apply)
+      + signature                = (known after apply)
+      + time_retrieved           = (known after apply)
+    }
+
+  # module.oci-ampere-a1.oci_core_app_catalog_subscription.almalinux_8_app_catalog_subscription will be created
+  + resource "oci_core_app_catalog_subscription" "almalinux_8_app_catalog_subscription" {
+      + compartment_id           = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      + display_name             = (known after apply)
+      + eula_link                = (known after apply)
+      + id                       = (known after apply)
+      + listing_id               = "ocid1.appcataloglisting.oc1..aaaaaaaaiayknhrp2gsevmoano5i3253iv65q73pc6qzk4s2lrouoruz6zua"
+      + listing_resource_id      = (known after apply)
+      + listing_resource_version = "8.6.20220523"
+      + oracle_terms_of_use_link = (known after apply)
+      + publisher_name           = (known after apply)
+      + signature                = (known after apply)
+      + summary                  = (known after apply)
+      + time_created             = (known after apply)
+      + time_retrieved           = (known after apply)
+    }
+
+  # module.oci-ampere-a1.oci_core_app_catalog_subscription.freebsd_app_catalog_subscription will be created
+  + resource "oci_core_app_catalog_subscription" "freebsd_app_catalog_subscription" {
+      + compartment_id           = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      + display_name             = (known after apply)
+      + eula_link                = (known after apply)
+      + id                       = (known after apply)
+      + listing_id               = "ocid1.appcataloglisting.oc1..aaaaaaaa52miob5xfolxu32kuxb2jgmdvtdovkisqvr22uozlr2b5cjwjm7a"
+      + listing_resource_id      = (known after apply)
+      + listing_resource_version = "13.1"
+      + oracle_terms_of_use_link = (known after apply)
+      + publisher_name           = (known after apply)
+      + signature                = (known after apply)
+      + summary                  = (known after apply)
+      + time_created             = (known after apply)
+      + time_retrieved           = (known after apply)
+    }
+
+  # module.oci-ampere-a1.oci_core_instance.ampere_a1[0] will be created
+  + resource "oci_core_instance" "ampere_a1" {
+      + availability_domain                 = "FFpD:CA-MONTREAL-1-AD-1"
+      + boot_volume_id                      = (known after apply)
+      + capacity_reservation_id             = (known after apply)
+      + compartment_id                      = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      + dedicated_vm_host_id                = (known after apply)
+      + defined_tags                        = (known after apply)
+      + display_name                        = "AmpereA1-0"
+      + fault_domain                        = (known after apply)
+      + freeform_tags                       = (known after apply)
+      + hostname_label                      = (known after apply)
+      + id                                  = (known after apply)
+      + image                               = (known after apply)
+      + ipxe_script                         = (known after apply)
+      + is_pv_encryption_in_transit_enabled = (known after apply)
+      + launch_mode                         = (known after apply)
+      + metadata                            = (known after apply)
+      + private_ip                          = (known after apply)
+      + public_ip                           = (known after apply)
+      + region                              = (known after apply)
+      + shape                               = "VM.Standard.A1.Flex"
+      + state                               = (known after apply)
+      + subnet_id                           = (known after apply)
+      + system_tags                         = (known after apply)
+      + time_created                        = (known after apply)
+      + time_maintenance_reboot_due         = (known after apply)
+
+      + agent_config {
+          + are_all_plugins_disabled = (known after apply)
+          + is_management_disabled   = (known after apply)
+          + is_monitoring_disabled   = (known after apply)
+
+          + plugins_config {
+              + desired_state = (known after apply)
+              + name          = (known after apply)
+            }
+        }
+
+      + availability_config {
+          + is_live_migration_preferred = (known after apply)
+          + recovery_action             = (known after apply)
+        }
+
+      + create_vnic_details {
+          + assign_public_ip       = "true"
+          + defined_tags           = (known after apply)
+          + display_name           = "primaryvnic"
+          + freeform_tags          = (known after apply)
+          + hostname_label         = "ampere-a1-freebsd-01"
+          + private_ip             = (known after apply)
+          + skip_source_dest_check = (known after apply)
+          + subnet_id              = (known after apply)
+          + vlan_id                = (known after apply)
+        }
+
+      + instance_options {
+          + are_legacy_imds_endpoints_disabled = (known after apply)
+        }
+
+      + launch_options {
+          + boot_volume_type                    = (known after apply)
+          + firmware                            = (known after apply)
+          + is_consistent_volume_naming_enabled = (known after apply)
+          + is_pv_encryption_in_transit_enabled = (known after apply)
+          + network_type                        = (known after apply)
+          + remote_data_volume_type             = (known after apply)
+        }
+
+      + platform_config {
+          + are_virtual_instructions_enabled               = (known after apply)
+          + is_access_control_service_enabled              = (known after apply)
+          + is_input_output_memory_management_unit_enabled = (known after apply)
+          + is_measured_boot_enabled                       = (known after apply)
+          + is_secure_boot_enabled                         = (known after apply)
+          + is_symmetric_multi_threading_enabled           = (known after apply)
+          + is_trusted_platform_module_enabled             = (known after apply)
+          + numa_nodes_per_socket                          = (known after apply)
+          + percentage_of_cores_enabled                    = (known after apply)
+          + type                                           = (known after apply)
+        }
+
+      + preemptible_instance_config {
+          + preemption_action {
+              + preserve_boot_volume = (known after apply)
+              + type                 = (known after apply)
+            }
+        }
+
+      + shape_config {
+          + baseline_ocpu_utilization     = (known after apply)
+          + gpu_description               = (known after apply)
+          + gpus                          = (known after apply)
+          + local_disk_description        = (known after apply)
+          + local_disks                   = (known after apply)
+          + local_disks_total_size_in_gbs = (known after apply)
+          + max_vnic_attachments          = (known after apply)
+          + memory_in_gbs                 = 24
+          + networking_bandwidth_in_gbps  = (known after apply)
+          + nvmes                         = (known after apply)
+          + ocpus                         = 4
+          + processor_description         = (known after apply)
+        }
+
+      + source_details {
+          + boot_volume_size_in_gbs = (known after apply)
+          + boot_volume_vpus_per_gb = (known after apply)
+          + kms_key_id              = (known after apply)
+          + source_id               = "ocid1.image.oc1..aaaaaaaayjatgvecms7kciqjx5exbj4dpcs3ympvpggpodwlfuezn7dejdja"
+          + source_type             = "image"
+        }
+    }
+
+  # module.oci-ampere-a1.oci_core_internet_gateway.ampere_internet_gateway will be created
+  + resource "oci_core_internet_gateway" "ampere_internet_gateway" {
+      + compartment_id = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      + defined_tags   = (known after apply)
+      + display_name   = "AmpereInternetGateway"
+      + enabled        = true
+      + freeform_tags  = (known after apply)
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + state          = (known after apply)
+      + time_created   = (known after apply)
+      + vcn_id         = (known after apply)
+    }
+
+  # module.oci-ampere-a1.oci_core_route_table.ampere_route_table will be created
+  + resource "oci_core_route_table" "ampere_route_table" {
+      + compartment_id = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      + defined_tags   = (known after apply)
+      + display_name   = "AmpereRouteTable"
+      + freeform_tags  = (known after apply)
+      + id             = (known after apply)
+      + state          = (known after apply)
+      + time_created   = (known after apply)
+      + vcn_id         = (known after apply)
+
+      + route_rules {
+          + cidr_block        = (known after apply)
+          + description       = (known after apply)
+          + destination       = "0.0.0.0/0"
+          + destination_type  = "CIDR_BLOCK"
+          + network_entity_id = (known after apply)
+          + route_type        = (known after apply)
+        }
+    }
+
+  # module.oci-ampere-a1.oci_core_security_list.ampere_security_list will be created
+  + resource "oci_core_security_list" "ampere_security_list" {
+      + compartment_id = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      + defined_tags   = (known after apply)
+      + display_name   = "ampereSecurityList"
+      + freeform_tags  = (known after apply)
+      + id             = (known after apply)
+      + state          = (known after apply)
+      + time_created   = (known after apply)
+      + vcn_id         = (known after apply)
+
+      + egress_security_rules {
+          + description      = (known after apply)
+          + destination      = "0.0.0.0/0"
+          + destination_type = (known after apply)
+          + protocol         = "6"
+          + stateless        = (known after apply)
+        }
+
+      + ingress_security_rules {
+          + description = (known after apply)
+          + protocol    = "6"
+          + source      = "0.0.0.0/0"
+          + source_type = (known after apply)
+          + stateless   = false
+
+          + tcp_options {
+              + max = 22
+              + min = 22
+            }
+        }
+      + ingress_security_rules {
+          + description = (known after apply)
+          + protocol    = "6"
+          + source      = "0.0.0.0/0"
+          + source_type = (known after apply)
+          + stateless   = false
+
+          + tcp_options {
+              + max = 3000
+              + min = 3000
+            }
+        }
+      + ingress_security_rules {
+          + description = (known after apply)
+          + protocol    = "6"
+          + source      = "0.0.0.0/0"
+          + source_type = (known after apply)
+          + stateless   = false
+
+          + tcp_options {
+              + max = 3005
+              + min = 3005
+            }
+        }
+      + ingress_security_rules {
+          + description = (known after apply)
+          + protocol    = "6"
+          + source      = "0.0.0.0/0"
+          + source_type = (known after apply)
+          + stateless   = false
+
+          + tcp_options {
+              + max = 80
+              + min = 80
+            }
+        }
+    }
+
+  # module.oci-ampere-a1.oci_core_subnet.ampere_subnet will be created
+  + resource "oci_core_subnet" "ampere_subnet" {
+      + availability_domain        = (known after apply)
+      + cidr_block                 = "10.2.1.0/24"
+      + compartment_id             = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      + defined_tags               = (known after apply)
+      + dhcp_options_id            = (known after apply)
+      + display_name               = "AmpereSubnet"
+      + dns_label                  = "Ampere"
+      + freeform_tags              = (known after apply)
+      + id                         = (known after apply)
+      + ipv6cidr_block             = (known after apply)
+      + ipv6cidr_blocks            = (known after apply)
+      + ipv6virtual_router_ip      = (known after apply)
+      + prohibit_internet_ingress  = (known after apply)
+      + prohibit_public_ip_on_vnic = (known after apply)
+      + route_table_id             = (known after apply)
+      + security_list_ids          = (known after apply)
+      + state                      = (known after apply)
+      + subnet_domain_name         = (known after apply)
+      + time_created               = (known after apply)
+      + vcn_id                     = (known after apply)
+      + virtual_router_ip          = (known after apply)
+      + virtual_router_mac         = (known after apply)
+    }
+
+  # module.oci-ampere-a1.oci_core_virtual_network.ampere_vcn will be created
+  + resource "oci_core_virtual_network" "ampere_vcn" {
+      + byoipv6cidr_blocks               = (known after apply)
+      + cidr_block                       = "10.2.0.0/16"
+      + cidr_blocks                      = (known after apply)
+      + compartment_id                   = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      + default_dhcp_options_id          = (known after apply)
+      + default_route_table_id           = (known after apply)
+      + default_security_list_id         = (known after apply)
+      + defined_tags                     = (known after apply)
+      + display_name                     = "AmpereVirtualCoreNetwork"
+      + dns_label                        = "amperevcn"
+      + freeform_tags                    = (known after apply)
+      + id                               = (known after apply)
+      + ipv6cidr_blocks                  = (known after apply)
+      + ipv6private_cidr_blocks          = (known after apply)
+      + is_ipv6enabled                   = (known after apply)
+      + is_oracle_gua_allocation_enabled = (known after apply)
+      + state                            = (known after apply)
+      + time_created                     = (known after apply)
+      + vcn_domain_name                  = (known after apply)
+
+      + byoipv6cidr_details {
+          + byoipv6range_id = (known after apply)
+          + ipv6cidr_block  = (known after apply)
+        }
+    }
+
+  # module.oci-ampere-a1.oci_marketplace_accepted_agreement.almalinux_8_accepted_agreement will be created
+  + resource "oci_marketplace_accepted_agreement" "almalinux_8_accepted_agreement" {
+      + agreement_id    = "50511633"
+      + compartment_id  = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      + defined_tags    = (known after apply)
+      + display_name    = (known after apply)
+      + freeform_tags   = (known after apply)
+      + id              = (known after apply)
+      + listing_id      = "125567282"
+      + package_version = "8.6.20220523"
+      + signature       = (known after apply)
+      + time_accepted   = (known after apply)
+    }
+
+  # module.oci-ampere-a1.oci_marketplace_accepted_agreement.freebsd_accepted_agreement will be created
+  + resource "oci_marketplace_accepted_agreement" "freebsd_accepted_agreement" {
+      + agreement_id    = "50511633"
+      + compartment_id  = "ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq"
+      + defined_tags    = (known after apply)
+      + display_name    = (known after apply)
+      + freeform_tags   = (known after apply)
+      + id              = (known after apply)
+      + listing_id      = "125980175"
+      + package_version = "13.1"
+      + signature       = (known after apply)
+      + time_accepted   = (known after apply)
+    }
+
+  # module.oci-ampere-a1.oci_marketplace_listing_package_agreement.almalinux_8_package_agreement will be created
+  + resource "oci_marketplace_listing_package_agreement" "almalinux_8_package_agreement" {
+      + agreement_id    = "50511633"
+      + author          = (known after apply)
+      + compartment_id  = (known after apply)
+      + content_url     = (known after apply)
+      + id              = (known after apply)
+      + listing_id      = "125567282"
+      + package_version = "8.6.20220523"
+      + prompt          = (known after apply)
+      + signature       = (known after apply)
+    }
+
+  # module.oci-ampere-a1.oci_marketplace_listing_package_agreement.freebsd_package_agreement will be created
+  + resource "oci_marketplace_listing_package_agreement" "freebsd_package_agreement" {
+      + agreement_id    = "50511633"
+      + author          = (known after apply)
+      + compartment_id  = (known after apply)
+      + content_url     = (known after apply)
+      + id              = (known after apply)
+      + listing_id      = "125980175"
+      + package_version = "13.1"
+      + prompt          = (known after apply)
+      + signature       = (known after apply)
+    }
+
+  # module.oci-ampere-a1.random_uuid.random_id will be created
+  + resource "random_uuid" "random_id" {
+      + id     = (known after apply)
+      + result = (known after apply)
+    }
+
+  # module.oci-ampere-a1.tls_private_key.oci will be created
+  + resource "tls_private_key" "oci" {
+      + algorithm                     = "RSA"
+      + ecdsa_curve                   = "P224"
+      + id                            = (known after apply)
+      + private_key_openssh           = (sensitive value)
+      + private_key_pem               = (sensitive value)
+      + private_key_pem_pkcs8         = (sensitive value)
+      + public_key_fingerprint_md5    = (known after apply)
+      + public_key_fingerprint_sha256 = (known after apply)
+      + public_key_openssh            = (known after apply)
+      + public_key_pem                = (known after apply)
+      + rsa_bits                      = 4096
+    }
+
+Plan: 18 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + oci_ampere_a1_private_ips = [
+      + [
+          + (known after apply),
+        ],
+    ]
+  + oci_ampere_a1_public_ips  = [
+      + [
+          + (known after apply),
+        ],
+    ]
+module.oci-ampere-a1.random_uuid.random_id: Creating...
+module.oci-ampere-a1.tls_private_key.oci: Creating...
+module.oci-ampere-a1.random_uuid.random_id: Creation complete after 0s [id=400ce2ff-e1ce-78b7-937f-c1cc9fa2ea5f]
+module.oci-ampere-a1.oci_core_app_catalog_listing_resource_version_agreement.freebsd_app_catalog_listing_resource_version_agreement: Creating...
+module.oci-ampere-a1.oci_core_virtual_network.ampere_vcn: Creating...
+module.oci-ampere-a1.oci_core_app_catalog_listing_resource_version_agreement.almalinux_8_app_catalog_listing_resource_version_agreement: Creating...
+module.oci-ampere-a1.oci_marketplace_listing_package_agreement.almalinux_8_package_agreement: Creating...
+module.oci-ampere-a1.oci_marketplace_listing_package_agreement.freebsd_package_agreement: Creating...
+module.oci-ampere-a1.oci_marketplace_listing_package_agreement.freebsd_package_agreement: Creation complete after 0s [id=50511633]
+module.oci-ampere-a1.oci_marketplace_listing_package_agreement.almalinux_8_package_agreement: Creation complete after 0s [id=50511633]
+module.oci-ampere-a1.oci_core_app_catalog_listing_resource_version_agreement.freebsd_app_catalog_listing_resource_version_agreement: Creation complete after 0s [id=2022-08-22 14:22:26.366 +0000 UTC]
+module.oci-ampere-a1.oci_marketplace_accepted_agreement.freebsd_accepted_agreement: Creating...
+module.oci-ampere-a1.oci_marketplace_accepted_agreement.almalinux_8_accepted_agreement: Creating...
+module.oci-ampere-a1.oci_core_app_catalog_subscription.freebsd_app_catalog_subscription: Creating...
+module.oci-ampere-a1.oci_core_app_catalog_listing_resource_version_agreement.almalinux_8_app_catalog_listing_resource_version_agreement: Creation complete after 1s [id=2022-08-22 14:22:26.589 +0000 UTC]
+module.oci-ampere-a1.oci_core_app_catalog_subscription.almalinux_8_app_catalog_subscription: Creating...
+module.oci-ampere-a1.oci_marketplace_accepted_agreement.freebsd_accepted_agreement: Creation complete after 0s [id=ocid1.marketplaceacceptedagreement.oc1..aaaaaaaaao6swpfxegh6lkxqrujx54pyskcxxrqgurwz24ntqflrhem7ha7q]
+module.oci-ampere-a1.oci_marketplace_accepted_agreement.almalinux_8_accepted_agreement: Creation complete after 0s [id=ocid1.marketplaceacceptedagreement.oc1..aaaaaaaa62bsowyk77vzd4g5xxfzxziv4isf77shyprtlqrfpwykd2wyucpa]
+module.oci-ampere-a1.oci_core_app_catalog_subscription.freebsd_app_catalog_subscription: Creation complete after 0s [id=compartmentId/ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq/listingId/ocid1.appcataloglisting.oc1..aaaaaaaa52miob5xfolxu32kuxb2jgmdvtdovkisqvr22uozlr2b5cjwjm7a/listingResourceVersion/13.1]
+module.oci-ampere-a1.oci_core_app_catalog_subscription.almalinux_8_app_catalog_subscription: Creation complete after 0s [id=compartmentId/ocid1.tenancy.oc1..aaaaaaaafr3n2emalltus7mfag2qismfdpj5ta63gzgxbqxfb6d5xuq5ocyq/listingId/ocid1.appcataloglisting.oc1..aaaaaaaaiayknhrp2gsevmoano5i3253iv65q73pc6qzk4s2lrouoruz6zua/listingResourceVersion/8.6.20220523]
+module.oci-ampere-a1.oci_core_virtual_network.ampere_vcn: Creation complete after 1s [id=ocid1.vcn.oc1.ca-montreal-1.amaaaaaas3ocaxia3uloouwtjazqbhdnl5gw44fqqoy5jsgatxkpxqafporq]
+module.oci-ampere-a1.oci_core_internet_gateway.ampere_internet_gateway: Creating...
+module.oci-ampere-a1.oci_core_security_list.ampere_security_list: Creating...
+module.oci-ampere-a1.oci_core_security_list.ampere_security_list: Creation complete after 0s [id=ocid1.securitylist.oc1.ca-montreal-1.aaaaaaaa35tcslvh366govvirorrmxreohdphi2e3dgh523vx3qhfw736t2q]
+module.oci-ampere-a1.oci_core_internet_gateway.ampere_internet_gateway: Creation complete after 1s [id=ocid1.internetgateway.oc1.ca-montreal-1.aaaaaaaajdzpkaqwidkis6xhdd3s2ubccduofjrawifyke446edzsyz4mu2a]
+module.oci-ampere-a1.oci_core_route_table.ampere_route_table: Creating...
+module.oci-ampere-a1.oci_core_route_table.ampere_route_table: Creation complete after 0s [id=ocid1.routetable.oc1.ca-montreal-1.aaaaaaaavq277xd777677xjzp6y5jb4czrjkkhi3b3f5ygcdtcacdc7eze7q]
+module.oci-ampere-a1.oci_core_subnet.ampere_subnet: Creating...
+module.oci-ampere-a1.oci_core_subnet.ampere_subnet: Creation complete after 3s [id=ocid1.subnet.oc1.ca-montreal-1.aaaaaaaaaoc6woleuaz3lnoxjtegjxudjvwbdsit5yix6tk53t4wnaxgqs7q]
+module.oci-ampere-a1.tls_private_key.oci: Still creating... [10s elapsed]
+module.oci-ampere-a1.tls_private_key.oci: Creation complete after 13s [id=5e88bcbd6a6df1fdc61a55f7eb9df59f1e77682e]
+module.oci-ampere-a1.local_file.oci-ssh-privkey: Creating...
+module.oci-ampere-a1.local_file.oci-ssh-pubkey: Creating...
+module.oci-ampere-a1.local_file.oci-ssh-pubkey: Creation complete after 0s [id=49cc8c26d18f56bd98394328b88c7d97c1428db7]
+module.oci-ampere-a1.oci_core_instance.ampere_a1[0]: Creating...
+module.oci-ampere-a1.local_file.oci-ssh-privkey: Creation complete after 0s [id=d5027921a08671a99244e9c3814b7cbf302aa4b2]
+module.oci-ampere-a1.oci_core_instance.ampere_a1[0]: Still creating... [10s elapsed]
+module.oci-ampere-a1.oci_core_instance.ampere_a1[0]: Still creating... [20s elapsed]
+module.oci-ampere-a1.oci_core_instance.ampere_a1[0]: Still creating... [30s elapsed]
+module.oci-ampere-a1.oci_core_instance.ampere_a1[0]: Creation complete after 37s [id=ocid1.instance.oc1.ca-montreal-1.an4xkljrs3ocaxic4eizvijhp2f3qylhxs5dc6lm5yb3zrerk4ufzpnnyhjq]
+
 Apply complete! Resources: 18 added, 0 changed, 0 destroyed.
 
 Outputs:
 
 oci_ampere_a1_private_ips = [
   [
-    "10.2.1.18",
+    "10.2.1.31",
   ],
 ]
 oci_ampere_a1_public_ips = [
   [
-    "155.248.238.91",
+    "155.248.228.151",
   ],
 ]
+```
+### Logging in
+
+To log in take the ip address from the output above and run the following ssh command:
+
+```
+ssh -i ./oci-is_rsa freebsd@155.248.228.151
+```
+
+You should be automatically logged in and see something similar to the following:
 
 ```
 
