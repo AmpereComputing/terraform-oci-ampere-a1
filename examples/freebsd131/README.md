@@ -1204,14 +1204,13 @@ parameter to execute the destroy operation.
 freebsd@ampere-a1-freebsd-01:~ %
 ```
 
-<script id="asciicast-432487" src="https://asciinema.org/a/432487.js" async data-autoplay="true" data-size="small" data-speed="2"></script>
+You now should have a fully running and configured FreeBSD instance.   When finished you will need to execute the 'destroy' command to remove all created objects in a 'leave no trace' manner.  Execute the following from a command to remove all created objects when finished:
 
+```
+terraform destroy -auto-approve
+```
 
-### Additional Terraform resources for OCI Ampere A1
-
-* Apache Tomcat on Ampere A1: [https://github.com/oracle-devrel/terraform-oci-arch-tomcat-autonomous](https://github.com/oracle-devrel/terraform-oci-arch-tomcat-autonomous)
-* WordPress on Ampere A1: [https://github.com/oracle-quickstart/oci-arch-wordpress-mds/tree/master/matomo](https://github.com/oracle-quickstart/oci-arch-wordpress-mds/tree/master/matomo)
-
+Modifing the cloud-init file and then performing the same workflow will allow you to get interating quickly. At this point you should definately know how to quickly get automating using FreeBSD with Ampere on the Cloud!  
 
 ## References
 
