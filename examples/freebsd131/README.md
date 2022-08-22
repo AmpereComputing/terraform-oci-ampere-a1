@@ -129,11 +129,13 @@ runcmd:
 
 ### Running Terraform
 
+Executing terraform is broken into three commands.   The first you must initialize the terraform project with the modules and necessary plugins to support proper execution.   The following command will do that:
+
 ```
-terraform init && terraform plan && terraform apply -auto-approve
+terraform init
 ```
 
-terraform init
+Below is output from a 'terraform init' execution within the project directory.
 
 ```
 Initializing modules...
@@ -179,7 +181,15 @@ rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
 ```
 
-Terraform Plan
+After 'terraform init' is executed it is necessary to run 'plan' to see the tasks, steps and objects. that will be created by interacting with the cloud APIs.
+Executing the following from a command line will do so:
+
+```
+terraform plan
+```
+
+The ouput from a 'terraform plan' execution in the project directy will look similar to the following:
+
 
 ```
 
@@ -629,7 +639,13 @@ Note: You didn't use the -out option to save this plan, so Terraform can't
 guarantee to take exactly these actions if you run "terraform apply" now.
 ```
 
-Terraform Apply
+Finally you will execute the 'apply' phase of the terraform exuction sequence.   This will create all the objects, execute all the tasks and display any output that is defined.   Executing the following command from the project directory will automatically execute without requiring any additional interaction:
+
+```
+terraform apply -auto-approve
+```
+
+The following is an example of output from a 'apply' run of terraform from within the project directory:
 
 ```
 
