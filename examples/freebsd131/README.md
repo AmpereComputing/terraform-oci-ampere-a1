@@ -191,8 +191,6 @@ The following is example output of the 'terraform destroy' when used on this pro
 
 <script id="asciicast-516714" src="https://asciinema.org/a/516714.js" async data-autoplay="true" data-size="small" data-speed="2"></script>
 
-https://asciinema.org/a/516714
-
 Modifing the cloud-init file and then performing the same workflow will allow you to get interating quickly. At this point you should definately know how to quickly get automating using FreeBSD with Ampere on the Cloud!  
 
 ## References
