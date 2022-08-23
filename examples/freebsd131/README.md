@@ -7,11 +7,13 @@
 * [Requirements](#requirements)
   * [Terraform](#terraform)
   * [Oracle OCI "Always Free" Account](#oracle-oci-always-free-account)
-* [What exactly is Terraform doing](#what-exactly-is-terraform-doing)
-* [Configuration with terraform.tfvars](#configuration-with-terraform-tfvars)
-* [Creating a cloud-init template](#creating-a-cloud-init-template)
-* [Using as a Module](#using-as-a-module)
+* [Using the oci-ampere-a1 terraform module](#using-the-oci-ampere-a1-terraform-module)
+  * [Configuration with terraform.tfvars](#configuration-with-terraform-tfvars)
+  * [Creating a maint.f](#creating-a-main-tf)
+  * [Creating a cloud-init template](#creating-a-cloud-init-template)
 * [Running Terraform](#running-terraform)
+* [Logging in](#logging-in)
+* [Destroying when done](#destroying-done)
 * [References](#references)
 
 ## Introduction
@@ -48,7 +50,7 @@ The [oci-ampere-a1](https://github.com/amperecomputing/terraform-oci-ampere-a1) 
 * Launch 1 to 4 Ampere A1 instances with metadata and ssh keys.
 * Output IP information to connect to the instance.
 
-## Configuration with terraform.tfvars
+### Configuration with terraform.tfvars
 
 For the purpose of this we will quickly configure Terraform using a terraform.tfvars in the project directory.  
 Please note that Compartment OCID are the same as Tenancy OCID for Root Compartment.
@@ -60,9 +62,9 @@ user_ocid = "ocid1.user.oc1..aaaaaaaabcdefghijklmnopqrstuvwxyz0987654321zyxwvust
 fingerprint = "a1:01:b2:02:c3:03:e4:04:10:11:12:13:14:15:16:17"
 private_key_path = "/home/bwayne/.oci/oracleidentitycloudservice_bwayne-08-09-14-59.pem"
 ```
-### Using as a Module
+### Creating the maint.tf
 
-This can also be used as a terraform module.   The following is example code for module usage supplying a custom cloud-init template:
+T0 use the terraform module you must open your favorite text editor and create a file called main.tf.  Copy the following is code to supply a custom cloud-init template:
 
 ```
 variable "tenancy_ocid" {}
@@ -185,6 +187,8 @@ You should be automatically logged in and see something similar to the following
 <script id="asciicast-516713" src="https://asciinema.org/a/516713.js" async data-autoplay="true" data-size="small" data-speed="2"></script>
 https://asciinema.org/a/516713
 
+
+### Destroying when done
 
 You now should have a fully running and configured FreeBSD instance.   When finished you will need to execute the 'destroy' command to remove all created objects in a 'leave no trace' manner.  Execute the following from a command to remove all created objects when finished:
 
