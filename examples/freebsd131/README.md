@@ -175,13 +175,10 @@ ssh -i ./oci-is_rsa freebsd@155.248.228.151
 You should be automatically logged in and see something similar to the following:
 
 <script id="asciicast-516713" src="https://asciinema.org/a/516713.js" async data-autoplay="true" data-size="small" data-speed="2"></script>
-https://asciinema.org/a/516713
-
 
 ### Destroying when done
 
 You now should have a fully running and configured FreeBSD instance.   When finished you will need to execute the 'destroy' command to remove all created objects in a 'leave no trace' manner.  Execute the following from a command to remove all created objects when finished:
-
 
 ```
 terraform destroy -auto-approve
