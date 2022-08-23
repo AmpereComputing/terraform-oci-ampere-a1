@@ -9,7 +9,7 @@
   * [Oracle OCI "Always Free" Account](#oracle-oci-always-free-account)
 * [Using the oci-ampere-a1 terraform module](#using-the-oci-ampere-a1-terraform-module)
   * [Configuration with terraform.tfvars](#configuration-with-terraformtfvars)
-  * [Creating a main.tf](#creating-a-maintf)
+  * [Creating the main.tf](#creating-the-maintf)
   * [Creating a cloud-init template](#creating-a-cloud-init-template)
 * [Running Terraform](#running-terraform)
 * [Logging in](#logging-in)
