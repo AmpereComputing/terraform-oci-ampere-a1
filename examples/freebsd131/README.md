@@ -31,7 +31,7 @@ In this post, we will build upon prevous work to quickly automate using [FreeBSD
 
 ## Requirements
 
-Obviously to begin you will need a couple things.  Personally I'm a big fan of the the DevOPs tools that support lots of api, and different use cases. [Terraform](https://www.terraform.io/downloads.html) is one of those types of tools.  If you have seen my prevous session with some members of the Oracle Cloud Infrastracture team, I build a terraform module to quickly get you started using Ampere plaforms on OCI.  Today we are going to use that module to launch a [FreeBSD](Instance) virtual machine while passing in some metadata to configure it.
+Obviously to begin you will need a couple things.  Personally I'm a big fan of the the DevOPs tools that support lots of api, and different use cases. [Terraform](https://www.terraform.io/downloads.html) is one of those types of tools.  If you have seen my [prevous session with some members of the Oracle Cloud Infrastracture team](https://youtu.be/3F5EnHRPCI4), I build a terraform module to quickly get you started using Ampere plaforms on OCI.  Today we are going to use that module to launch a [FreeBSD](Instance) virtual machine while passing in some metadata to configure it.
 
  * [Terraform](https://www.terraform.io/downloads.html) will need be installed on your system. 
  * [Oracle OCI "Always Free" Account](https://www.oracle.com/cloud/free/#always-free) and credentials for API use
