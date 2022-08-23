@@ -64,7 +64,7 @@ private_key_path = "/home/bwayne/.oci/oracleidentitycloudservice_bwayne-08-09-14
 ```
 ### Creating the maint.tf
 
-T0 use the terraform module you must open your favorite text editor and create a file called main.tf.  Copy the following is code to supply a custom cloud-init template:
+To use the terraform module you must open your favorite text editor and create a file called main.tf.  Copy the following is code to supply a custom cloud-init template:
 
 ```
 variable "tenancy_ocid" {}
