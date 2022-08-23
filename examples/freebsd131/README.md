@@ -5,15 +5,13 @@
 ## Table of Contents
 * [Introduction](#introduction)
 * [Requirements](#requirements)
-  * [Terraform](#terraform)
-  * [Oracle OCI "Always Free" Account](#oracle-oci-always-free-account)
 * [Using the oci-ampere-a1 terraform module](#using-the-oci-ampere-a1-terraform-module)
   * [Configuration with terraform.tfvars](#configuration-with-terraformtfvars)
   * [Creating the main.tf](#creating-the-maintf)
   * [Creating a cloud-init template](#creating-a-cloud-init-template)
-* [Running Terraform](#running-terraform)
-* [Logging in](#logging-in)
-* [Destroying when done](#destroying-done)
+  * [Running Terraform](#running-terraform)
+  * [Logging in](#logging-in)
+  * [Destroying when done](#destroying-done)
 * [References](#references)
 
 ## Introduction
@@ -143,8 +141,6 @@ Below is output from a 'terraform init' execution within the project directory.
 
 <script id="asciicast-516707" src="https://asciinema.org/a/516707.js" async data-autoplay="true" data-size="small" data-speed="2"></script>
 
-https://asciinema.org/a/516707
-
 After 'terraform init' is executed it is necessary to run 'plan' to see the tasks, steps and objects. that will be created by interacting with the cloud APIs.
 Executing the following from a command line will do so:
 
@@ -156,9 +152,6 @@ The ouput from a 'terraform plan' execution in the project directy will look sim
 
 <script id="asciicast-516709" src="https://asciinema.org/a/516709.js" async data-autoplay="true" data-size="small" data-speed="2"></script>
 
-https://asciinema.org/a/516709
-
-
 Finally you will execute the 'apply' phase of the terraform exuction sequence.   This will create all the objects, execute all the tasks and display any output that is defined.   Executing the following command from the project directory will automatically execute without requiring any additional interaction:
 
 ```
@@ -169,9 +162,6 @@ The following is an example of output from a 'apply' run of terraform from withi
 
 
 <script id="asciicast-516711" src="https://asciinema.org/a/516711.js" async data-autoplay="true" data-size="small" data-speed="2"></script>
-
-https://asciinema.org/a/516711
-
 
 ### Logging in
 
