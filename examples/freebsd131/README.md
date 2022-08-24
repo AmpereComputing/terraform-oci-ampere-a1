@@ -175,7 +175,7 @@ To log in take the ip address from the output above and run the following ssh co
 ssh -i ./oci-is_rsa freebsd@155.248.228.151
 ```
 
-You should be automatically logged in and see something similar to the following:
+You should be automatically logged in after running the the command.  The following is output from sshing into an instance and then running  'sudo cat /var/log/messages' to verify cloud-init execution and package installation:
 
 <script id="asciicast-516713" src="https://asciinema.org/a/516713.js" async data-autoplay="true" data-size="small" data-speed="2"></script>
 
