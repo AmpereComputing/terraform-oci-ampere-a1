@@ -12,7 +12,6 @@
   * [Running Terraform](#running-terraform)
   * [Logging in](#logging-in)
   * [Destroying when done](#destroying-done)
-* [References](#references)
 
 ## Introduction
 
@@ -63,6 +62,16 @@ user_ocid = "ocid1.user.oc1..aaaaaaaabcdefghijklmnopqrstuvwxyz0987654321zyxwvust
 fingerprint = "a1:01:b2:02:c3:03:e4:04:10:11:12:13:14:15:16:17"
 private_key_path = "/home/bwayne/.oci/oracleidentitycloudservice_bwayne-08-09-14-59.pem"
 ```
+
+For more information regarding how to get your OCI credentials please refer to the following reading material:
+
+* [https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformproviderconfiguration.htm](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformproviderconfiguration.htm)
+* [Where to Get the Tenancy's OCID and User's OCID](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#five)
+* [API Key Authentication](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformproviderconfiguration.htm#APIKeyAuth)
+* [Instance Principal Authorization](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformproviderconfiguration.htm#instancePrincipalAuth)
+* [Security Token Authentication](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformproviderconfiguration.htm#securityTokenAuth)
+* [How to Generate an API Signing Key](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#two)
+
 ### Creating the main.tf
 
 To use the terraform module you must open your favorite text editor and create a file called main.tf.  Copy the following is code to supply a custom cloud-init template:
@@ -192,23 +201,3 @@ The following is example output of the 'terraform destroy' when used on this pro
 <script id="asciicast-516714" src="https://asciinema.org/a/516714.js" async data-autoplay="true" data-size="small" data-speed="2"></script>
 
 Modifing the cloud-init file and then performing the same workflow will allow you to get interating quickly. At this point you should definately know how to quickly get automating using FreeBSD with Ampere on the Cloud!  
-
-## References
-
-* [https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformproviderconfiguration.htm](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformproviderconfiguration.htm)
-* [Where to Get the Tenancy's OCID and User's OCID](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#five)
-* [API Key Authentication](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformproviderconfiguration.htm#APIKeyAuth)
-* [Instance Principal Authorization](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformproviderconfiguration.htm#instancePrincipalAuth)
-* [Security Token Authentication](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformproviderconfiguration.htm#securityTokenAuth)
-* [How to Generate an API Signing Key](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#two)
-* [Bootstrapping a VM image in Oracle Cloud Infrastructure using Cloud-Init](https://martincarstenbach.wordpress.com/2018/11/30/bootstrapping-a-vm-image-in-oracle-cloud-infrastructure-using-cloud-init/)
-* [Oracle makes building applications on Ampere A1 Compute instances easy](https://blogs.oracle.com/cloud-infrastructure/post/oracle-makes-building-applications-on-ampere-a1-compute-instances-easy?source=:ow:o:p:nav:062520CloudComputeBC)
-* [scross01/oci-linux-instance-cloud-init.tf](https://gist.github.com/scross01/5a66207fdc731dd99869a91461e9e2b8)
-* [scross01/autonomous_linux_7.7.tf](https://gist.github.com/scross01/bcd21c12b15787f3ae9d51d0d9b2df06)
-* [Oracle Cloud Always Free](https://www.oracle.com/cloud/free/#always-free)
-* [OCI Terraform Level 200](https://www.oracle.com/a/ocom/docs/terraform-200.pdf)
-* [OCI Deploy Button](https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Tasks/deploybutton.htm)
-* [Working with OCI Marketplace Stacks](https://www.abhinavkotnala.com/?p=377)
-* [https://github.com/oracle-quickstart/oci-freebsd](https://github.com/oracle-quickstart/oci-freebsd)
-* [https://klarasystems.com/articles/the-next-level-freebsd-on-arm64-in-the-cloud/](https://klarasystems.com/articles/the-next-level-freebsd-on-arm64-in-the-cloud/)
-
