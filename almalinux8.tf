@@ -54,7 +54,7 @@ resource "oci_core_app_catalog_subscription" "almalinux_8_app_catalog_subscripti
   signature                = oci_core_app_catalog_listing_resource_version_agreement.almalinux_8_app_catalog_listing_resource_version_agreement.signature
   time_retrieved           = oci_core_app_catalog_listing_resource_version_agreement.almalinux_8_app_catalog_listing_resource_version_agreement.time_retrieved
 }
-output OCI_AlmaLinux_OS_Image_id {
+output OCI_AlmaLinux_8_OS_Image_id {
     sensitive = false
     value   = data.oci_core_app_catalog_listing_resource_version.almalinux_8_catalog_listing.listing_resource_id
 }
