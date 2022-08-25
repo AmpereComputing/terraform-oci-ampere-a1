@@ -1,4 +1,4 @@
-# "AlmaLinux OS"
+# "AlmaLinux 8 OS"
 resource "oci_marketplace_accepted_agreement" "almalinux_8_accepted_agreement" {
   agreement_id    = oci_marketplace_listing_package_agreement.almalinux_8_package_agreement.agreement_id
   compartment_id  = var.tenancy_ocid
