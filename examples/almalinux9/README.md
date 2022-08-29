@@ -105,7 +105,7 @@ output "oci_ampere_a1_public_ips" {
 
 ### Creating a cloud init template.
 
-Using your favorite text editor create a file named cloud-init.yaml.tpl in the same directory as the main.tf you previously created. To make things slightly more interesting, in this template we are going to update and install some base packages using standard package management, add a group, then install then necessary repositories to install the docker-engine, as well as some additional tools to utilize docker. Once everything is running we will start a container running a container repositoriy on the host.  To get started copy the following content into the text file and save it.
+Using your favorite text editor create a file named cloud-init.yaml.tpl in the same directory as the main.tf you previously created. To make things slightly more interesting, in this template we are going to update and install some base packages using standard package management, add a group, then install then necessary repositories to install the docker-engine, as well as some additional tools to utilize docker. Once everything is running we will start a container running a container registry on the host.  To get started copy the following content into the text file and save it.
 
 ```
 #cloud-config
