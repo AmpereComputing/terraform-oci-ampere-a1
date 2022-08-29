@@ -21,7 +21,7 @@
 
 Now personally speaking I have been working with the great team at the [AlmaLinux](https://almalinux.org) project for some time watching thier craftmanship, curating, iterating, and helping achive the "it just works" experience for Aarch64 and Ampere platforms and customers who choose to build and run solutions on [AlmaLinux](https://almalinux.org). Recently [AlmaLinux](https://almalinux.org) 9 became available for use on Ampere A1 shapes within the [Oracle OCI](https://www.oracle.com/cloud/free/#always-free) marketplace. 
 
-In this post, we will build upon prevous work to quickly automate using [AlmaLinux](https://almalinux.org) on Ampere(R) Altra(TM) Arm64 processors within Oracle Cloud Infrastructure using Ampere A1 shapes.
+In this post, we will build upon prevous work to quickly start automating using [AlmaLinux](https://almalinux.org) 9 on Ampere(R) Altra(TM) Arm64 processors within Oracle Cloud Infrastructure using Ampere A1 shapes.
 
 ## Requirements
 
