@@ -15,11 +15,11 @@
 
 ## Introduction
 
-Here at [Ampere Computing](https://amperecomputing.com) we are always interested in diverse workloads for our cloud-native Ampere(R) Altra(TM) Aarch64 processors, and that includes down to the the choose of your Operating System. [AlmaLinux](https://almalinux.org) is a newer and very active open source software project focusing on being a downstream rebuild of RedHat Enterprise Linux.. It's team derived from CloudLinux a whitelable downstream rebuild of RHEl used by some of the largest web hosting providers.  For those unfamiliar with [AlmaLinux](https://almalinux.org), it has similarities with RedHat Enterprise Linux, with identical package management tooling and methods, and open source software stacks available for installation easily.
+[AlmaLinux](https://almalinux.org) is a free open source Linux distribution, created by [CloudLinux](https://www.cloudlinux.com/) to provide a community-supported, production-grade enterprise operating system that is a binary-compatible downstream rebuild of RedHat Enterprise Linux. It's origin, [CloudLinux](https://www.cloudlinux.com/) is a whitelable downstream rebuild of RHEL used by some of the largest web hosting providers. [AlmaLinux](https://almalinux.org) has similarities to RedHat Enterprise Linux, with identical package management tooling and methods, and open source software stacks available for installation easily.
 
 [AlmaLinux](https://almalinux.org) supports the same industry standard metadata interfaces for instance configurations [Cloud-Init](https://cloud-init.io). This allows you to automate your [AlmaLinux](https://almalinux.org) workloads, in a simlar fashion to other operating system options.  This meams [AlmaLinux](https://almalinux.org) is perfectly suitable when using on a cloud platform.
 
-Now personally speaking I have been working with the great team at the [AlmaLinux](https://almalinux.org) project for some time watching thier craftmanship, curating, iterating, and helping achive the "it just works" experience for Aarch64 and Ampere platforms and customers who choose to build and run solutions on [AlmaLinux](https://almalinux.org). Recently [AlmaLinux](https://almalinux.org) 9 became available for use on Ampere A1 shapes within the [Oracle OCI](https://www.oracle.com/cloud/free/#always-free) marketplace.
+Now personally speaking I have been working with the great team at the [AlmaLinux](https://almalinux.org) project for some time watching thier craftmanship, curating, iterating, and helping achive the "it just works" experience for Aarch64 and Ampere platforms and customers who choose to build and run solutions on [AlmaLinux](https://almalinux.org). Recently [AlmaLinux](https://almalinux.org) 9 became available for use on Ampere A1 shapes within the [Oracle OCI](https://www.oracle.com/cloud/free/#always-free) marketplace. 
 
 In this post, we will build upon prevous work to quickly automate using [AlmaLinux](https://almalinux.org) on Ampere(R) Altra(TM) Arm64 processors within Oracle Cloud Infrastructure using Ampere A1 shapes.
 
@@ -105,7 +105,7 @@ output "oci_ampere_a1_public_ips" {
 
 ### Creating a cloud init template.
 
-Using your favorite text editor create a file named cloud-init.yaml.tpl in the same directory as the main.tf you previously created. Copy the following content into the text file and save it.
+Using your favorite text editor create a file named cloud-init.yaml.tpl in the same directory as the main.tf you previously created. To make things slightly more interesting, in this template we are going to update and install some base packages using standard package management, add a group, then install then necessary repositories to install the docker-engine, as well as some additional tools to utilize docker. Once everything is running we will start a container running a container repositoriy on the host.  To get started copy the following content into the text file and save it.
 
 ```
 #cloud-config
