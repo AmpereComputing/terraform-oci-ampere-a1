@@ -6,6 +6,7 @@ output "oci_aarch64_images_map" {
       "${data.oci_marketplace_listing.almalinux_8.name}${data.oci_core_app_catalog_listing_resource_version.almalinux_8_catalog_listing.listing_resource_version}",
       "${data.oci_marketplace_listing.almalinux_9.name}${data.oci_core_app_catalog_listing_resource_version.almalinux_9_catalog_listing.listing_resource_version}",
       "${data.oci_marketplace_listing.freebsd.name}${data.oci_core_app_catalog_listing_resource_version.freebsd_catalog_listing.listing_resource_version}",
+      "${data.oci_marketplace_listing.openmandriva.name}${data.oci_core_app_catalog_listing_resource_version.openmandriva_catalog_listing.listing_resource_version}",
       data.oci_core_images.oraclelinux-8_4-aarch64.images.0.display_name,
       data.oci_core_images.oraclelinux-7_9-aarch64.images.0.display_name,
       data.oci_core_images.ubuntu-20_04-aarch64.images.0.display_name,
@@ -15,6 +16,7 @@ output "oci_aarch64_images_map" {
       data.oci_core_app_catalog_listing_resource_version.almalinux_8_catalog_listing.listing_resource_id,
       data.oci_core_app_catalog_listing_resource_version.almalinux_9_catalog_listing.listing_resource_id,
       data.oci_core_app_catalog_listing_resource_version.freebsd_catalog_listing.listing_resource_id,
+      data.oci_core_app_catalog_listing_resource_version.openmandriva_catalog_listing.listing_resource_id,
       data.oci_core_images.oraclelinux-8_4-aarch64.images.0.id,
       data.oci_core_images.oraclelinux-7_9-aarch64.images.0.id,
       data.oci_core_images.ubuntu-20_04-aarch64.images.0.id,
@@ -29,6 +31,7 @@ locals {
       "${data.oci_marketplace_listing.almalinux_8.name}${data.oci_core_app_catalog_listing_resource_version.almalinux_8_catalog_listing.listing_resource_version}",
       "${data.oci_marketplace_listing.almalinux_9.name}${data.oci_core_app_catalog_listing_resource_version.almalinux_9_catalog_listing.listing_resource_version}",
       "${data.oci_marketplace_listing.freebsd.name}${data.oci_core_app_catalog_listing_resource_version.freebsd_catalog_listing.listing_resource_version}",
+      "${data.oci_marketplace_listing.openmandriva.name}${data.oci_core_app_catalog_listing_resource_version.openmandriva_catalog_listing.listing_resource_version}",
       data.oci_core_images.oraclelinux-8_4-aarch64.images.0.display_name,
       data.oci_core_images.oraclelinux-7_9-aarch64.images.0.display_name,
       data.oci_core_images.ubuntu-20_04-aarch64.images.0.display_name,
@@ -38,6 +41,7 @@ locals {
       data.oci_core_app_catalog_listing_resource_version.almalinux_8_catalog_listing.listing_resource_id,
       data.oci_core_app_catalog_listing_resource_version.almalinux_9_catalog_listing.listing_resource_id,
       data.oci_core_app_catalog_listing_resource_version.freebsd_catalog_listing.listing_resource_id,
+      data.oci_core_app_catalog_listing_resource_version.openmandriva_catalog_listing.listing_resource_id,
       data.oci_core_images.oraclelinux-8_4-aarch64.images.0.id,
       data.oci_core_images.oraclelinux-7_9-aarch64.images.0.id,
       data.oci_core_images.ubuntu-20_04-aarch64.images.0.id,
@@ -56,6 +60,9 @@ locals {
       }
       freebsd        = {
         os_image_id = data.oci_core_app_catalog_listing_resource_version.freebsd_catalog_listing.listing_resource_id
+      }
+      openmandriva        = {
+        os_image_id = data.oci_core_app_catalog_listing_resource_version.openmandriva_catalog_listing.listing_resource_id
       }
       oraclelinux84  = {
         os_image_id  = data.oci_core_images.oraclelinux-8_4-aarch64.images.0.id
