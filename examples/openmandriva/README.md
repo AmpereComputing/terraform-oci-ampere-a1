@@ -1,6 +1,6 @@
 ![Ampere Computing](https://avatars2.githubusercontent.com/u/34519842?s=400&u=1d29afaac44f477cbb0226139ec83f73faefe154&v=4)
 
-# Getting Cloud-Native with OpenMandriva in OCI using Ampere A1 and Terraform
+# Introducing OpenMandriva in OCI using Ampere A1 and Terraform
 
 ## Table of Contents
 * [Introduction](#introduction)
