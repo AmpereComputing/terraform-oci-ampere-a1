@@ -15,12 +15,13 @@
 
 ## Introduction
 
-Here at [Ampere Computing](https://amperecomputing.com) we are always interested in diverse workloads for our cloud-native Ampere(R) Altra(TM) Aarch64 processors, and that includes down to the the choose of your Operating System. [OpenMandriva](https://openmandriva.org) is an active open source software project.
+[OpenMandriva](https://openmandriva.org) is now available for use on Ampere A1 instances within Oracles Cloud Infrastructure. The roots of the OpenMandriva project  are in Mandrake and its traditions. They are a worldwide community of people who are passionate about free software working together and take thier technical and strategic decisions in a collaborative manner. They do not just build a Linux distro, they exchange knowledge and make new friends. I have been fortunate to have the pleasure of both working with and then meeting in person members of the team at a [recent event Ampere attended in Europe this Spring](https://amperecomputing.com/blogs/2022-04-15/cloudfest-2022-highlights-the-importance-of-a-sustainable-cloud.html).
 
-For those unfamiliar with [OpenMandriva](https://openmandriva.org) Linux, it uses similar package management tooling and methods, packages, and open source software stacks available for installation easily.
+Technically speaking [OpenMandriva](https://openmandriva.org) tends to pull changes in quickly from upstream, so you'll have all the latest and greatest packages avaiable.  This also includes the kernel. !!!Spoiler alert!!! They're already testing with Linux kernel 6.0 on Ampere platforms.
 
+For those unfamiliar with [OpenMandriva](https://openmandriva.org) Linux, it uses 'dnf', similar package management tooling to Fedora or Redhat based distributions and includes and open source software stacks available for installation easily.
 
-When choosing a cloud-native OS you might not think of [OpenMandriva](https://openmandriva.org), however it supports the same industry standard metadata interfaces for instance configurations as Linux, [Cloud-Init](https://cloud-init.io). This allows you to automate your [OpenMandriva](https://openmandriva.org) workloads, in a simlar fashion to other operating system options.  This meams [OpenMandriva](https://openmandriva.org) is perfectly suitable when using on a cloud platform.
+[OpenMandriva](https://openmandriva.org) supports the same industry standard metadata interfaces for instance configurations as Linux, [Cloud-Init](https://cloud-init.io). This allows you to automate your [OpenMandriva](https://openmandriva.org) workloads, in a simlar fashion to other operating system options.  This also meams [OpenMandriva](https://openmandriva.org) is perfectly suitable when using on a cloud platform.
 
 Now personally speaking I have been working with the great team at the [OpenMandriva](https://openmandriva.org) project for some time watching thier craftmanship, curating, iterating, and helping achive the "it just works" experience for Aarch64 and Ampere platforms and customers who choose to build and run solutions on [OpenMandriva](https://openmandriva.org). Recently [OpenMandriva](https://openmandriva.org) became available for use on Ampere A1 shapes within the [Oracle OCI](https://www.oracle.com/cloud/free/#always-free) marketplace.
 
@@ -176,11 +177,10 @@ The following is an example of output from a 'apply' run of terraform from withi
 
 ### Logging in
 
-Next you'll need to login with the dynamically generated sshkey that will be sitting in your project directory.
-To log in take the ip address from the output above and run the following ssh command:
+Next you'll need to login with the dynamically generated sshkey that will be sitting in your project directory.  The default user for OpenMandriva instances is 'omv'.  To log in take the ip address from the output above and run the following ssh command:
 
 ```
-ssh -i ./oci-is_rsa omv@155.248.228.151
+ssh -i ./oci-is_rsa omv@168.138.90.233
 ```
 
 You should be automatically logged in after running the the command.  The following is output from sshing into an instance and then running  'sudo cat /var/log/messages' to verify cloud-init execution and package installation:
