@@ -9,9 +9,9 @@ packages:
   - git
   - curl
   - bzip2
-  - python3
-  - python3-devel
-  - python3-pip-wheel
+  - python39
+  - lib64python39-devel
+  - python-pip
   - gcc
   - gcc-c++
   - bzip2
