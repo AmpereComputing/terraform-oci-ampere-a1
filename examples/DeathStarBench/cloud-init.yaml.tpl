@@ -32,13 +32,17 @@ system_info:
     groups: [docker]
 
 runcmd:
-  - docker run -d --name registry --restart=always -p 4000:5000  -v registry:/var/lib/registry registry:2
   - pip3 install -U pip
   - pip3 install -U wheel
-  - curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-linux-aarch64 -o /usr/local/bin/docker-compose-linux-aarch64
-  - chmod -x /usr/local/bin/docker-compose-linux-aarch64
-  - ln -s /usr/local/bin/docker-compose-linux-aarch64 /usr/bin/docker-compose
-  - docker-compose --version
-  - pip3 install -U docker-compose
   - cd /opt && git clone https://github.com/delimitrou/DeathStarBench
-  - cd /opt/DeathStarBench/socialNetwork/ && docker-compose up -d -f ./docker-compose.yml
+  - mkdir /etc/apt/keyrings
+  - sudo curl -fsSLo /etc/apt/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+  - echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+  - sudo apt-get update && sudo apt-get install -y kubelet kubeadm kubectl
+  - kubeadm init --control-plane-endpoint "ip address of nw i/f “
+  - mkdir -p /home/ubuntu/.kube
+  - cp -i /etc/kubernetes/admin.conf /home/ubuntu/.kube/config
+  - sudo chown ubuntu:ubuntu /home/ubuntu/.kube/config
+  - cd /opt && curl https://docs.projectcalico.org/manifests/calico.yaml -O
+  - kubectl apply -f /opt/calico.yaml
+  - kubectl taint nodes --all node-role.kubernetes.io/master-
