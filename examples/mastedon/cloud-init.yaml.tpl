@@ -31,13 +31,6 @@ system_info:
   default_user:
     groups: [docker]
 
-runcmd:
-# - docker run -d --name registry --restart=always -p 4000:5000  -v registry:/var/lib/registry registry:2
-  - pip3 install -U pip
-  - pip3 install -U wheel
-  - echo 'OCI Ampere A1 Ubuntu 20.04 Example' >> /etc/motd
-  - docker-compose -f /opt/mastodon/docker-compose.yml up -d
-
 write_files:
   - path: /opt/mastodon/docker-compose.yml
     permissions: "0644"
@@ -176,3 +169,14 @@ write_files:
         external_network:
         internal_network:
           internal: true
+
+runcmd:
+  - pip3 install -U pip
+  - pip3 install -U wheel
+  - sudo -u ubuntu git clone https://github.com/mastodon/mastodon /home/ubuntu/mastodon
+# Uncomment to launch the file we write to /opt/mastedon/docker-compose.yml
+# - sudo -u ubuntu docker-compose -f /opt/mastodon/docker-compose.yml up -d
+# Launch upstream that we clone from repo
+  - sudo -u ubuntu docker-compose -f /home/ubuntu/mastodon/docker-compose.yml up -d
+  - echo 'OCI Ampere A1 Mastodon Example' >> /etc/motd
+
