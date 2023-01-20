@@ -16,6 +16,7 @@ packages:
   - curl
   - docker-ce
   - docker-ce-cli
+  - docker-compose
   - python3-pip
   - python3-dev
   - python3-selinux
