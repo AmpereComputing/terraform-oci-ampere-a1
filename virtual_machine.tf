@@ -25,7 +25,8 @@ resource "oci_core_instance" "ampere_a1" {
 
   metadata = {
     ssh_authorized_keys = tls_private_key.oci.public_key_openssh
-    user_data = "${base64encode(data.template_file.cloud_config.rendered)}"
+#   user_data = "${base64encode(data.template_file.cloud_config.rendered)}"
+    user_data = "${base64encode(file("${local.cloud_init_template_file}"))}"
     
   }
 }

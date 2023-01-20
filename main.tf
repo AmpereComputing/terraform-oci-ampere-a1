@@ -1,3 +1,10 @@
+# Cloud-Init file
+locals {
+  # return var.cloud_init_template_path if it's not null
+  # otherwise return "${path.module}/templates/cloud-init.yaml.tpl"
+  cloud_init_template_file = coalesce(var.cloud_init_template_file, "${path.module}/templates/cloud-init.yaml.tpl")
+}
+
 # ssh keys
 resource "tls_private_key" "oci" {
   algorithm = "RSA"
