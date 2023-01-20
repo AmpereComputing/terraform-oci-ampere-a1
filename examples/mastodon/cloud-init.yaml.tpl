@@ -94,7 +94,7 @@ write_files:
         #     - '127.0.0.1:9200:9200'
       
         web:
-          build: .
+        # build: .
           image: tootsuite/mastodon
           restart: always
           env_file: .env.production
@@ -115,7 +115,7 @@ write_files:
             - ./public/system:/mastodon/public/system
       
         streaming:
-          build: .
+        # build: .
           image: tootsuite/mastodon
           restart: always
           env_file: .env.production
@@ -133,7 +133,7 @@ write_files:
             - redis
       
         sidekiq:
-          build: .
+        # build: .
           image: tootsuite/mastodon
           restart: always
           env_file: .env.production
@@ -172,12 +172,10 @@ write_files:
           internal: true
 
 runcmd:
-  - pip3 install -U pip
-  - pip3 install -U wheel
   - sudo -u ubuntu git clone https://github.com/mastodon/mastodon /home/ubuntu/mastodon
   - sudo -u ubuntu mv /home/ubuntu/mastodon/.env.production.sample /home/ubuntu/mastodon/.env.production
 # Uncomment to launch the file we write to /opt/mastedon/docker-compose.yml
-# - sudo -u ubuntu docker-compose -f /opt/mastodon/docker-compose.yml up -d
+  - sudo -u ubuntu cp /opt/mastodon/docker-compose.yml /home/ubuntu/mastodon/docker-compose.yml
 # Launch upstream that we clone from repo
   - sudo -u ubuntu docker-compose -f /home/ubuntu/mastodon/docker-compose.yml up -d
   - echo 'OCI Ampere A1 Mastodon Example' >> /etc/motd
