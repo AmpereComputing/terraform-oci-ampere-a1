@@ -106,7 +106,8 @@ write_files:
             # prettier-ignore
             test: ['CMD-SHELL', 'wget -q --spider --proxy=off localhost:3000/health || exit 1']
           ports:
-            - '127.0.0.1:3000:3000'
+          # - '127.0.0.1:3000:3000'
+            - 3000:3000
           depends_on:
             - db
             - redis
@@ -127,7 +128,8 @@ write_files:
             # prettier-ignore
             test: ['CMD-SHELL', 'wget -q --spider --proxy=off localhost:4000/api/v1/streaming/health || exit 1']
           ports:
-            - '127.0.0.1:4000:4000'
+          # - '127.0.0.1:4000:4000'
+            - 4000:4000
           depends_on:
             - db
             - redis
