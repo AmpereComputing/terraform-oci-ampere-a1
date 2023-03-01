@@ -1,0 +1,39 @@
+[
+  {
+    "action": "create_zip",
+    "file_name": "oci-ampere-a1-latest.zip",
+    "files": [
+      {
+        "src_pattern": "*.tf",
+        "dst_path": ".",
+        "exclude": [
+          "provider.tf",
+          "variables.tf"
+        ]
+      },
+      {
+        "src": "LICENSE"
+      },
+      {
+        "src": "templates",
+        "recursive": true
+      },
+      {
+        "src": "schema.yaml",
+        "dst": "schema.yaml"
+      },
+      {
+        "src": "orm/variables.tf",
+        "dst": "variables.tf"
+      },
+      {
+        "src": "orm/provider.tf",
+        "dst": "provider.tf"
+      },
+      {
+        "src": "orm",
+        "recursive": true
+      }        
+    ]
+  }
+]

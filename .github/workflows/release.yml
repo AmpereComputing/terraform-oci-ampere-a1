@@ -1,0 +1,38 @@
+---
+name: "latest-release"
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+
+  tagged-release:
+    name: "Latest Release"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      # ...
+      - name: "Build & test"
+        run: |
+          echo "done!"
+
+      - name: 'Checkout repo'
+        uses: actions/checkout@v2
+      - name: 'Make (and upload) ZIP file(s)'
+        uses: oracle-devrel/action-release-zip-maker@v0.5
+        id: zip_maker
+        with:
+          fail_on_missing_file: true
+          overwrite_dst: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: false
+          title: "ORM Latest Development Build"
+          files: |
+            oci-ampere-a1-latest.zip

@@ -1,7 +1,7 @@
-title: "Deploy Ampere A1 VM Instances on OCI"
-stackDescription: "Deploy Ampere A1 VM Instances on OCI"
+title: "DeathStarBench on Ampere A1 VM Instances on OCI"
+stackDescription: "DeathStarBench Ampere A1 VM Instances on OCI"
 schemaVersion: 0.0.1
-version: "20220104"
+version: "20230216"
 locale: "en"
 
 variableGroups:
@@ -75,7 +75,6 @@ variables:
     required: true
     title: "Private SSH Key path"
     description: "Path where your private  SSH Key is stored."
-    required: false
 
   oci_vcn_cidr_block:
     type: string
@@ -100,14 +99,13 @@ variables:
     title: "Instance Hostname Prefix"
     description: "Type Instance Hostname Prefix."
 
-
   oci_vm_count:
     type: number
     required: false
     minimum: 1
     maximum: 4
     multipleOf: 1
-    default: 1
+    default: 2
     title: "OCI Free Tier Ampere A1 Instance Count"
     description: "Choose number of OCPUs for Flex Shape."
     visible: true
@@ -132,6 +130,53 @@ variables:
     default: 4
     title: "Ampere A1 VM CPU Core Count"
     description: "Choose number of Ampere A1 cores."
+    visible: true
+
+  deathstarbench_repository_url:
+    type: string
+    required: false
+    title: "DeathStarBench Repository URL"
+    description: "DeathStarBench repository url"
+    visible: true
+
+  wrk_number_of_threads:
+    type: number
+    required: false
+    minimum: 2
+    maximum: 10
+    multipleOf: 1
+    default: 2
+    title: "Number of Threads to use when running wrk"
+    description: "Choose number of Threads to use when running wrk"
+    visible: true
+
+  wrk_number_of_conns:
+    type: number
+    required: false
+    minimum: 100
+    maximum: 1000
+    multipleOf: 1
+    default: 100
+    title: "Number of connections to use when running wrk"
+    description: "Choose number of connections to use when running wrk"
+    visible: true
+
+  wrk_duration:
+    type: string
+    required: false
+    title: "Wrk2 Duration"
+    description: "Duration in seconds to use when running wrk"
+    visible: true
+
+  wrk_requests_per_second:
+    type: number
+    required: false
+    minimum: 10
+    maximum: 5000
+    multipleOf: 1
+    default: 50
+    title: "Number of requests per second to use when running wrk"
+    description: "Choose number of requests per second to use when running wrk"
     visible: true
 
 outputs:
