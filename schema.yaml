@@ -132,52 +132,12 @@ variables:
     description: "Choose number of Ampere A1 cores."
     visible: true
 
-  deathstarbench_repository_url:
+  cloud_init_template_file:
     type: string
     required: false
-    title: "DeathStarBench Repository URL"
-    description: "DeathStarBench repository url"
     visible: true
-
-  wrk_number_of_threads:
-    type: number
-    required: false
-    minimum: 2
-    maximum: 10
-    multipleOf: 1
-    default: 2
-    title: "Number of Threads to use when running wrk"
-    description: "Choose number of Threads to use when running wrk"
-    visible: true
-
-  wrk_number_of_conns:
-    type: number
-    required: false
-    minimum: 100
-    maximum: 1000
-    multipleOf: 1
-    default: 100
-    title: "Number of connections to use when running wrk"
-    description: "Choose number of connections to use when running wrk"
-    visible: true
-
-  wrk_duration:
-    type: string
-    required: false
-    title: "Wrk2 Duration"
-    description: "Duration in seconds to use when running wrk"
-    visible: true
-
-  wrk_requests_per_second:
-    type: number
-    required: false
-    minimum: 10
-    maximum: 5000
-    multipleOf: 1
-    default: 50
-    title: "Number of requests per second to use when running wrk"
-    description: "Choose number of requests per second to use when running wrk"
-    visible: true
+    title: "Cloud-init template file"
+    description: "Cloud-init metadata template for instance initialization"
 
 outputs:
 
