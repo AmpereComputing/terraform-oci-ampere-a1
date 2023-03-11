@@ -19,7 +19,6 @@ resource "oci_core_instance" "ampere_a1" {
   }
   source_details {
     source_type = "image"
-#   source_id   = data.oci_core_images.oraclelinux-8_4-aarch64.images.0.id
     source_id   = local.os_images[var.oci_os_image].os_image_id
   }
 
