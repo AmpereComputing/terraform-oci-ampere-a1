@@ -19,6 +19,7 @@ output "oci_aarch64_images_map" {
       data.oci_core_app_catalog_listing_resource_version.almalinux_9_catalog_listing.listing_resource_id,
       data.oci_core_app_catalog_listing_resource_version.freebsd_catalog_listing.listing_resource_id,
       data.oci_core_app_catalog_listing_resource_version.openmandriva_catalog_listing.listing_resource_id,
+      data.oci_core_images.oraclelinux-9-aarch64.images.0.id,
       data.oci_core_images.oraclelinux-8-aarch64.images.0.id,
       data.oci_core_images.oraclelinux-7_9-aarch64.images.0.id,
       data.oci_core_images.ubuntu-22_04-aarch64.images.0.id,

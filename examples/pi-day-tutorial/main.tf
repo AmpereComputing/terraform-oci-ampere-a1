@@ -15,7 +15,7 @@ module "oci-ampere-a1" {
 # Optional
 # oci_vcn_cidr_block       = "10.2.0.0/16"
 # oci_vcn_cidr_subnet      = "10.2.1.0/24"
-  oci_os_image             = "oraclelinux84"
+  oci_os_image             = "oraclelinux8"
   instance_prefix          = "ampere-a1-oraclelinux-8"
   oci_vm_count             = "1"
   ampere_a1_vm_memory      = "24"

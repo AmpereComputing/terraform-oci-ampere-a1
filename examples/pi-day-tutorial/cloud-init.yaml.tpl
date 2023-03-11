@@ -41,5 +41,5 @@ runcmd:
   - systemctl enable docker
   - systemctl start docker
   - docker info
-  - git clone https://github.com/amperecomputing/pi-day-tutorial
+  - sudo -u opc git clone https://github.com/amperecomputing/pi-day-tutorial /home/opc/pi-day-tutorial
   - echo 'OCI Ampere A1 Oracle Pi Day Tutorial' >> /etc/motd
