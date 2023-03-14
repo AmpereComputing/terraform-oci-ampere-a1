@@ -33,7 +33,7 @@ runcmd:
   - dnf update -y
   - dnf install docker-ce docker-ce-cli containerd.io -y
   - curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-linux-aarch64 -o /usr/local/bin/docker-compose-linux-aarch64
-  - chmod -x /usr/local/bin/docker-compose-linux-aarch64
+  - chmod +x /usr/local/bin/docker-compose-linux-aarch64
   - ln -s /usr/local/bin/docker-compose-linux-aarch64 /usr/bin/docker-compose
   - docker-compose --version
   - pip3 install -U docker-compose
@@ -42,4 +42,4 @@ runcmd:
   - systemctl start docker
   - docker info
   - sudo -u opc git clone https://github.com/amperecomputing/pi-day-tutorial /home/opc/pi-day-tutorial
-  - echo 'OCI Ampere A1 Oracle Pi Day Tutorial' >> /etc/motd
+  - echo 'OCI Ampere A1 Oracle Pi Day Tutorial - piday:3.141592' >> /etc/motd
