@@ -16,11 +16,13 @@ data "oci_core_images" "oraclelinux-9-aarch64" {
   }
 }
 
+# Output OCI AlmaLinux 9 Image ID
 output "OracleLinux-9-aarch64-latest-name" {
   value = data.oci_core_images.oraclelinux-9-aarch64.images.0.display_name
   sensitive = false
 }
 
+# Output OCI AlmaLinux 9 Image ID
 output "OracleLinux-9-aarch64-latest_ocid" {
   value = data.oci_core_images.oraclelinux-9-aarch64.images.0.id
   sensitive = false

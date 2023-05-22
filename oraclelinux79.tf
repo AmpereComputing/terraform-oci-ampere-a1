@@ -16,11 +16,13 @@ data "oci_core_images" "oraclelinux-7_9-aarch64" {
   }
 }
 
+# Output OCI OracleLinux 7.9 Image Name
 output "OracleLinux-7_9-aarch64-latest-name" {
   value = data.oci_core_images.oraclelinux-7_9-aarch64.images.0.display_name
   sensitive = false
 }
 
+# Output OCI OracleLinux 7.9 Image ID
 output "OracleLinux-7_9-aarch64-latest_ocid" {
   value = data.oci_core_images.oraclelinux-7_9-aarch64.images.0.id
   sensitive = false

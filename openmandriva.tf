@@ -54,6 +54,9 @@ resource "oci_core_app_catalog_subscription" "openmandriva_app_catalog_subscript
   signature                = oci_core_app_catalog_listing_resource_version_agreement.openmandriva_app_catalog_listing_resource_version_agreement.signature
   time_retrieved           = oci_core_app_catalog_listing_resource_version_agreement.openmandriva_app_catalog_listing_resource_version_agreement.time_retrieved
 }
+
+# Output OCI OpenMandriva Image ID
+
 output OCI_OpenMandriva_Linux_Image_id {
     value   = data.oci_core_app_catalog_listing_resource_version.openmandriva_catalog_listing.listing_resource_id
 }

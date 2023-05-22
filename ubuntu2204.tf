@@ -15,11 +15,13 @@ data "oci_core_images" "ubuntu-22_04-aarch64" {
   }
 }
 
+# Output OCI Ubuntu 22.04 Image Name
 output "Ubuntu-22_04-aarch64-latest_name" {
   value     = data.oci_core_images.ubuntu-22_04-aarch64.images.0.display_name
   sensitive = false
 }
 
+# Output OCI Ubuntu 22.04 Image ID
 output "Ubuntu-22_04-aarch64-latest_ocid" {
   value     = data.oci_core_images.ubuntu-22_04-aarch64.images.0.id
   sensitive = false
