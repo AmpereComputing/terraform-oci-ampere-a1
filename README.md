@@ -203,26 +203,26 @@ terraform init && terraform plan && terraform apply -auto-approve
 
 | Name | Description |
 |------|-------------|
-| <a name="output_OCI_AlmaLinux_8_OS_Image_id"></a> [OCI\_AlmaLinux\_8\_OS\_Image\_id](#output\_OCI\_AlmaLinux\_8\_OS\_Image\_id) | n/a |
-| <a name="output_OCI_AlmaLinux_9_OS_Image_id"></a> [OCI\_AlmaLinux\_9\_OS\_Image\_id](#output\_OCI\_AlmaLinux\_9\_OS\_Image\_id) | n/a |
+| <a name="output_OCI_AlmaLinux_8_OS_Image_id"></a> [OCI\_AlmaLinux\_8\_OS\_Image\_id](#output\_OCI\_AlmaLinux\_8\_OS\_Image\_id) | Output OCI AlmaLinux 8 Image ID |
+| <a name="output_OCI_AlmaLinux_9_OS_Image_id"></a> [OCI\_AlmaLinux\_9\_OS\_Image\_id](#output\_OCI\_AlmaLinux\_9\_OS\_Image\_id) | Output OCI AlmaLinux 9 Image ID |
 | <a name="output_OCI_Availability_Domains"></a> [OCI\_Availability\_Domains](#output\_OCI\_Availability\_Domains) | Output Availability Domain Results |
-| <a name="output_OCI_FreeBSD_OS_Image_id"></a> [OCI\_FreeBSD\_OS\_Image\_id](#output\_OCI\_FreeBSD\_OS\_Image\_id) | n/a |
+| <a name="output_OCI_FreeBSD_OS_Image_id"></a> [OCI\_FreeBSD\_OS\_Image\_id](#output\_OCI\_FreeBSD\_OS\_Image\_id) | Output OCI FreeBSD Image ID |
 | <a name="output_OCI_OpenMandriva_Linux_Image_id"></a> [OCI\_OpenMandriva\_Linux\_Image\_id](#output\_OCI\_OpenMandriva\_Linux\_Image\_id) | n/a |
-| <a name="output_OracleLinux-7_9-aarch64-latest-name"></a> [OracleLinux-7\_9-aarch64-latest-name](#output\_OracleLinux-7\_9-aarch64-latest-name) | n/a |
-| <a name="output_OracleLinux-7_9-aarch64-latest_ocid"></a> [OracleLinux-7\_9-aarch64-latest\_ocid](#output\_OracleLinux-7\_9-aarch64-latest\_ocid) | n/a |
-| <a name="output_OracleLinux-8-aarch64-latest-name"></a> [OracleLinux-8-aarch64-latest-name](#output\_OracleLinux-8-aarch64-latest-name) | n/a |
-| <a name="output_OracleLinux-8-aarch64-latest_ocid"></a> [OracleLinux-8-aarch64-latest\_ocid](#output\_OracleLinux-8-aarch64-latest\_ocid) | n/a |
-| <a name="output_OracleLinux-9-aarch64-latest-name"></a> [OracleLinux-9-aarch64-latest-name](#output\_OracleLinux-9-aarch64-latest-name) | n/a |
-| <a name="output_OracleLinux-9-aarch64-latest_ocid"></a> [OracleLinux-9-aarch64-latest\_ocid](#output\_OracleLinux-9-aarch64-latest\_ocid) | n/a |
-| <a name="output_Ubuntu-18_04-aarch64-latest_name"></a> [Ubuntu-18\_04-aarch64-latest\_name](#output\_Ubuntu-18\_04-aarch64-latest\_name) | n/a |
-| <a name="output_Ubuntu-18_04-aarch64-latest_ocid"></a> [Ubuntu-18\_04-aarch64-latest\_ocid](#output\_Ubuntu-18\_04-aarch64-latest\_ocid) | n/a |
-| <a name="output_Ubuntu-20_04-aarch64-latest_name"></a> [Ubuntu-20\_04-aarch64-latest\_name](#output\_Ubuntu-20\_04-aarch64-latest\_name) | n/a |
-| <a name="output_Ubuntu-20_04-aarch64-latest_ocid"></a> [Ubuntu-20\_04-aarch64-latest\_ocid](#output\_Ubuntu-20\_04-aarch64-latest\_ocid) | n/a |
-| <a name="output_Ubuntu-22_04-aarch64-latest_name"></a> [Ubuntu-22\_04-aarch64-latest\_name](#output\_Ubuntu-22\_04-aarch64-latest\_name) | n/a |
-| <a name="output_Ubuntu-22_04-aarch64-latest_ocid"></a> [Ubuntu-22\_04-aarch64-latest\_ocid](#output\_Ubuntu-22\_04-aarch64-latest\_ocid) | n/a |
-| <a name="output_ampere_a1_boot_volume_ids"></a> [ampere\_a1\_boot\_volume\_ids](#output\_ampere\_a1\_boot\_volume\_ids) | Output the boot volume IDs of the instance |
-| <a name="output_ampere_a1_private_ips"></a> [ampere\_a1\_private\_ips](#output\_ampere\_a1\_private\_ips) | n/a |
-| <a name="output_ampere_a1_public_ips"></a> [ampere\_a1\_public\_ips](#output\_ampere\_a1\_public\_ips) | n/a |
+| <a name="output_OracleLinux-7_9-aarch64-latest-name"></a> [OracleLinux-7\_9-aarch64-latest-name](#output\_OracleLinux-7\_9-aarch64-latest-name) | Output OCI OracleLinux 7.9 Image Name |
+| <a name="output_OracleLinux-7_9-aarch64-latest_ocid"></a> [OracleLinux-7\_9-aarch64-latest\_ocid](#output\_OracleLinux-7\_9-aarch64-latest\_ocid) | Output OCI OracleLinux 7.9 Image ID |
+| <a name="output_OracleLinux-8-aarch64-latest-name"></a> [OracleLinux-8-aarch64-latest-name](#output\_OracleLinux-8-aarch64-latest-name) | Output OCI AlmaLinux 8 Image Name |
+| <a name="output_OracleLinux-8-aarch64-latest_ocid"></a> [OracleLinux-8-aarch64-latest\_ocid](#output\_OracleLinux-8-aarch64-latest\_ocid) | Output OCI AlmaLinux 8 Image ID |
+| <a name="output_OracleLinux-9-aarch64-latest-name"></a> [OracleLinux-9-aarch64-latest-name](#output\_OracleLinux-9-aarch64-latest-name) | Output OCI AlmaLinux 9 Image ID |
+| <a name="output_OracleLinux-9-aarch64-latest_ocid"></a> [OracleLinux-9-aarch64-latest\_ocid](#output\_OracleLinux-9-aarch64-latest\_ocid) | Output OCI AlmaLinux 9 Image ID |
+| <a name="output_Ubuntu-18_04-aarch64-latest_name"></a> [Ubuntu-18\_04-aarch64-latest\_name](#output\_Ubuntu-18\_04-aarch64-latest\_name) | Output OCI Ubuntu 18.04 Image Name |
+| <a name="output_Ubuntu-18_04-aarch64-latest_ocid"></a> [Ubuntu-18\_04-aarch64-latest\_ocid](#output\_Ubuntu-18\_04-aarch64-latest\_ocid) | Output OCI Ubuntu 18.04 Image ID |
+| <a name="output_Ubuntu-20_04-aarch64-latest_name"></a> [Ubuntu-20\_04-aarch64-latest\_name](#output\_Ubuntu-20\_04-aarch64-latest\_name) | Output OCI Ubuntu 20.04 Image Name |
+| <a name="output_Ubuntu-20_04-aarch64-latest_ocid"></a> [Ubuntu-20\_04-aarch64-latest\_ocid](#output\_Ubuntu-20\_04-aarch64-latest\_ocid) | Output OCI Ubuntu 20.04 Image ID |
+| <a name="output_Ubuntu-22_04-aarch64-latest_name"></a> [Ubuntu-22\_04-aarch64-latest\_name](#output\_Ubuntu-22\_04-aarch64-latest\_name) | Output OCI Ubuntu 22.04 Image Name |
+| <a name="output_Ubuntu-22_04-aarch64-latest_ocid"></a> [Ubuntu-22\_04-aarch64-latest\_ocid](#output\_Ubuntu-22\_04-aarch64-latest\_ocid) | Output OCI Ubuntu 22.04 Image ID |
+| <a name="output_ampere_a1_boot_volume_ids"></a> [ampere\_a1\_boot\_volume\_ids](#output\_ampere\_a1\_boot\_volume\_ids) | Output the boot volume IDs of the instance(s) |
+| <a name="output_ampere_a1_private_ips"></a> [ampere\_a1\_private\_ips](#output\_ampere\_a1\_private\_ips) | Output the private IP(s) of the instance(s) |
+| <a name="output_ampere_a1_public_ips"></a> [ampere\_a1\_public\_ips](#output\_ampere\_a1\_public\_ips) | Output the public IP(s) of the instance(s) |
 | <a name="output_local_oci_aarch64_image_ids"></a> [local\_oci\_aarch64\_image\_ids](#output\_local\_oci\_aarch64\_image\_ids) | n/a |
 | <a name="output_local_oci_aarch64_image_names"></a> [local\_oci\_aarch64\_image\_names](#output\_local\_oci\_aarch64\_image\_names) | n/a |
 | <a name="output_local_oci_aarch64_images_map"></a> [local\_oci\_aarch64\_images\_map](#output\_local\_oci\_aarch64\_images\_map) | n/a |
