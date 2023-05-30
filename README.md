@@ -190,9 +190,9 @@ terraform init && terraform plan && terraform apply -auto-approve
 | <a name="output_ampere_a1_public_ips"></a> [ampere\_a1\_public\_ips](#output\_ampere\_a1\_public\_ips) | Output the public IP(s) of the instance(s) |
 | <a name="output_local_oci_aarch64_image_ids"></a> [local\_oci\_aarch64\_image\_ids](#output\_local\_oci\_aarch64\_image\_ids) | Output: List of available OCI image IDs |
 | <a name="output_local_oci_aarch64_image_names"></a> [local\_oci\_aarch64\_image\_names](#output\_local\_oci\_aarch64\_image\_names) | Output: List of available OCI image names |
-| <a name="output_local_oci_aarch64_images_map"></a> [local\_oci\_aarch64\_images\_map](#output\_local\_oci\_aarch64\_images\_map) | Output: a map of the available oci image names and IDs |
-| <a name="output_oci_aarch64_images_map"></a> [oci\_aarch64\_images\_map](#output\_oci\_aarch64\_images\_map) | n/a |
-| <a name="output_oci_home_region"></a> [oci\_home\_region](#output\_oci\_home\_region) | n/a |
+| <a name="output_local_oci_aarch64_images_map"></a> [local\_oci\_aarch64\_images\_map](#output\_local\_oci\_aarch64\_images\_map) | Output: the local map of the available oci image names and IDs |
+| <a name="output_oci_aarch64_images_map"></a> [oci\_aarch64\_images\_map](#output\_oci\_aarch64\_images\_map) | Output: map of image names and image ids |
+| <a name="output_oci_home_region"></a> [oci\_home\_region](#output\_oci\_home\_region) | Output: the home region of the tenancy |
 | <a name="output_oci_ssh_private_key"></a> [oci\_ssh\_private\_key](#output\_oci\_ssh\_private\_key) | Output: The dynamically created openssh private key |
 | <a name="output_oci_ssh_public_key"></a> [oci\_ssh\_public\_key](#output\_oci\_ssh\_public\_key) | Output: The dynamically created openssh public key |
 | <a name="output_random_uuid"></a> [random\_uuid](#output\_random\_uuid) | Output: A randomly generated uuid |
