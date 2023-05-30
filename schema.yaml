@@ -1,5 +1,5 @@
 title: "Ampere A1 VM Instances on OCI"
-stackDescription: "DeathStarBench Ampere A1 VM Instances on OCI"
+stackDescription: "Ampere A1 VM Instances on OCI"
 schemaVersion: 0.0.1
 version: "20230216"
 locale: "en"
