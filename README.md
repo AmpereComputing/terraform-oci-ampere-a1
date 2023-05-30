@@ -172,7 +172,7 @@ terraform init && terraform plan && terraform apply -auto-approve
 | <a name="output_OCI_AlmaLinux_9_OS_Image_id"></a> [OCI\_AlmaLinux\_9\_OS\_Image\_id](#output\_OCI\_AlmaLinux\_9\_OS\_Image\_id) | Output OCI AlmaLinux 9 Image ID |
 | <a name="output_OCI_Availability_Domains"></a> [OCI\_Availability\_Domains](#output\_OCI\_Availability\_Domains) | Output Availability Domain Results |
 | <a name="output_OCI_FreeBSD_OS_Image_id"></a> [OCI\_FreeBSD\_OS\_Image\_id](#output\_OCI\_FreeBSD\_OS\_Image\_id) | Output OCI FreeBSD Image ID |
-| <a name="output_OCI_OpenMandriva_Linux_Image_id"></a> [OCI\_OpenMandriva\_Linux\_Image\_id](#output\_OCI\_OpenMandriva\_Linux\_Image\_id) | n/a |
+| <a name="output_OCI_OpenMandriva_Linux_Image_id"></a> [OCI\_OpenMandriva\_Linux\_Image\_id](#output\_OCI\_OpenMandriva\_Linux\_Image\_id) | Output OCI OpenMandriva Image ID |
 | <a name="output_OracleLinux-7_9-aarch64-latest-name"></a> [OracleLinux-7\_9-aarch64-latest-name](#output\_OracleLinux-7\_9-aarch64-latest-name) | Output OCI OracleLinux 7.9 Image Name |
 | <a name="output_OracleLinux-7_9-aarch64-latest_ocid"></a> [OracleLinux-7\_9-aarch64-latest\_ocid](#output\_OracleLinux-7\_9-aarch64-latest\_ocid) | Output OCI OracleLinux 7.9 Image ID |
 | <a name="output_OracleLinux-8-aarch64-latest-name"></a> [OracleLinux-8-aarch64-latest-name](#output\_OracleLinux-8-aarch64-latest-name) | Output OCI AlmaLinux 8 Image Name |
@@ -188,14 +188,14 @@ terraform init && terraform plan && terraform apply -auto-approve
 | <a name="output_ampere_a1_boot_volume_ids"></a> [ampere\_a1\_boot\_volume\_ids](#output\_ampere\_a1\_boot\_volume\_ids) | Output the boot volume IDs of the instance(s) |
 | <a name="output_ampere_a1_private_ips"></a> [ampere\_a1\_private\_ips](#output\_ampere\_a1\_private\_ips) | Output the private IP(s) of the instance(s) |
 | <a name="output_ampere_a1_public_ips"></a> [ampere\_a1\_public\_ips](#output\_ampere\_a1\_public\_ips) | Output the public IP(s) of the instance(s) |
-| <a name="output_local_oci_aarch64_image_ids"></a> [local\_oci\_aarch64\_image\_ids](#output\_local\_oci\_aarch64\_image\_ids) | n/a |
-| <a name="output_local_oci_aarch64_image_names"></a> [local\_oci\_aarch64\_image\_names](#output\_local\_oci\_aarch64\_image\_names) | n/a |
-| <a name="output_local_oci_aarch64_images_map"></a> [local\_oci\_aarch64\_images\_map](#output\_local\_oci\_aarch64\_images\_map) | n/a |
+| <a name="output_local_oci_aarch64_image_ids"></a> [local\_oci\_aarch64\_image\_ids](#output\_local\_oci\_aarch64\_image\_ids) | Output: List of available OCI image IDs |
+| <a name="output_local_oci_aarch64_image_names"></a> [local\_oci\_aarch64\_image\_names](#output\_local\_oci\_aarch64\_image\_names) | Output: List of available OCI image names |
+| <a name="output_local_oci_aarch64_images_map"></a> [local\_oci\_aarch64\_images\_map](#output\_local\_oci\_aarch64\_images\_map) | Output: a map of the available oci image names and IDs |
 | <a name="output_oci_aarch64_images_map"></a> [oci\_aarch64\_images\_map](#output\_oci\_aarch64\_images\_map) | n/a |
 | <a name="output_oci_home_region"></a> [oci\_home\_region](#output\_oci\_home\_region) | n/a |
-| <a name="output_oci_ssh_private_key"></a> [oci\_ssh\_private\_key](#output\_oci\_ssh\_private\_key) | n/a |
-| <a name="output_oci_ssh_public_key"></a> [oci\_ssh\_public\_key](#output\_oci\_ssh\_public\_key) | n/a |
-| <a name="output_random_uuid"></a> [random\_uuid](#output\_random\_uuid) | n/a |
+| <a name="output_oci_ssh_private_key"></a> [oci\_ssh\_private\_key](#output\_oci\_ssh\_private\_key) | Output: The dynamically created openssh private key |
+| <a name="output_oci_ssh_public_key"></a> [oci\_ssh\_public\_key](#output\_oci\_ssh\_public\_key) | Output: The dynamically created openssh public key |
+| <a name="output_random_uuid"></a> [random\_uuid](#output\_random\_uuid) | Output: A randomly generated uuid |
 <!-- END_TF_DOCS -->
 
 ## References
