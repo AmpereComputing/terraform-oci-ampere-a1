@@ -18,13 +18,8 @@ sections:
   hide-all: false # deprecated in v0.13.0, removed in v0.15.0
   show-all: true  # deprecated in v0.13.0, removed in v0.15.0
 
-content: ""
-
-output:
-  file: ""
-  mode: inject
-  template: |-
-    <!-- BEGIN_TF_DOCS -->
+content: |-
+  {{ .Header }}
     ## Example AlmaLinux 8
 
     ```hcl
@@ -78,9 +73,17 @@ output:
     ```hcl
     {{ include "examples/ubuntu2204/main.tf" }}
     ```
+    
+    {{ .Inputs }}
 
+    {{ .Outputs }}  
+
+output:
+  file: ""
+  mode: inject
+  template: |-
+    <!-- BEGIN_TF_DOCS -->
     {{ .Content }}
-
     <!-- END_TF_DOCS -->    
 
 output-values:
