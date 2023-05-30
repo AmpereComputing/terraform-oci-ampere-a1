@@ -8,6 +8,7 @@ locals {
   region_map = { for r in data.oci_identity_regions.regions.regions : r.key => r.name }
 }
 
+# Output: the home region of the tenancy
 output oci_home_region {
   value     = lookup(local.region_map, data.oci_identity_tenancy.tenancy.home_region_key)
   sensitive = false

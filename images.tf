@@ -1,4 +1,4 @@
-
+# Output: map of image names and image ids
 output "oci_aarch64_images_map" {
   sensitive = false
   value = zipmap(
@@ -94,7 +94,7 @@ locals {
 
 }
 
-# Output: a map of the available oci image names and IDs
+# Output: the local map of the available oci image names and IDs
 output "local_oci_aarch64_images_map" {
   value = local.oci_aarch64_images
   sensitive = false
