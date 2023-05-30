@@ -19,56 +19,57 @@ sections:
   show-all: true  # deprecated in v0.13.0, removed in v0.15.0
 
 content: |-
-  {{ .Header }}
-    ## Example AlmaLinux 8
+    {{ .Header }}
+
+    ### Example AlmaLinux 8
 
     ```hcl
     {{ include "examples/almalinux8/main.tf" }}
     ```
 
-    ## Example AlmaLinux 9
+    ### Example AlmaLinux 9
 
     ```hcl
     {{ include "examples/almalinux9/main.tf" }}
     ```
 
-    ## Example FreeBSD 13.1
+    ### Example FreeBSD 13.1
 
     ```hcl
     {{ include "examples/freebsd131/main.tf" }}
     ```
    
-    ## Example OpenMandriva 
+    ### Example OpenMandriva 
 
     ```hcl
     {{ include "examples/openmandriva/main.tf" }}
     ```
    
-    ## Example OracleLinux 7.9
+    ### Example OracleLinux 7.9
 
     ```hcl
     {{ include "examples/oraclelinux79/main.tf" }}
     ```
 
-    ## Example OracleLinux 8
+    ### Example OracleLinux 8
 
     ```hcl
     {{ include "examples/oraclelinux8/main.tf" }}
     ```
 
-    ## Example Ubuntu 18.04
+    ### Example Ubuntu 18.04
 
     ```hcl
     {{ include "examples/ubuntu1804/main.tf" }}
     ```
 
-    ## Example Ubuntu 20.04
+    ### Example Ubuntu 20.04
 
     ```hcl
     {{ include "examples/ubuntu2004/main.tf" }}
     ```
 
-    ## Example Ubuntu 22.04
+    ### Example Ubuntu 22.04
 
     ```hcl
     {{ include "examples/ubuntu2204/main.tf" }}
