@@ -74,9 +74,11 @@ content: |-
     {{ include "examples/ubuntu2204/main.tf" }}
     ```
     
+    {{ .Data-sources }}
     {{ .Inputs }}
-
     {{ .Outputs }}  
+    {{ .Resources }}  
+    {{ .Footer }}  
 
 output:
   file: ""
