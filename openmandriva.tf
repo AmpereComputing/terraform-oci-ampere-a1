@@ -56,7 +56,6 @@ resource "oci_core_app_catalog_subscription" "openmandriva_app_catalog_subscript
 }
 
 # Output OCI OpenMandriva Image ID
-
 output OCI_OpenMandriva_Linux_Image_id {
     value   = data.oci_core_app_catalog_listing_resource_version.openmandriva_catalog_listing.listing_resource_id
 }

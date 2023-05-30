@@ -23,11 +23,13 @@ resource "local_file" "oci-ssh-pubkey" {
     file_permission = "0644"
 }
 
+# Output: The dynamically created openssh public key
 output "oci_ssh_public_key" {
   value = tls_private_key.oci.public_key_openssh
   sensitive = false
 }
 
+# Output: The dynamically created openssh private key
 output "oci_ssh_private_key" {
   value = tls_private_key.oci.private_key_pem
   sensitive = true
@@ -35,6 +37,7 @@ output "oci_ssh_private_key" {
 
 resource "random_uuid" "random_id" { }
 
+# Output: A randomly generated uuid
 output "random_uuid" {
   value = random_uuid.random_id.result
   sensitive = false

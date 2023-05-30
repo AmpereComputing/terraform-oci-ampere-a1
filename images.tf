@@ -94,15 +94,19 @@ locals {
 
 }
 
+# Output: a map of the available oci image names and IDs
 output "local_oci_aarch64_images_map" {
   value = local.oci_aarch64_images
   sensitive = false
 }
 
+# Output: List of available OCI image names
 output "local_oci_aarch64_image_names" {
   value = local.oci_aarch64_image_names
   sensitive = false
 }
+
+# Output: List of available OCI image IDs
 output "local_oci_aarch64_image_ids" {
   value = local.oci_aarch64_image_ids
   sensitive = false
