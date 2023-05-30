@@ -49,43 +49,8 @@ private_key_path = "/home/bwayne/.oci/oracleidentitycloudservice_bwayne-08-09-14
 
 ### Using as a Module
 
-This can also be used as a terraform module.   The following is example code for module usage supplying a custom cloud-init template:
+This can also be used as a terraform module.   The [examples](examples) directory contains example code for module usage showing different operating systems booting with a custom cloud-init templates.   Doing a clone of this repository and changing directory to one of the examples, placing a terraform.tfvars into that directory, and running a typical terrafornm workflow will produce a working virtual machine in the os that was specified in the main.tf that is located within the chosen example directory.
 
-
-```
-variable "tenancy_ocid" {}
-variable "user_ocid" {}
-variable "fingerprint" {}
-variable "private_key_path" {}
-
-locals {
-  cloud_init_template_path = "${path.cwd}/cloud-init.yaml.tpl"
-}
-
-module "oci-ampere-a1" {
-  source                   = "github.com/amperecomputing/terraform-oci-ampere-a1"
-  tenancy_ocid             = var.tenancy_ocid
-  user_ocid                = var.user_ocid
-  fingerprint              = var.fingerprint
-  private_key_path         = var.private_key_path
-# Optional
-# oci_vcn_cidr_block       = "10.2.0.0/16"
-# oci_vcn_cidr_subnet      = "10.2.1.0/24"
-  oci_os_image             = "oraclelinux84"
-  instance_prefix          = "ampere-a1-oraclelinux-84"
-  oci_vm_count             = "1"
-  ampere_a1_vm_memory      = "24"
-  ampere_a1_cpu_core_count = "4"
-  cloud_init_template_file = local.cloud_init_template_path
-}
-
-output "oci_ampere_a1_private_ips" {
-  value     = module.oci-ampere-a1.ampere_a1_private_ips
-}
-output "oci_ampere_a1_public_ips" {
-  value     = module.oci-ampere-a1.ampere_a1_public_ips
-}
-```
 
 ### Running Terraform
 
