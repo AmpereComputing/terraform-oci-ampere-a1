@@ -9,11 +9,11 @@ data "oci_core_images" "oraclelinux-8-aarch64" {
   operating_system_version = "8"
 
   # include Aarch64 specific images
-  filter {
-    name   = "display_name"
-     values = ["^.*-aarch64-.*$"]
-    regex  = true
-  }
+  #filter {
+  #  name   = "display_name"
+  #   values = ["^.*-aarch64-.*$"]
+  #  regex  = true
+  #}
 }
 
 # Output OCI AlmaLinux 8 Image Name
