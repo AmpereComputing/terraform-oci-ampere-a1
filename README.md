@@ -72,7 +72,6 @@ tofu init && tofu plan && tofu apply -auto-approve
 This can also be used as a terraform module.   The [examples](examples) directory contains example code for module usage showing different operating systems booting with a custom cloud-init templates.   Doing a clone of this repository and changing directory to one of the examples, placing a terraform.tfvars into that directory, and running a typical terrafornm workflow will produce a working virtual machine in the os that was specified in the main.tf that is located within the chosen example directory.
 
 <!-- BEGIN_TF_DOCS -->
-
 ## Example AlmaLinux 8
 
 ```hcl
