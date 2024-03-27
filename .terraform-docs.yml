@@ -69,6 +69,12 @@ content: |-
     {{ include "examples/oraclelinux8/main.tf" }}
     ```
 
+    ### Example OracleLinux 9
+
+    ```hcl
+    {{ include "examples/oraclelinux9/main.tf" }}
+    ```
+
     ### Example Ubuntu 18.04
 
     ```hcl

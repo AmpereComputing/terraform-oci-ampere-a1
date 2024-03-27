@@ -1,4 +1,4 @@
-# Example of Ampere A1 running OracleLinux 8 on OCI using this module
+# Example of Ampere A1 running OracleLinux 9 on OCI using this module
 variable "tenancy_ocid" {}
 variable "user_ocid" {}
 variable "fingerprint" {}
@@ -15,8 +15,8 @@ module "oci-ampere-a1" {
 # Optional
 # oci_vcn_cidr_block       = "10.2.0.0/16"
 # oci_vcn_cidr_subnet      = "10.2.1.0/24"
-  oci_os_image             = "oraclelinux8"
-  instance_prefix          = "ampere-a1-oraclelinux-8"
+  oci_os_image             = "oraclelinux9"
+  instance_prefix          = "ampere-a1-oraclelinux-9"
   oci_vm_count             = "1"
   ampere_a1_vm_memory      = "24"
   ampere_a1_cpu_core_count = "4"
