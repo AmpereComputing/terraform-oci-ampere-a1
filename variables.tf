@@ -1,4 +1,5 @@
 # User/Tenant authentication variables
+
 variable "tenancy_ocid" {
   description = "OCI Tenancy ID for Free-Tier Account"
 }
@@ -27,7 +28,7 @@ variable "oci_vcn_cidr_subnet" {
 }
 
 variable "oci_os_image" {
-  default     = "oraclelinux84"
+  default     = "oraclelinux8"
   description = "Default OS Image From the Local Vars"
 }
 
