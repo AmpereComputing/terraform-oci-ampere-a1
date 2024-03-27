@@ -33,6 +33,18 @@ content: |-
     {{ include "examples/almalinux9/main.tf" }}
     ```
 
+    ### Example RockyLinux 8
+
+    ```hcl
+    {{ include "examples/rockylinux8/main.tf" }}
+    ```
+
+    ### Example RockyLinux 9
+
+    ```hcl
+    {{ include "examples/rockylinux9/main.tf" }}
+    ```
+
     ### Example FreeBSD 13.1
 
     ```hcl
