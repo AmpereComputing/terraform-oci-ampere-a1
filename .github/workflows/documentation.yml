@@ -18,5 +18,6 @@ jobs:
       with:
         working-dir: .
         output-file: README.md
+        config-file: .terraform-docs.yml
         output-method: inject
         git-push: "true"
