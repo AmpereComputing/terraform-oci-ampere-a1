@@ -1,4 +1,4 @@
-formatter: "" # this is required
+formatter: "markdown"
 
 version: ""
 
@@ -10,13 +10,13 @@ recursive:
   path: modules
 
 sections:
-  hide: 
+  hide:
     - requirements
     - modules
   show: []
 
-  hide-all: false # deprecated in v0.13.0, removed in v0.15.0
-  show-all: true  # deprecated in v0.13.0, removed in v0.15.0
+  hide-all: false
+  show-all: true
 
 content: |-
     {{ .Header }}
@@ -49,13 +49,13 @@ content: |-
     ```hcl
     {{ include "examples/freebsd131/main.tf" }}
     ```
-   
-    ### Example OpenMandriva 
+
+    ### Example OpenMandriva
 
     ```hcl
     {{ include "examples/openmandriva/main.tf" }}
     ```
-   
+
     ### Example OracleLinux 7.9
 
     ```hcl
@@ -91,20 +91,20 @@ content: |-
     ```hcl
     {{ include "examples/ubuntu2204/main.tf" }}
     ```
-    
+
     {{ .Data-sources }}
     {{ .Inputs }}
-    {{ .Outputs }}  
-    {{ .Resources }}  
-    {{ .Footer }}  
+    {{ .Outputs }}
+    {{ .Resources }}
+    {{ .Footer }}
 
 output:
   file: ""
   mode: inject
-  template: |-
+  template: |
     <!-- BEGIN_TF_DOCS -->
     {{ .Content }}
-    <!-- END_TF_DOCS -->    
+    <!-- END_TF_DOCS -->
 
 output-values:
   enabled: false
