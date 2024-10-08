@@ -13,7 +13,7 @@ output "oci_aarch64_images_map" {
       data.oci_core_images.oraclelinux-9-aarch64.images.0.display_name,
       data.oci_core_images.oraclelinux-8-aarch64.images.0.display_name,
       data.oci_core_images.oraclelinux-7_9-aarch64.images.0.display_name,
-      data.oci_core_images.ubuntu-24_04-aarch64.images.0.display_name,
+      #data.oci_core_images.ubuntu-24_04-aarch64.images.0.display_name,
       data.oci_core_images.ubuntu-22_04-aarch64.images.0.display_name,
       data.oci_core_images.ubuntu-20_04-aarch64.images.0.display_name,
       # Ubuntu 18.04 no longer in OCI catalog
@@ -30,7 +30,7 @@ output "oci_aarch64_images_map" {
       data.oci_core_images.oraclelinux-9-aarch64.images.0.id,
       data.oci_core_images.oraclelinux-8-aarch64.images.0.id,
       data.oci_core_images.oraclelinux-7_9-aarch64.images.0.id,
-      data.oci_core_images.ubuntu-24_04-aarch64.images.0.id,
+      #data.oci_core_images.ubuntu-24_04-aarch64.images.0.id,
       data.oci_core_images.ubuntu-22_04-aarch64.images.0.id,
       data.oci_core_images.ubuntu-20_04-aarch64.images.0.id,
       # Ubuntu 18.04 no longer in OCI catalog
@@ -52,7 +52,7 @@ locals {
       data.oci_core_images.oraclelinux-9-aarch64.images.0.display_name,
       data.oci_core_images.oraclelinux-8-aarch64.images.0.display_name,
       data.oci_core_images.oraclelinux-7_9-aarch64.images.0.display_name,
-      data.oci_core_images.ubuntu-24_04-aarch64.images.0.display_name,
+      #data.oci_core_images.ubuntu-24_04-aarch64.images.0.display_name,
       data.oci_core_images.ubuntu-22_04-aarch64.images.0.display_name,
       data.oci_core_images.ubuntu-20_04-aarch64.images.0.display_name,
       # Ubuntu 18.04 no longer in OCI catalog
@@ -69,7 +69,7 @@ locals {
       data.oci_core_images.oraclelinux-9-aarch64.images.0.id,
       data.oci_core_images.oraclelinux-8-aarch64.images.0.id,
       data.oci_core_images.oraclelinux-7_9-aarch64.images.0.id,
-      data.oci_core_images.ubuntu-24_04-aarch64.images.0.id,
+      #data.oci_core_images.ubuntu-24_04-aarch64.images.0.id,
       data.oci_core_images.ubuntu-22_04-aarch64.images.0.id,
       data.oci_core_images.ubuntu-20_04-aarch64.images.0.id,
       # Ubuntu 18.04 no longer in OCI catalog
@@ -107,9 +107,9 @@ locals {
       oraclelinux79  = {
         os_image_id  = data.oci_core_images.oraclelinux-7_9-aarch64.images.0.id
       }
-      ubuntu2404     = {
-        os_image_id  = data.oci_core_images.ubuntu-24_04-aarch64.images.0.id
-      }
+      #ubuntu2404     = {
+      #  os_image_id  = data.oci_core_images.ubuntu-24_04-aarch64.images.0.id
+      #}
       ubuntu2204     = {
         os_image_id  = data.oci_core_images.ubuntu-22_04-aarch64.images.0.id
       }

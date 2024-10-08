@@ -8,11 +8,11 @@ data "oci_core_images" "ubuntu-24_04-aarch64" {
   operating_system_version = "24.04"
 
   # include Aarch64 specific images
-  filter {
-    name   = "display_name"
-     values = ["^.*-aarch64-.*$"]
-    regex  = true
-  }
+#  filter {
+#    name   = "display_name"
+#     values = ["^.*-aarch64-.*$"]
+#    regex  = true
+#  }
 }
 
 # Output OCI Ubuntu 24.04 Image Name
