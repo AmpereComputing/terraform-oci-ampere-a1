@@ -1,7 +1,3 @@
-![Ampere Computing](https://avatars2.githubusercontent.com/u/34519842?s=400&u=1d29afaac44f477cbb0226139ec83f73faefe154&v=4)
-
-# terraform-oci-ampere-a1
-
 [![Source Code](https://img.shields.io/badge/source-GitHub-blue.svg?style=flat)](https://github.com/AmpereComputing/terraform-oci-ampere-a1)
 ![documentation workflow](https://github.com/AmpereComputing/terraform-oci-ampere-a1/actions/workflows/documentation.yml/badge.svg?label=build&style=flat-square&branch=main)
 ![release workflow](https://github.com/AmpereComputing/terraform-oci-ampere-a1/actions/workflows/release.yml/badge.svg?label=build&style=flat-square&branch=main)
@@ -16,6 +12,9 @@
 ![GitHub deployments](https://img.shields.io/github/deployments/AmpereComputing/terraform-oci-ampere-a1/github-pages)
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Famperecomputing.github.io/terraform-oci-ampere-a1)
 
+# terraform-oci-ampere-a1
+
+![Ampere Computing](https://avatars2.githubusercontent.com/u/34519842?s=400&u=1d29afaac44f477cbb0226139ec83f73faefe154&v=4)
 
 ## Description
 
