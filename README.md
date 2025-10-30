@@ -84,6 +84,542 @@ tofu init && tofu plan && tofu apply -auto-approve
 This can also be used as a terraform module.   The [examples](examples) directory contains example code for module usage showing different operating systems booting with a custom cloud-init templates.   Doing a clone of this repository and changing directory to one of the examples, placing a terraform.tfvars into that directory, and running a typical terrafornm workflow will produce a working virtual machine in the os that was specified in the main.tf that is located within the chosen example directory.
 
 <!-- BEGIN_TF_DOCS -->
+
+
+### Example AlmaLinux 8
+
+```hcl
+# Example of Ampere A1 running AlmaLinux 8 on OCI using this module
+variable "tenancy_ocid" {}
+variable "user_ocid" {}
+variable "fingerprint" {}
+variable "private_key_path" {}
+locals {
+  cloud_init_template_path = "${path.cwd}/cloud-init.yaml.tpl"
+}
+module "oci-ampere-a1" {
+  source                   = "github.com/amperecomputing/terraform-oci-ampere-a1"
+  tenancy_ocid             = var.tenancy_ocid
+  user_ocid                = var.user_ocid
+  fingerprint              = var.fingerprint
+  private_key_path         = var.private_key_path
+# Optional
+# oci_vcn_cidr_block       = "10.2.0.0/16"
+# oci_vcn_cidr_subnet      = "10.2.1.0/24"
+  oci_os_image             = "almalinux8"
+  instance_prefix          = "ampere-a1-almalinux-8"
+  oci_vm_count             = "1"
+  ampere_a1_vm_memory      = "24"
+  ampere_a1_cpu_core_count = "4"
+  cloud_init_template_file = local.cloud_init_template_path
+}
+output "oci_ampere_a1_private_ips" {
+  value     = module.oci-ampere-a1.ampere_a1_private_ips
+}
+output "oci_ampere_a1_public_ips" {
+  value     = module.oci-ampere-a1.ampere_a1_public_ips
+}
+```
+
+### Example AlmaLinux 9
+
+```hcl
+# Example of Ampere A1 running AlmaLinux 9 on OCI using this module
+variable "tenancy_ocid" {}
+variable "user_ocid" {}
+variable "fingerprint" {}
+variable "private_key_path" {}
+locals {
+  cloud_init_template_path = "${path.cwd}/cloud-init.yaml.tpl"
+}
+module "oci-ampere-a1" {
+  source                   = "github.com/amperecomputing/terraform-oci-ampere-a1"
+  tenancy_ocid             = var.tenancy_ocid
+  user_ocid                = var.user_ocid
+  fingerprint              = var.fingerprint
+  private_key_path         = var.private_key_path
+# Optional
+# oci_vcn_cidr_block       = "10.2.0.0/16"
+# oci_vcn_cidr_subnet      = "10.2.1.0/24"
+  oci_os_image             = "almalinux9"
+  instance_prefix          = "ampere-a1-almalinux-9"
+  oci_vm_count             = "1"
+  ampere_a1_vm_memory      = "24"
+  ampere_a1_cpu_core_count = "4"
+  cloud_init_template_file = local.cloud_init_template_path
+}
+output "oci_ampere_a1_private_ips" {
+  value     = module.oci-ampere-a1.ampere_a1_private_ips
+}
+output "oci_ampere_a1_public_ips" {
+  value     = module.oci-ampere-a1.ampere_a1_public_ips
+}
+```
+
+### Example RockyLinux 8
+
+```hcl
+# Example of Ampere A1 running RockyLinux 8 on OCI using this module
+variable "tenancy_ocid" {}
+variable "user_ocid" {}
+variable "fingerprint" {}
+variable "private_key_path" {}
+locals {
+  cloud_init_template_path = "${path.cwd}/cloud-init.yaml.tpl"
+}
+module "oci-ampere-a1" {
+  source                   = "github.com/amperecomputing/terraform-oci-ampere-a1"
+  tenancy_ocid             = var.tenancy_ocid
+  user_ocid                = var.user_ocid
+  fingerprint              = var.fingerprint
+  private_key_path         = var.private_key_path
+# Optional
+# oci_vcn_cidr_block       = "10.2.0.0/16"
+# oci_vcn_cidr_subnet      = "10.2.1.0/24"
+  oci_os_image             = "rockylinux8"
+  instance_prefix          = "ampere-a1-rockylinux-8"
+  oci_vm_count             = "1"
+  ampere_a1_vm_memory      = "24"
+  ampere_a1_cpu_core_count = "4"
+  cloud_init_template_file = local.cloud_init_template_path
+}
+output "oci_ampere_a1_private_ips" {
+  value     = module.oci-ampere-a1.ampere_a1_private_ips
+}
+output "oci_ampere_a1_public_ips" {
+  value     = module.oci-ampere-a1.ampere_a1_public_ips
+}
+```
+
+### Example RockyLinux 9
+
+```hcl
+# Example of Ampere A1 running RockyLinux 9 on OCI using this module
+variable "tenancy_ocid" {}
+variable "user_ocid" {}
+variable "fingerprint" {}
+variable "private_key_path" {}
+locals {
+  cloud_init_template_path = "${path.cwd}/cloud-init.yaml.tpl"
+}
+module "oci-ampere-a1" {
+  source                   = "github.com/amperecomputing/terraform-oci-ampere-a1"
+  tenancy_ocid             = var.tenancy_ocid
+  user_ocid                = var.user_ocid
+  fingerprint              = var.fingerprint
+  private_key_path         = var.private_key_path
+# Optional
+# oci_vcn_cidr_block       = "10.2.0.0/16"
+# oci_vcn_cidr_subnet      = "10.2.1.0/24"
+  oci_os_image             = "rockylinux9"
+  instance_prefix          = "ampere-a1-rockylinux-9"
+  oci_vm_count             = "1"
+  ampere_a1_vm_memory      = "24"
+  ampere_a1_cpu_core_count = "4"
+  cloud_init_template_file = local.cloud_init_template_path
+}
+output "oci_ampere_a1_private_ips" {
+  value     = module.oci-ampere-a1.ampere_a1_private_ips
+}
+output "oci_ampere_a1_public_ips" {
+  value     = module.oci-ampere-a1.ampere_a1_public_ips
+}
+```
+
+### Example FreeBSD 13.1
+
+```hcl
+# Example of Ampere A1 running FreeBSD 13.1 on OCI using this module
+variable "tenancy_ocid" {}
+variable "user_ocid" {}
+variable "fingerprint" {}
+variable "private_key_path" {}
+locals {
+  cloud_init_template_path = "${path.cwd}/cloud-init.yaml.tpl"
+}
+module "oci-ampere-a1" {
+  source                   = "github.com/amperecomputing/terraform-oci-ampere-a1"
+  tenancy_ocid             = var.tenancy_ocid
+  user_ocid                = var.user_ocid
+  fingerprint              = var.fingerprint
+  private_key_path         = var.private_key_path
+# Optional
+# oci_vcn_cidr_block       = "10.2.0.0/16"
+# oci_vcn_cidr_subnet      = "10.2.1.0/24"
+  oci_os_image             = "freebsd"
+  instance_prefix          = "ampere-a1-freebsd"
+  oci_vm_count             = "1"
+  ampere_a1_vm_memory      = "24"
+  ampere_a1_cpu_core_count = "4"
+  cloud_init_template_file = local.cloud_init_template_path
+}
+output "oci_ampere_a1_private_ips" {
+  value     = module.oci-ampere-a1.ampere_a1_private_ips
+}
+output "oci_ampere_a1_public_ips" {
+  value     = module.oci-ampere-a1.ampere_a1_public_ips
+}
+```
+
+### Example OpenMandriva
+
+```hcl
+# Example of Ampere A1 running OpenMandriva on OCI using this module
+variable "tenancy_ocid" {}
+variable "user_ocid" {}
+variable "fingerprint" {}
+variable "private_key_path" {}
+locals {
+  cloud_init_template_path = "${path.cwd}/cloud-init.yaml.tpl"
+}
+module "oci-ampere-a1" {
+  source                   = "github.com/amperecomputing/terraform-oci-ampere-a1"
+  tenancy_ocid             = var.tenancy_ocid
+  user_ocid                = var.user_ocid
+  fingerprint              = var.fingerprint
+  private_key_path         = var.private_key_path
+# Optional
+# oci_vcn_cidr_block       = "10.2.0.0/16"
+# oci_vcn_cidr_subnet      = "10.2.1.0/24"
+  oci_os_image             = "openmandriva"
+  instance_prefix          = "ampere-a1-openmandriva"
+  oci_vm_count             = "1"
+  ampere_a1_vm_memory      = "24"
+  ampere_a1_cpu_core_count = "4"
+  cloud_init_template_file = local.cloud_init_template_path
+}
+output "oci_ampere_a1_private_ips" {
+  value     = module.oci-ampere-a1.ampere_a1_private_ips
+}
+output "oci_ampere_a1_public_ips" {
+  value     = module.oci-ampere-a1.ampere_a1_public_ips
+}
+```
+
+### Example OracleLinux 7.9
+
+```hcl
+# Example of Ampere A1 running OracleLinux 7.9 on OCI using this module
+variable "tenancy_ocid" {}
+variable "user_ocid" {}
+variable "fingerprint" {}
+variable "private_key_path" {}
+locals {
+  cloud_init_template_path = "${path.cwd}/cloud-init.yaml.tpl"
+}
+module "oci-ampere-a1" {
+  source                   = "github.com/amperecomputing/terraform-oci-ampere-a1"
+  tenancy_ocid             = var.tenancy_ocid
+  user_ocid                = var.user_ocid
+  fingerprint              = var.fingerprint
+  private_key_path         = var.private_key_path
+# Optional
+# oci_vcn_cidr_block       = "10.2.0.0/16"
+# oci_vcn_cidr_subnet      = "10.2.1.0/24"
+  oci_os_image             = "oraclelinux79"
+  instance_prefix          = "ampere-a1-oraclelinux-79"
+  oci_vm_count             = "1"
+  ampere_a1_vm_memory      = "24"
+  ampere_a1_cpu_core_count = "4"
+  cloud_init_template_file = local.cloud_init_template_path
+}
+output "oci_ampere_a1_private_ips" {
+  value     = module.oci-ampere-a1.ampere_a1_private_ips
+}
+output "oci_ampere_a1_public_ips" {
+  value     = module.oci-ampere-a1.ampere_a1_public_ips
+}
+```
+
+### Example OracleLinux 8
+
+```hcl
+# Example of Ampere A1 running OracleLinux 8 on OCI using this module
+variable "tenancy_ocid" {}
+variable "user_ocid" {}
+variable "fingerprint" {}
+variable "private_key_path" {}
+locals {
+  cloud_init_template_path = "${path.cwd}/cloud-init.yaml.tpl"
+}
+module "oci-ampere-a1" {
+  source                   = "github.com/amperecomputing/terraform-oci-ampere-a1"
+  tenancy_ocid             = var.tenancy_ocid
+  user_ocid                = var.user_ocid
+  fingerprint              = var.fingerprint
+  private_key_path         = var.private_key_path
+# Optional
+# oci_vcn_cidr_block       = "10.2.0.0/16"
+# oci_vcn_cidr_subnet      = "10.2.1.0/24"
+  oci_os_image             = "oraclelinux8"
+  instance_prefix          = "ampere-a1-oraclelinux-8"
+  oci_vm_count             = "1"
+  ampere_a1_vm_memory      = "24"
+  ampere_a1_cpu_core_count = "4"
+  cloud_init_template_file = local.cloud_init_template_path
+}
+output "oci_ampere_a1_private_ips" {
+  value     = module.oci-ampere-a1.ampere_a1_private_ips
+}
+output "oci_ampere_a1_public_ips" {
+  value     = module.oci-ampere-a1.ampere_a1_public_ips
+}
+```
+
+### Example OracleLinux 9
+
+```hcl
+# Example of Ampere A1 running OracleLinux 9 on OCI using this module
+variable "tenancy_ocid" {}
+variable "user_ocid" {}
+variable "fingerprint" {}
+variable "private_key_path" {}
+locals {
+  cloud_init_template_path = "${path.cwd}/cloud-init.yaml.tpl"
+}
+module "oci-ampere-a1" {
+  source                   = "github.com/amperecomputing/terraform-oci-ampere-a1"
+  tenancy_ocid             = var.tenancy_ocid
+  user_ocid                = var.user_ocid
+  fingerprint              = var.fingerprint
+  private_key_path         = var.private_key_path
+# Optional
+# oci_vcn_cidr_block       = "10.2.0.0/16"
+# oci_vcn_cidr_subnet      = "10.2.1.0/24"
+  oci_os_image             = "oraclelinux9"
+  instance_prefix          = "ampere-a1-oraclelinux-9"
+  oci_vm_count             = "1"
+  ampere_a1_vm_memory      = "24"
+  ampere_a1_cpu_core_count = "4"
+  cloud_init_template_file = local.cloud_init_template_path
+}
+output "oci_ampere_a1_private_ips" {
+  value     = module.oci-ampere-a1.ampere_a1_private_ips
+}
+output "oci_ampere_a1_public_ips" {
+  value     = module.oci-ampere-a1.ampere_a1_public_ips
+}
+```
+
+### Example Ubuntu 20.04
+
+```hcl
+# Example of Ampere A1 running Ubuntu 20.04 on OCI using this module
+variable "tenancy_ocid" {}
+variable "user_ocid" {}
+variable "fingerprint" {}
+variable "private_key_path" {}
+locals {
+  cloud_init_template_path = "${path.cwd}/cloud-init.yaml.tpl"
+}
+module "oci-ampere-a1" {
+  source                   = "github.com/amperecomputing/terraform-oci-ampere-a1"
+  tenancy_ocid             = var.tenancy_ocid
+  user_ocid                = var.user_ocid
+  fingerprint              = var.fingerprint
+  private_key_path         = var.private_key_path
+# Optional
+# oci_vcn_cidr_block       = "10.2.0.0/16"
+# oci_vcn_cidr_subnet      = "10.2.1.0/24"
+  oci_os_image             = "ubuntu2004"
+  instance_prefix          = "ampere-a1-ubuntu-2004"
+  oci_vm_count             = "1"
+  ampere_a1_vm_memory      = "24"
+  ampere_a1_cpu_core_count = "4"
+  cloud_init_template_file = local.cloud_init_template_path
+}
+output "oci_ampere_a1_private_ips" {
+  value     = module.oci-ampere-a1.ampere_a1_private_ips
+}
+output "oci_ampere_a1_public_ips" {
+  value     = module.oci-ampere-a1.ampere_a1_public_ips
+}
+```
+
+### Example Ubuntu 22.04
+
+```hcl
+# Example of Ampere A1 running Ubuntu 22.04 on OCI using this module
+variable "tenancy_ocid" {}
+variable "user_ocid" {}
+variable "fingerprint" {}
+variable "private_key_path" {}
+locals {
+  cloud_init_template_path = "${path.cwd}/cloud-init.yaml.tpl"
+}
+module "oci-ampere-a1" {
+  source                   = "github.com/amperecomputing/terraform-oci-ampere-a1"
+  tenancy_ocid             = var.tenancy_ocid
+  user_ocid                = var.user_ocid
+  fingerprint              = var.fingerprint
+  private_key_path         = var.private_key_path
+# Optional
+# oci_vcn_cidr_block       = "10.2.0.0/16"
+# oci_vcn_cidr_subnet      = "10.2.1.0/24"
+  oci_os_image             = "ubuntu2204"
+  instance_prefix          = "ampere-a1-ubuntu-2204"
+  oci_vm_count             = "1"
+  ampere_a1_vm_memory      = "24"
+  ampere_a1_cpu_core_count = "4"
+  cloud_init_template_file = local.cloud_init_template_path
+}
+output "oci_ampere_a1_private_ips" {
+  value     = module.oci-ampere-a1.ampere_a1_private_ips
+}
+output "oci_ampere_a1_public_ips" {
+  value     = module.oci-ampere-a1.ampere_a1_public_ips
+}
+```
+### Example Ubuntu 24.04
+
+```hcl
+# Example of Ampere A1 running Ubuntu 24.04 on OCI using this module
+variable "tenancy_ocid" {}
+variable "user_ocid" {}
+variable "fingerprint" {}
+variable "private_key_path" {}
+locals {
+  cloud_init_template_path = "${path.cwd}/cloud-init.yaml.tpl"
+}
+module "oci-ampere-a1" {
+  source                   = "github.com/amperecomputing/terraform-oci-ampere-a1"
+  tenancy_ocid             = var.tenancy_ocid
+  user_ocid                = var.user_ocid
+  fingerprint              = var.fingerprint
+  private_key_path         = var.private_key_path
+# Optional
+# oci_vcn_cidr_block       = "10.2.0.0/16"
+# oci_vcn_cidr_subnet      = "10.2.1.0/24"
+  oci_os_image             = "ubuntu2404"
+  instance_prefix          = "ampere-a1-ubuntu-2404"
+  oci_vm_count             = "1"
+  ampere_a1_vm_memory      = "24"
+  ampere_a1_cpu_core_count = "4"
+  cloud_init_template_file = local.cloud_init_template_path
+}
+output "oci_ampere_a1_private_ips" {
+  value     = module.oci-ampere-a1.ampere_a1_private_ips
+}
+output "oci_ampere_a1_public_ips" {
+  value     = module.oci-ampere-a1.ampere_a1_public_ips
+}
+```
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_ampere_a1_cpu_core_count"></a> [ampere\_a1\_cpu\_core\_count](#input\_ampere\_a1\_cpu\_core\_count) | Default core count for Ampere A1 instances in OCI Free Tier | `string` | `"4"` | no |
+| <a name="input_ampere_a1_shape"></a> [ampere\_a1\_shape](#input\_ampere\_a1\_shape) | n/a | `string` | `"VM.Standard.A1.Flex"` | no |
+| <a name="input_ampere_a1_vm_memory"></a> [ampere\_a1\_vm\_memory](#input\_ampere\_a1\_vm\_memory) | Default RAM in GB for Ampere A1 instances in OCI Free Tier | `string` | `"24"` | no |
+| <a name="input_cloud_init_template_file"></a> [cloud\_init\_template\_file](#input\_cloud\_init\_template\_file) | Optional path for a cloud-init file | `string` | `null` | no |
+| <a name="input_fingerprint"></a> [fingerprint](#input\_fingerprint) | OCI Fingerprint ID for Free-Tier Account | `any` | n/a | yes |
+| <a name="input_instance_prefix"></a> [instance\_prefix](#input\_instance\_prefix) | Name prefix for vm instances | `string` | `"ampere-a1-"` | no |
+| <a name="input_oci_os_image"></a> [oci\_os\_image](#input\_oci\_os\_image) | Default OS Image From the Local Vars | `string` | `"oraclelinux8"` | no |
+| <a name="input_oci_vcn_cidr_block"></a> [oci\_vcn\_cidr\_block](#input\_oci\_vcn\_cidr\_block) | CIDR Address range for OCI Networks | `string` | `"10.2.0.0/16"` | no |
+| <a name="input_oci_vcn_cidr_subnet"></a> [oci\_vcn\_cidr\_subnet](#input\_oci\_vcn\_cidr\_subnet) | CIDR Address range for OCI Networks | `string` | `"10.2.1.0/24"` | no |
+| <a name="input_oci_vm_count"></a> [oci\_vm\_count](#input\_oci\_vm\_count) | OCI Free Tier Ampere A1 is two instances | `number` | `1` | no |
+| <a name="input_private_key_path"></a> [private\_key\_path](#input\_private\_key\_path) | Local path to the OCI private key file | `any` | n/a | yes |
+| <a name="input_tenancy_ocid"></a> [tenancy\_ocid](#input\_tenancy\_ocid) | OCI Tenancy ID for Free-Tier Account | `any` | n/a | yes |
+| <a name="input_user_ocid"></a> [user\_ocid](#input\_user\_ocid) | OCI User ID for Free-Tier Account | `any` | n/a | yes |
+## Modules
+
+No modules.
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| <a name="output_OCI_AlmaLinux_8_OS_Image_id"></a> [OCI\_AlmaLinux\_8\_OS\_Image\_id](#output\_OCI\_AlmaLinux\_8\_OS\_Image\_id) | Output OCI AlmaLinux 8 Image ID |
+| <a name="output_OCI_AlmaLinux_9_OS_Image_id"></a> [OCI\_AlmaLinux\_9\_OS\_Image\_id](#output\_OCI\_AlmaLinux\_9\_OS\_Image\_id) | Output OCI AlmaLinux 9 Image ID |
+| <a name="output_OCI_Availability_Domains"></a> [OCI\_Availability\_Domains](#output\_OCI\_Availability\_Domains) | Output Availability Domain Results |
+| <a name="output_OCI_FreeBSD_OS_Image_id"></a> [OCI\_FreeBSD\_OS\_Image\_id](#output\_OCI\_FreeBSD\_OS\_Image\_id) | Output OCI FreeBSD Image ID |
+| <a name="output_OracleLinux-7_9-aarch64-latest-name"></a> [OracleLinux-7\_9-aarch64-latest-name](#output\_OracleLinux-7\_9-aarch64-latest-name) | Output OCI OracleLinux 7.9 Image Name |
+| <a name="output_OracleLinux-7_9-aarch64-latest_ocid"></a> [OracleLinux-7\_9-aarch64-latest\_ocid](#output\_OracleLinux-7\_9-aarch64-latest\_ocid) | Output OCI OracleLinux 7.9 Image ID |
+| <a name="output_OracleLinux-8-aarch64-latest-name"></a> [OracleLinux-8-aarch64-latest-name](#output\_OracleLinux-8-aarch64-latest-name) | Output OCI AlmaLinux 8 Image Name |
+| <a name="output_OracleLinux-8-aarch64-latest_ocid"></a> [OracleLinux-8-aarch64-latest\_ocid](#output\_OracleLinux-8-aarch64-latest\_ocid) | Output OCI AlmaLinux 8 Image ID |
+| <a name="output_OracleLinux-9-aarch64-latest-name"></a> [OracleLinux-9-aarch64-latest-name](#output\_OracleLinux-9-aarch64-latest-name) | Output OCI AlmaLinux 9 Image ID |
+| <a name="output_OracleLinux-9-aarch64-latest_ocid"></a> [OracleLinux-9-aarch64-latest\_ocid](#output\_OracleLinux-9-aarch64-latest\_ocid) | Output OCI AlmaLinux 9 Image ID |
+| <a name="output_Ubuntu-20_04-aarch64-latest_name"></a> [Ubuntu-20\_04-aarch64-latest\_name](#output\_Ubuntu-20\_04-aarch64-latest\_name) | Output OCI Ubuntu 20.04 Image Name |
+| <a name="output_Ubuntu-20_04-aarch64-latest_ocid"></a> [Ubuntu-20\_04-aarch64-latest\_ocid](#output\_Ubuntu-20\_04-aarch64-latest\_ocid) | Output OCI Ubuntu 20.04 Image ID |
+| <a name="output_Ubuntu-22_04-aarch64-latest_name"></a> [Ubuntu-22\_04-aarch64-latest\_name](#output\_Ubuntu-22\_04-aarch64-latest\_name) | Output OCI Ubuntu 22.04 Image Name |
+| <a name="output_Ubuntu-22_04-aarch64-latest_ocid"></a> [Ubuntu-22\_04-aarch64-latest\_ocid](#output\_Ubuntu-22\_04-aarch64-latest\_ocid) | Output OCI Ubuntu 22.04 Image ID |
+| <a name="output_ampere_a1_boot_volume_ids"></a> [ampere\_a1\_boot\_volume\_ids](#output\_ampere\_a1\_boot\_volume\_ids) | Output the boot volume IDs of the instance(s) |
+| <a name="output_ampere_a1_private_ips"></a> [ampere\_a1\_private\_ips](#output\_ampere\_a1\_private\_ips) | Output the private IP(s) of the instance(s) |
+| <a name="output_ampere_a1_public_ips"></a> [ampere\_a1\_public\_ips](#output\_ampere\_a1\_public\_ips) | Output the public IP(s) of the instance(s) |
+| <a name="output_local_oci_aarch64_image_ids"></a> [local\_oci\_aarch64\_image\_ids](#output\_local\_oci\_aarch64\_image\_ids) | Output: List of available OCI image IDs |
+| <a name="output_local_oci_aarch64_image_names"></a> [local\_oci\_aarch64\_image\_names](#output\_local\_oci\_aarch64\_image\_names) | Output: List of available OCI image names |
+| <a name="output_local_oci_aarch64_images_map"></a> [local\_oci\_aarch64\_images\_map](#output\_local\_oci\_aarch64\_images\_map) | Output: the local map of the available oci image names and IDs |
+| <a name="output_oci_aarch64_images_map"></a> [oci\_aarch64\_images\_map](#output\_oci\_aarch64\_images\_map) | Output: map of image names and image ids |
+| <a name="output_oci_home_region"></a> [oci\_home\_region](#output\_oci\_home\_region) | Output: the home region of the tenancy |
+| <a name="output_oci_ssh_private_key"></a> [oci\_ssh\_private\_key](#output\_oci\_ssh\_private\_key) | Output: The dynamically created openssh private key |
+| <a name="output_oci_ssh_public_key"></a> [oci\_ssh\_public\_key](#output\_oci\_ssh\_public\_key) | Output: The dynamically created openssh public key |
+| <a name="output_random_uuid"></a> [random\_uuid](#output\_random\_uuid) | Output: A randomly generated uuid |
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_local"></a> [local](#provider\_local) | n/a |
+| <a name="provider_oci"></a> [oci](#provider\_oci) | n/a |
+| <a name="provider_random"></a> [random](#provider\_random) | n/a |
+| <a name="provider_tls"></a> [tls](#provider\_tls) | n/a |
+## Resources
+
+| Name | Type |
+|------|------|
+| [local_file.oci-ssh-privkey](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) | resource |
+| [local_file.oci-ssh-pubkey](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) | resource |
+| [oci_core_app_catalog_listing_resource_version_agreement.almalinux_8_app_catalog_listing_resource_version_agreement](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_app_catalog_listing_resource_version_agreement) | resource |
+| [oci_core_app_catalog_listing_resource_version_agreement.almalinux_9_app_catalog_listing_resource_version_agreement](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_app_catalog_listing_resource_version_agreement) | resource |
+| [oci_core_app_catalog_listing_resource_version_agreement.freebsd_app_catalog_listing_resource_version_agreement](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_app_catalog_listing_resource_version_agreement) | resource |
+| [oci_core_app_catalog_subscription.almalinux_8_app_catalog_subscription](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_app_catalog_subscription) | resource |
+| [oci_core_app_catalog_subscription.almalinux_9_app_catalog_subscription](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_app_catalog_subscription) | resource |
+| [oci_core_app_catalog_subscription.freebsd_app_catalog_subscription](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_app_catalog_subscription) | resource |
+| [oci_core_instance.ampere_a1](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_instance) | resource |
+| [oci_core_internet_gateway.ampere_internet_gateway](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_internet_gateway) | resource |
+| [oci_core_route_table.ampere_route_table](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_route_table) | resource |
+| [oci_core_security_list.ampere_security_list](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_security_list) | resource |
+| [oci_core_subnet.ampere_subnet](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_subnet) | resource |
+| [oci_core_virtual_network.ampere_vcn](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_virtual_network) | resource |
+| [oci_marketplace_accepted_agreement.almalinux_8_accepted_agreement](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/marketplace_accepted_agreement) | resource |
+| [oci_marketplace_accepted_agreement.almalinux_9_accepted_agreement](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/marketplace_accepted_agreement) | resource |
+| [oci_marketplace_accepted_agreement.freebsd_accepted_agreement](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/marketplace_accepted_agreement) | resource |
+| [oci_marketplace_listing_package_agreement.almalinux_8_package_agreement](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/marketplace_listing_package_agreement) | resource |
+| [oci_marketplace_listing_package_agreement.almalinux_9_package_agreement](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/marketplace_listing_package_agreement) | resource |
+| [oci_marketplace_listing_package_agreement.freebsd_package_agreement](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/marketplace_listing_package_agreement) | resource |
+| [random_uuid.random_id](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/uuid) | resource |
+| [tls_private_key.oci](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key) | resource |
+| [oci_core_app_catalog_listing_resource_version.almalinux_8_catalog_listing](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/core_app_catalog_listing_resource_version) | data source |
+| [oci_core_app_catalog_listing_resource_version.almalinux_9_catalog_listing](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/core_app_catalog_listing_resource_version) | data source |
+| [oci_core_app_catalog_listing_resource_version.freebsd_catalog_listing](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/core_app_catalog_listing_resource_version) | data source |
+| [oci_core_app_catalog_listing_resource_versions.almalinux_8_app_catalog_listing_resource_versions](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/core_app_catalog_listing_resource_versions) | data source |
+| [oci_core_app_catalog_listing_resource_versions.almalinux_9_app_catalog_listing_resource_versions](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/core_app_catalog_listing_resource_versions) | data source |
+| [oci_core_app_catalog_listing_resource_versions.freebsd_app_catalog_listing_resource_versions](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/core_app_catalog_listing_resource_versions) | data source |
+| [oci_core_images.oraclelinux-7_9-aarch64](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/core_images) | data source |
+| [oci_core_images.oraclelinux-8-aarch64](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/core_images) | data source |
+| [oci_core_images.oraclelinux-9-aarch64](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/core_images) | data source |
+| [oci_core_images.ubuntu-20_04-aarch64](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/core_images) | data source |
+| [oci_core_images.ubuntu-22_04-aarch64](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/core_images) | data source |
+| [oci_identity_availability_domains.ads](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/identity_availability_domains) | data source |
+| [oci_identity_regions.regions](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/identity_regions) | data source |
+| [oci_identity_tenancy.tenancy](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/identity_tenancy) | data source |
+| [oci_marketplace_listing.almalinux_8](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/marketplace_listing) | data source |
+| [oci_marketplace_listing.almalinux_9](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/marketplace_listing) | data source |
+| [oci_marketplace_listing.freebsd](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/marketplace_listing) | data source |
+| [oci_marketplace_listing_package.almalinux_8_package](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/marketplace_listing_package) | data source |
+| [oci_marketplace_listing_package.almalinux_9_package](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/marketplace_listing_package) | data source |
+| [oci_marketplace_listing_package.freebsd_package](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/marketplace_listing_package) | data source |
+| [oci_marketplace_listing_package_agreements.almalinux_8_package_agreements](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/marketplace_listing_package_agreements) | data source |
+| [oci_marketplace_listing_package_agreements.almalinux_9_package_agreements](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/marketplace_listing_package_agreements) | data source |
+| [oci_marketplace_listing_package_agreements.freebsd_package_agreements](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/marketplace_listing_package_agreements) | data source |
+| [oci_marketplace_listing_packages.almalinux_8_packages](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/marketplace_listing_packages) | data source |
+| [oci_marketplace_listing_packages.almalinux_9_packages](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/marketplace_listing_packages) | data source |
+| [oci_marketplace_listing_packages.freebsd_packages](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/marketplace_listing_packages) | data source |
+| [oci_marketplace_listings.almalinux_8](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/marketplace_listings) | data source |
+| [oci_marketplace_listings.almalinux_9](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/marketplace_listings) | data source |
+| [oci_marketplace_listings.freebsd](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/marketplace_listings) | data source |
+## Requirements
+
+No requirements.
 <!-- END_TF_DOCS -->
 
 ## References
