@@ -5,6 +5,7 @@
 [![Source Code](https://img.shields.io/badge/source-GitHub-blue.svg?style=flat)](https://github.com/AmpereComputing/terraform-oci-ampere-a1)
 ![documentation workflow](https://github.com/AmpereComputing/terraform-oci-ampere-a1/actions/workflows/documentation.yml/badge.svg?label=build&style=flat-square&branch=main)
 ![release workflow](https://github.com/AmpereComputing/terraform-oci-ampere-a1/actions/workflows/release.yml/badge.svg?label=build&style=flat-square&branch=main)
+[![pages-build-deployment](https://github.com/AmpereComputing/terraform-oci-ampere-a1/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/AmpereComputing/terraform-oci-ampere-a1/actions/workflows/pages/pages-build-deployment)
 [![Latest version](https://img.shields.io/github/tag/AmpereComputing/terraform-oci-ampere-a1.svg?label=release&style=flat&maxAge=3600)](https://github.com/AmpereComputing/terraform-oci-ampere-a1/tags)
 [![GitHub issues](https://img.shields.io/github/issues/AmpereComputing/terraform-oci-ampere-a1.svg)](https://github.com/AmpereComputing/terraform-oci-ampere-a1/issues)
 ![Github stars](https://badgen.net/github/stars/AmpereComputing/terraform-oci-ampere-a1?icon=github&label=stars)
