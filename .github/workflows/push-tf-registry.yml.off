@@ -1,0 +1,51 @@
+### This workflow can be used to manually create new release versions from a tag push using e.g. VSCODE ###
+on:
+  push:
+    tags:
+      - '*'
+
+name: Release to terraform public registry
+jobs:
+  Release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      # https://github.com/PaulHatch/semantic-version/blob/master/guide.md
+      - uses: paulhatch/semantic-version@latest
+        with:
+          bump_each_commit: true
+      - uses: ncipollo/release-action@v1
+        with:
+          generateReleaseNotes: true
+          name: 'v${{ github.ref_name }}'
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: get-files-changed
+        id: get-files-changed
+        run: |
+          files="$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})"
+          folders_list="[]"
+
+          for file in $files
+          do  
+            folder="$(echo $(dirname "${file}") | sed 's!/*\([^/]*\).*!\1!g')"
+            folders_list="$(echo "$folders_list" | jq ". += [\"$folder\"]")"
+          done
+
+          unique_list="$(echo "$folders_list" | jq -c unique )"
+          echo "::set-output name=FOLDERS_LIST::$unique_list"
+
+      - name: publish
+        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+        uses: seeeverything/publish-terraform-modules@1.0.0
+        with:
+          modules_list: ${{ steps.get-files-changed.outputs.FOLDERS_LIST }}
+          provider: "aws"
+          namespace: "organization"
+          token: ${{ secrets.TF_CLOUD_API_TOKEN }}
+          recreate: "false"
+          base_version: "1.0.0"
+          autobump: "true"
