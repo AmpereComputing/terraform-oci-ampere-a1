@@ -2,10 +2,9 @@ name: Generate terraform docs
 on:
   push:
     branches:
-      - "main"
+      - main
 jobs:
-  build:
-    name: Documenation
+  documentation:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -14,7 +13,7 @@ jobs:
         ref: main
 
     - name: Render terraform docs and push changes back to PR
-      uses: terraform-docs/gh-actions@v1.1.0
+      uses: terraform-docs/gh-actions@v1.4.1
       with:
         working-dir: .
         output-file: README.md

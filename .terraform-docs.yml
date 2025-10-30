@@ -19,6 +19,7 @@ sections:
   show-all: true
 
 content: |-
+
     {{ .Header }}
     ### Example AlmaLinux 8
 
@@ -91,7 +92,7 @@ content: |-
     ```hcl
     {{ include "examples/ubuntu2204/main.tf" }}
     ```
-
+    {{ .Providers }}
     {{ .Data-sources }}
     {{ .Inputs }}
     {{ .Outputs }}
