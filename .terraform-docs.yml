@@ -71,12 +71,6 @@ content: |-
     {{ include "examples/oraclelinux9/main.tf" }}
     ```
 
-    ### Example Ubuntu 18.04
-
-    ```hcl
-    {{ include "examples/ubuntu1804/main.tf" }}
-    ```
-
     ### Example Ubuntu 20.04
 
     ```hcl
@@ -88,11 +82,18 @@ content: |-
     ```hcl
     {{ include "examples/ubuntu2204/main.tf" }}
     ```
-    {{ .Providers }}
-    {{ .Data-sources }}
+    ### Example Ubuntu 24.04
+
+    ```hcl
+    {{ include "examples/ubuntu2404/main.tf" }}
+    ```
+
     {{ .Inputs }}
+    {{ .Modules }}
     {{ .Outputs }}
+    {{ .Providers }}
     {{ .Resources }}
+    {{ .Requirements }}
     {{ .Footer }}
 
 output:
