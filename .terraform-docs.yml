@@ -8,15 +8,11 @@ footer-from: ""
 recursive:
   enabled: false
   path: modules
+  include-main: true
 
 sections:
-  hide:
-    - requirements
-    - modules
+  hide: []
   show: []
-
-  hide-all: false
-  show-all: true
 
 content: |-
 
@@ -102,7 +98,7 @@ content: |-
 output:
   file: ""
   mode: inject
-  template: |
+  template: |-
     <!-- BEGIN_TF_DOCS -->
     {{ .Content }}
     <!-- END_TF_DOCS -->
