@@ -13,6 +13,7 @@
 ![Github forks](https://badgen.net/github/forks/AmpereComputing/terraform-oci-ampere-a1?icon=github&label=forks)
 ![GitHub License](https://img.shields.io/github/license/AmpereComputing/terraform-oci-ampere-a1)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+![GitHub deployments](https://img.shields.io/github/deployments/AmpereComputing/terraform-oci-ampere-a1/github-pages)
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Famperecomputing.github.io/terraform-oci-ampere-a1)
 
 
