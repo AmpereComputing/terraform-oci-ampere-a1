@@ -545,6 +545,8 @@ No modules.
 | <a name="output_Ubuntu-20_04-aarch64-latest_ocid"></a> [Ubuntu-20\_04-aarch64-latest\_ocid](#output\_Ubuntu-20\_04-aarch64-latest\_ocid) | Output OCI Ubuntu 20.04 Image ID |
 | <a name="output_Ubuntu-22_04-aarch64-latest_name"></a> [Ubuntu-22\_04-aarch64-latest\_name](#output\_Ubuntu-22\_04-aarch64-latest\_name) | Output OCI Ubuntu 22.04 Image Name |
 | <a name="output_Ubuntu-22_04-aarch64-latest_ocid"></a> [Ubuntu-22\_04-aarch64-latest\_ocid](#output\_Ubuntu-22\_04-aarch64-latest\_ocid) | Output OCI Ubuntu 22.04 Image ID |
+| <a name="output_Ubuntu-24_04-aarch64-latest_name"></a> [Ubuntu-24\_04-aarch64-latest\_name](#output\_Ubuntu-24\_04-aarch64-latest\_name) | Output OCI Ubuntu 24.04 Image Name |
+| <a name="output_Ubuntu-24_04-aarch64-latest_ocid"></a> [Ubuntu-24\_04-aarch64-latest\_ocid](#output\_Ubuntu-24\_04-aarch64-latest\_ocid) | Output OCI Ubuntu 24.04 Image ID |
 | <a name="output_ampere_a1_boot_volume_ids"></a> [ampere\_a1\_boot\_volume\_ids](#output\_ampere\_a1\_boot\_volume\_ids) | Output the boot volume IDs of the instance(s) |
 | <a name="output_ampere_a1_private_ips"></a> [ampere\_a1\_private\_ips](#output\_ampere\_a1\_private\_ips) | Output the private IP(s) of the instance(s) |
 | <a name="output_ampere_a1_public_ips"></a> [ampere\_a1\_public\_ips](#output\_ampere\_a1\_public\_ips) | Output the public IP(s) of the instance(s) |
@@ -601,6 +603,7 @@ No modules.
 | [oci_core_images.oraclelinux-9-aarch64](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/core_images) | data source |
 | [oci_core_images.ubuntu-20_04-aarch64](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/core_images) | data source |
 | [oci_core_images.ubuntu-22_04-aarch64](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/core_images) | data source |
+| [oci_core_images.ubuntu-24_04-aarch64](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/core_images) | data source |
 | [oci_identity_availability_domains.ads](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/identity_availability_domains) | data source |
 | [oci_identity_regions.regions](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/identity_regions) | data source |
 | [oci_identity_tenancy.tenancy](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/identity_tenancy) | data source |
