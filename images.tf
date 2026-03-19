@@ -5,11 +5,13 @@ output "oci_aarch64_images_map" {
     [
       "${data.oci_marketplace_listing.almalinux_8.name}${data.oci_core_app_catalog_listing_resource_version.almalinux_8_catalog_listing.listing_resource_version}",
       "${data.oci_marketplace_listing.almalinux_9.name}${data.oci_core_app_catalog_listing_resource_version.almalinux_9_catalog_listing.listing_resource_version}",
+#     "${data.oci_marketplace_listing.almalinux_10.name}${data.oci_core_app_catalog_listing_resource_version.almalinux_10_catalog_listing.listing_resource_version}",
 #     "${data.oci_marketplace_listing.rockylinux_8.name}${data.oci_core_app_catalog_listing_resource_version.rockylinux_8_catalog_listing.listing_resource_version}",
 #     "${data.oci_marketplace_listing.rockylinux_9.name}${data.oci_core_app_catalog_listing_resource_version.rockylinux_9_catalog_listing.listing_resource_version}",
       "${data.oci_marketplace_listing.freebsd.name}${data.oci_core_app_catalog_listing_resource_version.freebsd_catalog_listing.listing_resource_version}",
       # 9/25/2024 - Looks like openmandriva was delisted from the OCI marketplace
       # "${data.oci_marketplace_listing.openmandriva.name}${data.oci_core_app_catalog_listing_resource_version.openmandriva_catalog_listing.listing_resource_version}",
+      data.oci_core_images.oraclelinux-10-aarch64.images.0.display_name,
       data.oci_core_images.oraclelinux-9-aarch64.images.0.display_name,
       data.oci_core_images.oraclelinux-8-aarch64.images.0.display_name,
       data.oci_core_images.oraclelinux-7_9-aarch64.images.0.display_name,
@@ -22,11 +24,13 @@ output "oci_aarch64_images_map" {
     [
       data.oci_core_app_catalog_listing_resource_version.almalinux_8_catalog_listing.listing_resource_id,
       data.oci_core_app_catalog_listing_resource_version.almalinux_9_catalog_listing.listing_resource_id,
+#     data.oci_core_app_catalog_listing_resource_version.almalinux_10_catalog_listing.listing_resource_id,
 #     data.oci_core_app_catalog_listing_resource_version.rockylinux_8_catalog_listing.listing_resource_id,
 #     data.oci_core_app_catalog_listing_resource_version.rockylinux_9_catalog_listing.listing_resource_id,
       data.oci_core_app_catalog_listing_resource_version.freebsd_catalog_listing.listing_resource_id,
       # 9/25/2024 - Looks like openmandriva was delisted from the OCI marketplace
       # data.oci_core_app_catalog_listing_resource_version.openmandriva_catalog_listing.listing_resource_id,
+      data.oci_core_images.oraclelinux-10-aarch64.images.0.id,
       data.oci_core_images.oraclelinux-9-aarch64.images.0.id,
       data.oci_core_images.oraclelinux-8-aarch64.images.0.id,
       data.oci_core_images.oraclelinux-7_9-aarch64.images.0.id,
@@ -44,11 +48,13 @@ locals {
     [
       "${data.oci_marketplace_listing.almalinux_8.name}${data.oci_core_app_catalog_listing_resource_version.almalinux_8_catalog_listing.listing_resource_version}",
       "${data.oci_marketplace_listing.almalinux_9.name}${data.oci_core_app_catalog_listing_resource_version.almalinux_9_catalog_listing.listing_resource_version}",
+#     "${data.oci_marketplace_listing.almalinux_10.name}${data.oci_core_app_catalog_listing_resource_version.almalinux_10_catalog_listing.listing_resource_version}",
 #     "${data.oci_marketplace_listing.rockylinux_8.name}${data.oci_core_app_catalog_listing_resource_version.rockylinux_8_catalog_listing.listing_resource_version}",
 #     "${data.oci_marketplace_listing.rockylinux_9.name}${data.oci_core_app_catalog_listing_resource_version.rockylinux_9_catalog_listing.listing_resource_version}",
       "${data.oci_marketplace_listing.freebsd.name}${data.oci_core_app_catalog_listing_resource_version.freebsd_catalog_listing.listing_resource_version}",
       # 9/25/2024 - Looks like openmandriva was delisted from the OCI marketplace
       #"${data.oci_marketplace_listing.openmandriva.name}${data.oci_core_app_catalog_listing_resource_version.openmandriva_catalog_listing.listing_resource_version}",
+      data.oci_core_images.oraclelinux-10-aarch64.images.0.display_name,
       data.oci_core_images.oraclelinux-9-aarch64.images.0.display_name,
       data.oci_core_images.oraclelinux-8-aarch64.images.0.display_name,
       data.oci_core_images.oraclelinux-7_9-aarch64.images.0.display_name,
@@ -61,11 +67,13 @@ locals {
     [
       data.oci_core_app_catalog_listing_resource_version.almalinux_8_catalog_listing.listing_resource_id,
       data.oci_core_app_catalog_listing_resource_version.almalinux_9_catalog_listing.listing_resource_id,
+#     data.oci_core_app_catalog_listing_resource_version.almalinux_10_catalog_listing.listing_resource_id,
 #     data.oci_core_app_catalog_listing_resource_version.rockylinux_8_catalog_listing.listing_resource_id,
 #     data.oci_core_app_catalog_listing_resource_version.rockylinux_9_catalog_listing.listing_resource_id,
       data.oci_core_app_catalog_listing_resource_version.freebsd_catalog_listing.listing_resource_id,
       # 9/25/2024 - Looks like openmandriva was delisted from the OCI marketplace
       #data.oci_core_app_catalog_listing_resource_version.openmandriva_catalog_listing.listing_resource_id,
+      data.oci_core_images.oraclelinux-10-aarch64.images.0.id,
       data.oci_core_images.oraclelinux-9-aarch64.images.0.id,
       data.oci_core_images.oraclelinux-8-aarch64.images.0.id,
       data.oci_core_images.oraclelinux-7_9-aarch64.images.0.id,
@@ -86,6 +94,9 @@ locals {
       almalinux9     = {
         os_image_id  = data.oci_core_app_catalog_listing_resource_version.almalinux_9_catalog_listing.listing_resource_id
       }
+#     almalinux10     = {
+#       os_image_id  = data.oci_core_app_catalog_listing_resource_version.almalinux_10_catalog_listing.listing_resource_id
+#     }
 #     rockylinux8    = {
 #       os_image_id = data.oci_core_app_catalog_listing_resource_version.rockylinux_8_catalog_listing.listing_resource_id
 #     }
@@ -98,6 +109,9 @@ locals {
       #openmandriva   = {
       #  os_image_id = data.oci_core_app_catalog_listing_resource_version.openmandriva_catalog_listing.listing_resource_id
       #}
+      oraclelinux10   = {
+        os_image_id  = data.oci_core_images.oraclelinux-10-aarch64.images.0.id
+      }
       oraclelinux9   = {
         os_image_id  = data.oci_core_images.oraclelinux-9-aarch64.images.0.id
       }

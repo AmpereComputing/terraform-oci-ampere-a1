@@ -4,11 +4,10 @@ apt:
   sources:
     docker.list:
       source: deb [arch=arm64] https://download.docker.com/linux/ubuntu $RELEASE stable
+      keyurl: https://download.docker.com/linux/ubuntu/gpg
       keyid: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
-
 package_update: true
 package_upgrade: true
-
 packages:
   - screen
   - rsync
@@ -32,7 +31,6 @@ system_info:
     groups: [docker]
 
 runcmd:
-  - docker run -d --name registry --restart=always -p 4000:5000  -v registry:/var/lib/registry registry:2
   - pip3 install -U pip
   - pip3 install -U wheel
   - echo 'OCI Ampere A1 Ubuntu 24.04 Example' >> /etc/motd
