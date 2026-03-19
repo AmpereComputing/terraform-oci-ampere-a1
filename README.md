@@ -535,6 +535,8 @@ No modules.
 | <a name="output_OCI_AlmaLinux_9_OS_Image_id"></a> [OCI\_AlmaLinux\_9\_OS\_Image\_id](#output\_OCI\_AlmaLinux\_9\_OS\_Image\_id) | Output OCI AlmaLinux 9 Image ID |
 | <a name="output_OCI_Availability_Domains"></a> [OCI\_Availability\_Domains](#output\_OCI\_Availability\_Domains) | Output Availability Domain Results |
 | <a name="output_OCI_FreeBSD_OS_Image_id"></a> [OCI\_FreeBSD\_OS\_Image\_id](#output\_OCI\_FreeBSD\_OS\_Image\_id) | Output OCI FreeBSD Image ID |
+| <a name="output_OracleLinux-10-aarch64-latest-name"></a> [OracleLinux-10-aarch64-latest-name](#output\_OracleLinux-10-aarch64-latest-name) | Output OCI AlmaLinux 10 Image ID |
+| <a name="output_OracleLinux-10-aarch64-latest_ocid"></a> [OracleLinux-10-aarch64-latest\_ocid](#output\_OracleLinux-10-aarch64-latest\_ocid) | Output OCI AlmaLinux 10 Image ID |
 | <a name="output_OracleLinux-7_9-aarch64-latest-name"></a> [OracleLinux-7\_9-aarch64-latest-name](#output\_OracleLinux-7\_9-aarch64-latest-name) | Output OCI OracleLinux 7.9 Image Name |
 | <a name="output_OracleLinux-7_9-aarch64-latest_ocid"></a> [OracleLinux-7\_9-aarch64-latest\_ocid](#output\_OracleLinux-7\_9-aarch64-latest\_ocid) | Output OCI OracleLinux 7.9 Image ID |
 | <a name="output_OracleLinux-8-aarch64-latest-name"></a> [OracleLinux-8-aarch64-latest-name](#output\_OracleLinux-8-aarch64-latest-name) | Output OCI AlmaLinux 8 Image Name |
@@ -598,6 +600,7 @@ No modules.
 | [oci_core_app_catalog_listing_resource_versions.almalinux_8_app_catalog_listing_resource_versions](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/core_app_catalog_listing_resource_versions) | data source |
 | [oci_core_app_catalog_listing_resource_versions.almalinux_9_app_catalog_listing_resource_versions](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/core_app_catalog_listing_resource_versions) | data source |
 | [oci_core_app_catalog_listing_resource_versions.freebsd_app_catalog_listing_resource_versions](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/core_app_catalog_listing_resource_versions) | data source |
+| [oci_core_images.oraclelinux-10-aarch64](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/core_images) | data source |
 | [oci_core_images.oraclelinux-7_9-aarch64](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/core_images) | data source |
 | [oci_core_images.oraclelinux-8-aarch64](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/core_images) | data source |
 | [oci_core_images.oraclelinux-9-aarch64](https://registry.terraform.io/providers/oracle/oci/latest/docs/data-sources/core_images) | data source |
